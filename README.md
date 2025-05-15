@@ -16,3 +16,19 @@ mybusinesstheme/
 ├── README.md
 ├── .gitignore
 ```
+### Git Ignore
+---
+# .gitignore
+/node_modules/
+/vendor/
+*.log
+*.zip
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/cache/
+
+.env
+.DS_Store
+.idea/
+.vscode/
+---
