@@ -6,8 +6,14 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header>
-    <nav>
-        <?php wp_nav_menu(['theme_location' => 'primary']); ?>
+<header style="background-color: #f8f9fa; padding: 1rem 2rem;">
+    <nav class="main-nav" style="max-width: 1200px; margin: 0 auto;">
+        <?php
+        wp_nav_menu([
+            'theme_location' => 'main_menu',
+            'container' => false,
+            'menu_class' => 'nav-menu',
+        ]);
+        ?>
     </nav>
 </header>
