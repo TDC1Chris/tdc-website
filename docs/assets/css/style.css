@@ -39,6 +39,20 @@ h1, h2, h3 {
   color: #1f2937;
 }
 
+.card {
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.hero {
+  background: url('assets/images/banner.png') center/cover no-repeat;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}
 ul {
   list-style-type: disc;
   margin-left: 20px;
@@ -46,9 +60,8 @@ ul {
 
 blockquote {
   background: #fff;
-  border-left: 5px solid #2563eb;
-  margin: 1.5rem 0;
   padding: 1rem;
+  border-left: 4px solid #2563eb;
   font-style: italic;
 }
 
@@ -81,5 +94,5 @@ To add a favicon:
 3. Add the following to <head> of every HTML page:
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />x
 */
