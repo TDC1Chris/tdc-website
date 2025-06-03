@@ -3,42 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex">
   <title>Page Not Found - Total Design Consulting</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
   <style>
     body {
-      background-color: #111827;
-      color: #f9fafb;
       font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      padding: 60px 20px;
+    }
+    header, footer {
+      background-color: #1f2937;
+      color: white;
+      padding: 1rem;
+    }
+    main {
+      padding: 4rem 2rem;
     }
     h1 {
-      font-size: 4rem;
-      margin-bottom: 10px;
+      font-size: 3rem;
+      margin-bottom: 1rem;
     }
     p {
       font-size: 1.2rem;
-      margin-bottom: 30px;
     }
-    a {
+    a.button {
       display: inline-block;
-      padding: 12px 24px;
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
       background-color: #2563eb;
       color: white;
-      border-radius: 5px;
       text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
+      border-radius: 4px;
     }
-    a:hover {
+    a.button:hover {
       background-color: #1d4ed8;
     }
   </style>
 </head>
 <body>
-  <h1>404</h1>
-  <p>Sorry, that page couldn’t be found.</p>
-  <a href="index.html">Return Home</a>
+  <header>
+    <h1>Total Design Consulting</h1>
+  </header>
+  <main>
+    <h1>404</h1>
+    <p>Oops! The page you're looking for doesn't exist.</p>
+    <a href="index.html" class="button">Return to Home</a>
+  </main>
+  <footer>
+    <p>&copy; 2025 Total Design Consulting LLC | <a href="mailto:contact@totaldesignconsulting.com" style="color: white;">Contact Us</a></p>
+  </footer>
 </body>
 </html>

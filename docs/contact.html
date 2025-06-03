@@ -3,12 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Total Design Consulting for inquiries, estimates, and support.">
   <link rel="stylesheet" href="assets/css/style.css" />
-  <title>Contact - Total Design Consulting</title>
+  <title>Contact Us - Total Design Consulting</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background-color: #1f2937;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1d4ed8;
+    }
+    .email-alt {
+      margin-top: 1rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Contact Us</h1>
+    <h1>Total Design Consulting</h1>
     <nav>
       <a href="index.html">Home</a> |
       <a href="services.html">Services</a> |
@@ -16,17 +72,22 @@
     </nav>
   </header>
   <main>
-    <p>You can reach us directly at:</p>
-    <ul>
-      <li>Email: <a href="mailto:info@totaldesignconsulting.com">info@totaldesignconsulting.com</a></li>
-      <li>Phone: (555) 123-4567</li>
-    </ul>
+    <h2>Contact Us</h2>
     <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required><br>
-      <input type="email" name="_replyto" placeholder="Your Email" required><br>
-      <textarea name="message" placeholder="Your Message"></textarea><br>
-      <button type="submit">Send</button>
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
     </form>
+    <div class="email-alt">
+      <p>Prefer email? <a href="mailto:contact@totaldesignconsulting.com">contact@totaldesignconsulting.com</a></p>
+    </div>
   </main>
   <footer>
     <p>&copy; 2025 Total Design Consulting LLC</p>

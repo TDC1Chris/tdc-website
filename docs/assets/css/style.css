@@ -1,39 +1,85 @@
+/* assets/css/style.css */
 
 body {
   font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
-  background: #f4f4f4;
-  color: #333;
 }
+
 header, footer {
-  background: #222;
-  color: #fff;
-  text-align: center;
+  background-color: #1f2937;
+  color: white;
   padding: 1rem;
+  text-align: center;
 }
+
 nav a {
-  color: #61dafb;
+  color: white;
   margin: 0 10px;
   text-decoration: none;
 }
+
+nav a:hover {
+  text-decoration: underline;
+}
+
 main {
   padding: 2rem;
+  max-width: 960px;
+  margin: auto;
 }
-form input, form textarea {
-  width: 100%;
-  max-width: 600px;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
+
+section {
+  margin-bottom: 2rem;
 }
-button {
-  padding: 0.5rem 1rem;
-  background: #222;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+
+h1, h2, h3 {
+  color: #1f2937;
 }
-button:hover {
-  background: #444;
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
 }
+
+blockquote {
+  background: #fff;
+  border-left: 5px solid #2563eb;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  font-style: italic;
+}
+
+cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+a.button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+a.button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Favicon Instructions */
+/*
+To add a favicon:
+1. Create a 32x32 or 64x64 icon file, e.g. favicon.ico
+2. Place it in the root of the "docs" folder
+3. Add the following to <head> of every HTML page:
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+*/
