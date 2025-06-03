@@ -12,9 +12,10 @@ This is the static marketing site for [Total Design Consulting LLC](https://www.
 
 ## Structure
 ```bash
-- `public/`: Static files for GitHub Pages
-- `src/`: WordPress theme and development source (optional)
+- `/docs/`: Static files for GitHub Pages
+- `/src/`: WordPress theme and development source (optional)
 - `.github/`: GitHub Pages and automation
+- `.gitignore/`: GitHub Workflow security
 
 tdc-website/
 ├── public/                 ← GitHub Pages deploy folder (only static site here)
@@ -28,7 +29,7 @@ tdc-website/
 │   ├── 404.html
 │   └── favicon.ico
 ├── src/                    ← Original theme or WordPress files (optional backup)
-│   └── dev/
+│   └── totaldesignconsulting/
 ├── .github/                ← GitHub workflows (CI/CD, linting)
 ├── .gitignore
 ├── README.md              ← Repo purpose, deployment instructions
@@ -37,7 +38,7 @@ tdc-website/
 ```
 ## Deployment
 
-All files in `public/` are automatically served by GitHub Pages.
+All files in `docs/` are automatically served by GitHub Pages.
 
 
 ## Notes
