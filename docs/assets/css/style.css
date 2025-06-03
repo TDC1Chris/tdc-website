@@ -53,6 +53,20 @@ h1, h2, h3 {
   padding: 4rem 2rem;
   text-align: center;
 }
+
+.icon-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.icon-header img {
+  width: 32px;
+  height: auto;
+}
+
+
 ul {
   list-style-type: disc;
   margin-left: 20px;
