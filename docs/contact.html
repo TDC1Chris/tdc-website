@@ -26,7 +26,7 @@
     font-size: 2rem;
     letter-spacing: 1px;
     font-weight: 600;
-    color: #60a5fa; /* Updated for contrast */
+    color: #60a5fa;
   }
   nav {
     margin-top: 0.2rem;
@@ -90,7 +90,6 @@
     color: #22223b;
     transition: border-color 0.2s, box-shadow 0.2s;
     outline: none;
-    /* remove resize for textarea below */
   }
   textarea {
     resize: none;
@@ -179,6 +178,16 @@
     <div style="margin-bottom:1.5rem; color:#374151; font-size:1.07rem; line-height:1.7;">
       We understand there are many avenues of communication in the current era of technology, but we also want to uphold our commitment to create bespoke solutions for each client we partner with. To that end, all communication methods used at the firm are monitored by a human who is a direct employee of the firm. We do not outsource our customer service in any way. Click the button below to select the platform or method that works best for you!
     </div>
+    <div class="email-alt" style="margin-bottom:1.2rem;">
+      <p>
+        Prefer email?
+        <a
+          id="mailto-link"
+          href="mailto:support@totaldesignconsulting.com?subject=Contact%20from%20Website&body=Hello%20Total%20Design%20Consulting%2C%0A%0AMy%20name%20is%20[Your%20Name]%20and%20my%20email%20is%20[Your%20Email].%0A%0AI%20would%20like%20to%20inquire%20about%3A%0A%0A[Please%20describe%20your%20request%20or%20question%20here]%0A%0AThank%20you!">
+          support@totaldesignconsulting.com
+        </a>
+      </p>
+    </div>
     <form action="https://formspree.io/f/your-form-id" method="POST">
       <label for="name">Your Name</label>
       <input id="name" name="name" required type="text" autocomplete="name"/>
@@ -188,9 +197,6 @@
       <textarea id="message" name="message" required rows="5"></textarea>
       <button type="submit">Send Message</button>
     </form>
-    <div class="email-alt">
-      <p>Prefer email? <a href="mailto:support@totaldesignconsulting.com">support@totaldesignconsulting.com</a></p>
-    </div>
   </div>
 </main>
 <footer>
