@@ -1,99 +1,193 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Contact Total Design Consulting for inquiries, estimates, and support." name="description"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Contact Total Design Consulting for inquiries, estimates, and support."/>
 <link href="assets/css/style.css" rel="stylesheet"/>
 <title>Contact Us - Total Design Consulting</title>
 <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9fafb;
-      color: #111827;
-      margin: 0;
-      padding: 0;
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ef 100%);
+    color: #22223b;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  header {
+    background: #1f2937;
+    color: #fff;
+    padding: 1.2rem 0 0.8rem 0;
+    box-shadow: 0 2px 8px rgba(31,41,55,0.06);
+  }
+  header h1 {
+    margin: 0 0 0.3rem 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  nav {
+    margin-top: 0.2rem;
+  }
+  nav a {
+    color: #e0e7ef;
+    margin: 0 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-size: 1.05rem;
+  }
+  nav a:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1rem 2rem 1rem;
+    min-height: 70vh;
+  }
+  .contact-title {
+    text-align: center;
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 2.2rem;
+    color: #1f2937;
+    letter-spacing: 0.5px;
+  }
+  .contact-card {
+    background: #fff;
+    border-radius: 1.1rem;
+    box-shadow: 0 4px 24px rgba(31,41,55,0.09);
+    padding: 2.2rem 2rem 1.5rem 2rem;
+    max-width: 420px;
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  label {
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.2rem;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f9fafb;
+    color: #22223b;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    resize: vertical;
+  }
+  input:focus, textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px #93c5fd55;
+    background: #fff;
+  }
+  button {
+    margin-top: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.08rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s, box-shadow 0.18s;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.07);
+    letter-spacing: 0.2px;
+  }
+  button:hover, button:focus {
+    background-color: #1d4ed8;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+  }
+  .email-alt {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #374151;
+    font-size: 1.05rem;
+  }
+  .email-alt a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 500;
+  }
+  .email-alt a:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+  }
+  footer {
+    background: #1f2937;
+    color: #e0e7ef;
+    padding: 1.2rem 0;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    box-shadow: 0 -2px 8px rgba(31,41,55,0.06);
+  }
+  footer a {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer a:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+  }
+  @media (max-width: 600px) {
+    .contact-card {
+      padding: 1.2rem 0.7rem 1rem 0.7rem;
+      max-width: 98vw;
     }
-    header, footer {
-      background-color: #1f2937;
-      color: white;
-      padding: 1rem;
-      text-align: center;
+    .contact-title {
+      font-size: 1.5rem;
     }
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      padding: 2rem;
-      max-width: 600px;
-      margin: auto;
-    }
-    label {
-      display: block;
-      margin-top: 1rem;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 0.5rem;
-      margin-top: 0.3rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background-color: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #1d4ed8;
-    }
-    .email-alt {
-      margin-top: 1rem;
-      text-align: center;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-
 <header>
-<h1>Total Design Consulting</h1>
-<nav>
-<a href="index.html">Home</a> |
+  <h1>Total Design Consulting</h1>
+  <nav>
+    <a href="index.html">Home</a> |
     <a href="services.html">Services</a> |
     <a href="contact.html">Contact</a> |
     <a href="testimonials.html">Testimonials</a>
-</nav>
+  </nav>
 </header>
-
 <main>
-<h2>Contact Us</h2>
-<form action="https://formspree.io/f/your-form-id" method="POST">
-<label for="name">Your Name:</label>
-<input id="name" name="name" required="" type="text"/>
-<label for="email">Your Email:</label>
-<input id="email" name="email" required="" type="email"/>
-<label for="message">Message:</label>
-<textarea id="message" name="message" required="" rows="5"></textarea>
-<button type="submit">Send Message</button>
-</form>
-<div class="email-alt">
-<p>Prefer email? <a href="mailto:contact@totaldesignconsulting.com">contact@totaldesignconsulting.com</a></p>
-</div>
+  <div class="contact-title">Contact Us</div>
+  <div class="contact-card">
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <label for="name">Your Name</label>
+      <input id="name" name="name" required type="text" autocomplete="name"/>
+      <label for="email">Your Email</label>
+      <input id="email" name="email" required type="email" autocomplete="email"/>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required rows="5"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="email-alt">
+      <p>Prefer email? <a href="mailto:contact@totaldesignconsulting.com">contact@totaldesignconsulting.com</a></p>
+    </div>
+  </div>
 </main>
-
 <footer>
-<p>© 2025 Total Design Consulting LLC | <a href="mailto:contact@totaldesignconsulting.com">Email Us</a></p>
+  <p>© 2025 Total Design Consulting LLC | <a href="mailto:contact@totaldesignconsulting.com">Email Us</a></p>
 </footer>
-
 </body>
 </html>

@@ -1,109 +1,216 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Explore the services offered by Total Design Consulting including Cybersecurity, Automation, and IT/OT Engineering." name="description"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Explore the services offered by Total Design Consulting including Cybersecurity, Automation, and IT/OT Engineering."/>
 <link href="assets/css/style.css" rel="stylesheet"/>
 <title>Our Services - Total Design Consulting</title>
 <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9fafb;
-      color: #111827;
-      margin: 0;
-      padding: 0;
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ef 100%);
+    color: #22223b;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  header {
+    background: #1f2937;
+    color: #fff;
+    padding: 1.2rem 0 0.8rem 0;
+    box-shadow: 0 2px 8px rgba(31,41,55,0.06);
+  }
+  header h1 {
+    margin: 0 0 0.3rem 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  nav {
+    margin-top: 0.2rem;
+  }
+  nav a {
+    color: #e0e7ef;
+    margin: 0 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-size: 1.05rem;
+  }
+  nav a:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+  }
+  main {
+    padding: 2.5rem 1rem 2rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .services-title {
+    text-align: center;
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    color: #1f2937;
+    letter-spacing: 0.5px;
+  }
+  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  .service-card {
+    background: #fff;
+    border-radius: 1.1rem;
+    box-shadow: 0 4px 24px rgba(31,41,55,0.09);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    max-width: 340px;
+    min-width: 270px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.18s, box-shadow 0.18s;
+    border: 1px solid #e5e7eb;
+  }
+  .service-card:hover {
+    transform: translateY(-6px) scale(1.025);
+    box-shadow: 0 8px 32px rgba(37,99,235,0.12);
+    border-color: #60a5fa;
+  }
+  .service-icon {
+    margin-bottom: 1.1rem;
+    width: 48px;
+    height: 48px;
+    background: #e0e7ef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(31,41,55,0.07);
+  }
+  .service-icon img {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+  .service-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 0.2px;
+  }
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .service-list li {
+    margin-bottom: 0.7rem;
+    padding-left: 1.6rem;
+    position: relative;
+    color: #374151;
+    font-size: 1.04rem;
+  }
+  .service-list li:before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0.6rem;
+    width: 7px;
+    height: 7px;
+    background: #2563eb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  footer {
+    background: #1f2937;
+    color: #e0e7ef;
+    padding: 1.2rem 0;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    box-shadow: 0 -2px 8px rgba(31,41,55,0.06);
+  }
+  footer a {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer a:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+  }
+  @media (max-width: 900px) {
+    .services-grid {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
     }
-    header, footer {
-      background-color: #1f2937;
-      color: white;
-      padding: 1rem;
-      text-align: center;
+    .service-card {
+      max-width: 95vw;
     }
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      padding: 2rem;
-      max-width: 960px;
-      margin: auto;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      color: #1f2937;
-    }
-    h3 {
-      margin-top: 1.5rem;
-      color: #2563eb;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 20px;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-
 <header>
-<h1>Total Design Consulting</h1>
-<nav>
-<a href="index.html">Home</a> |
+  <h1>Total Design Consulting</h1>
+  <nav>
+    <a href="index.html">Home</a> |
     <a href="services.html">Services</a> |
     <a href="contact.html">Contact</a> |
     <a href="testimonials.html">Testimonials</a>
-</nav>
+  </nav>
 </header>
-
 <main>
-<h2>Our Services</h2>
-<sections></sections>
-<div class="icon-header">
-  <img src="assets/images/icon-cybersecurity.png" alt="Cybersecurity" width="32">
-  <h2>Cybersecurity Consulting</h2>
-</div>
-<ul>
-<div class="card"><li>Risk assessment and mitigation strategies</li></div>
-<div class="card"><li>Firewall and endpoint security design</li></div>
-<div class="card"><li>Network segmentation and Zero Trust Architecture</li></div>
-<div class="card"><li>Penetration testing and audit compliance</li></div>
-</ul>
-</section>
-<section><div class="icon-header">
-  <img src="assets/images/icon-network.png" alt="Network" width="32">
-  <h2>Network infrastructure Consulting</h2>
-</div>
-<ul>
-<div class="card"><li>Hybrid infrastructure integration (IT &amp; OT)</li></div>
-<div class="card"><li>Redundant and high-availability network design</li></div>
-<div class="card"><li>Industrial protocol configuration and diagnostics</li></div>
-<div class="card"><li>Remote access and secure VPN deployment</li></div>
-</ul>
-</section>
-<section>
-  <div class="icon-header">
-  <img src="assets/images/icon-plc.png" alt="PLC" width="32">
-  <h2>Industrial Automation &amp; PLC Systems</h2>
+  <div class="services-title">Our Services</div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <img src="assets/images/icon-cybersecurity.png" alt="Cybersecurity">
+      </div>
+      <div class="service-title">Cybersecurity Consulting</div>
+      <ul class="service-list">
+        <li>Risk assessment and mitigation strategies</li>
+        <li>Firewall and endpoint security design</li>
+        <li>Network segmentation and Zero Trust Architecture</li>
+        <li>Penetration testing and audit compliance</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <img src="assets/images/icon-network.png" alt="Network">
+      </div>
+      <div class="service-title">Network Infrastructure Consulting</div>
+      <ul class="service-list">
+        <li>Hybrid infrastructure integration (IT &amp; OT)</li>
+        <li>Redundant and high-availability network design</li>
+        <li>Industrial protocol configuration and diagnostics</li>
+        <li>Remote access and secure VPN deployment</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <img src="assets/images/icon-plc.png" alt="PLC">
+      </div>
+      <div class="service-title">Industrial Automation &amp; PLC Systems</div>
+      <ul class="service-list">
+        <li>PLC &amp; HMI design and troubleshooting</li>
+        <li>Process control and SCADA optimization</li>
+        <li>System documentation and compliance</li>
+        <li>Legacy migration and modernization</li>
+      </ul>
+    </div>
   </div>
-<ul>
-<div class="card"><li>PLC &amp; HMI design and troubleshooting</li></div>
-<div class="card"><li>Process control and SCADA optimization</li></div>
-<div class="card"><li>System documentation and compliance</li></div>
-<div class="card"><li>Legacy migration and modernization</li></div>
-</ul>
-</section>
 </main>
-
 <footer>
-<p>© 2025 Total Design Consulting LLC | <a href="mailto:contact@totaldesignconsulting.com">Email Us</a></p>
+  <p>© 2025 Total Design Consulting LLC | <a href="mailto:contact@totaldesignconsulting.com">Email Us</a></p>
 </footer>
-
 </body>
 </html>

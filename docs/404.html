@@ -1,71 +1,159 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="noindex" name="robots"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex"/>
 <title>Page Not Found - Total Design Consulting</title>
 <link href="assets/css/style.css" rel="stylesheet"/>
 <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9fafb;
-      color: #111827;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ef 100%);
+    color: #22223b;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  header {
+    background: #1f2937;
+    color: #fff;
+    padding: 1.2rem 0 0.8rem 0;
+    box-shadow: 0 2px 8px rgba(31,41,55,0.06);
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 0.3rem 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  nav {
+    margin-top: 0.2rem;
+  }
+  nav a {
+    color: #e0e7ef;
+    margin: 0 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-size: 1.05rem;
+  }
+  nav a:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 2.5rem 1rem 2rem 1rem;
+  }
+  .error-card {
+    background: #fff;
+    border-radius: 1.1rem;
+    box-shadow: 0 4px 24px rgba(31,41,55,0.09);
+    border: 1px solid #e5e7eb;
+    max-width: 400px;
+    width: 100%;
+    padding: 2.5rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .error-icon {
+    font-size: 3.5rem;
+    color: #2563eb;
+    margin-bottom: 1.2rem;
+    opacity: 0.85;
+  }
+  .error-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #1f2937;
+    letter-spacing: 1px;
+  }
+  .error-message {
+    font-size: 1.13rem;
+    color: #374151;
+    margin-bottom: 1.7rem;
+    line-height: 1.6;
+  }
+  .error-button {
+    display: inline-block;
+    padding: 0.8rem 2.1rem;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.13);
+    transition: background 0.18s, color 0.18s;
+    border: none;
+    margin-top: 0.5rem;
+  }
+  .error-button:hover, .error-button:focus {
+    background: #1d4ed8;
+    color: #fff;
+    outline: none;
+  }
+  footer {
+    background: #1f2937;
+    color: #e0e7ef;
+    padding: 1.2rem 0;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    box-shadow: 0 -2px 8px rgba(31,41,55,0.06);
+  }
+  footer a {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer a:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+  }
+  @media (max-width: 600px) {
+    .error-card {
+      padding: 1.2rem 0.7rem 1rem 0.7rem;
+      max-width: 98vw;
     }
-    header, footer {
-      background-color: #1f2937;
-      color: white;
-      padding: 1rem;
+    .error-title {
+      font-size: 1.5rem;
     }
-    main {
-      padding: 4rem 2rem;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    p {
-      font-size: 1.2rem;
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.75rem 1.5rem;
-      background-color: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-    a.button:hover {
-      background-color: #1d4ed8;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-
 <header>
-<h1>Total Design Consulting</h1>
-<nav>
-<a href="index.html">Home</a> |
+  <h1>Total Design Consulting</h1>
+  <nav>
+    <a href="index.html">Home</a> |
     <a href="services.html">Services</a> |
     <a href="contact.html">Contact</a> |
     <a href="testimonials.html">Testimonials</a>
-</nav>
+  </nav>
 </header>
-
 <main>
-<h1>404</h1>
-<p>Oops! The page you're looking for doesn't exist.</p>
-<a class="button" href="index.html">Return to Home</a>
+  <div class="error-card">
+    <div class="error-icon">&#9888;</div>
+    <div class="error-title">404 – Page Not Found</div>
+    <div class="error-message">
+      Oops! The page you're looking for doesn't exist or has been moved.<br>
+      Please check the URL or return to the homepage.
+    </div>
+    <a class="error-button" href="index.html">Return to Home</a>
+  </div>
 </main>
-
 <footer>
-<p>© 2025 Total Design Consulting LLC | <a href="mailto:contact@totaldesignconsulting.com">Email Us</a></p>
+  <p>© 2025 Total Design Consulting LLC | <a href="mailto:contact@totaldesignconsulting.com">Email Us</a></p>
 </footer>
-
 </body>
 </html>
