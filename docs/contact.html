@@ -89,7 +89,10 @@
     color: #22223b;
     transition: border-color 0.2s, box-shadow 0.2s;
     outline: none;
-    resize: vertical;
+    /* remove resize for textarea below */
+  }
+  textarea {
+    resize: none;
   }
   input:focus, textarea:focus {
     border-color: #2563eb;
