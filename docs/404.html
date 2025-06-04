@@ -27,6 +27,7 @@
     font-size: 2rem;
     letter-spacing: 1px;
     font-weight: 600;
+    color: #60a5fa;
   }
   nav {
     margin-top: 0.2rem;
@@ -51,44 +52,79 @@
     min-height: 70vh;
     padding: 2.5rem 1rem 2rem 1rem;
   }
-  .error-card {
+  .comic-card {
     background: #fff;
     border-radius: 1.1rem;
     box-shadow: 0 4px 24px rgba(31,41,55,0.09);
-    border: 1px solid #e5e7eb;
-    max-width: 400px;
+    border: 2px dashed #2563eb;
+    max-width: 480px;
     width: 100%;
     padding: 2.5rem 2rem 2rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;
+    overflow: visible;
   }
-  .error-icon {
-    font-size: 3.5rem;
-    color: #2563eb;
-    margin-bottom: 1.2rem;
-    opacity: 0.85;
-  }
-  .error-title {
-    font-size: 2.3rem;
-    font-weight: 800;
+  .comic-404 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #f59e42;
+    text-shadow: 2px 2px 0 #22223b, 4px 4px 0 #2563eb;
     margin-bottom: 0.5rem;
-    color: #1f2937;
-    letter-spacing: 1px;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive, Arial, sans-serif;
+    letter-spacing: 2px;
   }
-  .error-message {
-    font-size: 1.13rem;
+  .comic-img {
+    width: 180px;
+    margin-bottom: 1.2rem;
+    margin-top: 0.2rem;
+    filter: drop-shadow(2px 4px 0 #2563eb33);
+    user-select: none;
+  }
+  .comic-bubble {
+    background: #fffbe7;
+    border: 2px solid #f59e42;
+    border-radius: 1.2rem 1.2rem 1.2rem 0.4rem/1.5rem 1.5rem 1.5rem 0.7rem;
+    padding: 1.1rem 1.3rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.18rem;
+    color: #22223b;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive, Arial, sans-serif;
+    box-shadow: 2px 4px 0 #f59e4280;
+    position: relative;
+    display: inline-block;
+    max-width: 340px;
+  }
+  .comic-bubble:after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    bottom: -22px;
+    width: 30px;
+    height: 30px;
+    background: #fffbe7;
+    border: 2px solid #f59e42;
+    border-top: none;
+    border-right: none;
+    border-radius: 0 0 0 1.5rem;
+    transform: rotate(-20deg);
+    z-index: 1;
+  }
+  .comic-caption {
+    font-size: 1.05rem;
     color: #374151;
-    margin-bottom: 1.7rem;
-    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive, Arial, sans-serif;
   }
-  .error-button {
+  .comic-button {
     display: inline-block;
     padding: 0.8rem 2.1rem;
     background: #2563eb;
     color: #fff;
-    font-weight: 600;
+    font-weight: 700;
     border-radius: 2rem;
     font-size: 1.1rem;
     text-decoration: none;
@@ -96,11 +132,29 @@
     transition: background 0.18s, color 0.18s;
     border: none;
     margin-top: 0.5rem;
+    font-family: inherit;
   }
-  .error-button:hover, .error-button:focus {
-    background: #1d4ed8;
-    color: #fff;
+  .comic-button:hover, .comic-button:focus {
+    background: #f59e42;
+    color: #22223b;
     outline: none;
+  }
+  @media (max-width: 600px) {
+    .comic-card {
+      padding: 1.2rem 0.7rem 1rem 0.7rem;
+      max-width: 98vw;
+    }
+    .comic-404 {
+      font-size: 2.2rem;
+    }
+    .comic-img {
+      width: 110px;
+    }
+    .comic-bubble {
+      font-size: 1rem;
+      padding: 0.7rem 0.7rem;
+      max-width: 90vw;
+    }
   }
   footer {
     background: #1f2937;
@@ -120,15 +174,6 @@
     color: #93c5fd;
     text-decoration: underline;
   }
-  @media (max-width: 600px) {
-    .error-card {
-      padding: 1.2rem 0.7rem 1rem 0.7rem;
-      max-width: 98vw;
-    }
-    .error-title {
-      font-size: 1.5rem;
-    }
-  }
 </style>
 </head>
 <body>
@@ -142,14 +187,17 @@
   </nav>
 </header>
 <main>
-  <div class="error-card">
-    <div class="error-icon">&#9888;</div>
-    <div class="error-title">404 – Page Not Found</div>
-    <div class="error-message">
-      Oops! The page you're looking for doesn't exist or has been moved.<br>
-      Please check the URL or return to the homepage.
+  <div class="comic-card">
+    <div class="comic-404">404</div>
+    <img class="comic-img" src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f916.png" alt="Mischievous Robot Cartoon">
+    <div class="comic-bubble">
+      <strong>Whoops!</strong> Looks like I pressed the wrong button again.<br>
+      This page is as lost as Calvin's homework!
     </div>
-    <a class="error-button" href="index.html">Return to Home</a>
+    <div class="comic-caption">
+      (Don't worry, Hobbes is on the case. Or maybe he's napping.)
+    </div>
+    <a class="comic-button" href="index.html">Back to Safety!</a>
   </div>
 </main>
 <footer>
