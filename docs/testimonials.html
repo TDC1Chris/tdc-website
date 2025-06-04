@@ -26,7 +26,7 @@
     font-size: 2rem;
     letter-spacing: 1px;
     font-weight: 600;
-    color: #60a5fa; /* Updated for contrast */
+    color: #60a5fa;
   }
   nav {
     margin-top: 0.2rem;
@@ -45,7 +45,7 @@
   }
   main {
     padding: 2.5rem 1rem 2rem 1rem;
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -66,21 +66,23 @@
     gap: 2rem;
     justify-content: center;
     width: 100%;
+    margin-bottom: 2.5rem;
   }
   .testimonial-card {
     background: #fff;
     border-radius: 1.1rem;
     box-shadow: 0 4px 24px rgba(31,41,55,0.09);
     border: 1px solid #e5e7eb;
-    max-width: 350px;
-    min-width: 260px;
+    max-width: 340px;
+    min-width: 270px;
     flex: 1 1 300px;
-    padding: 2rem 1.5rem 1.2rem 1.5rem;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
     transition: transform 0.18s, box-shadow 0.18s;
+    text-align: left;
   }
   .testimonial-card:hover {
     transform: translateY(-6px) scale(1.025);
@@ -105,6 +107,7 @@
     font-size: 1.08rem;
     line-height: 1.6;
     min-height: 70px;
+    z-index: 1;
   }
   .testimonial-cite {
     display: block;
@@ -115,6 +118,42 @@
     width: 100%;
     font-size: 1.01rem;
     letter-spacing: 0.1px;
+  }
+  .testimonial-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.7rem;
+    border: 2px solid #e5e7eb;
+    background: #f3f4f6;
+    align-self: center;
+  }
+  .testimonial-card .testimonial-photo {
+    margin-top: 0.5rem;
+  }
+  .testimonial-card .testimonial-photo[alt="Chris"] {
+    border-color: #2563eb;
+  }
+  @media (max-width: 900px) {
+    .testimonials-list {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .testimonial-card {
+      max-width: 95vw;
+    }
+    .testimonials-title {
+      font-size: 1.5rem;
+    }
+  }
+  .copyright {
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
   }
   footer {
     background: #1f2937;
@@ -134,19 +173,6 @@
     color: #93c5fd;
     text-decoration: underline;
   }
-  @media (max-width: 900px) {
-    .testimonials-list {
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    .testimonial-card {
-      max-width: 95vw;
-    }
-    .testimonials-title {
-      font-size: 1.5rem;
-    }
-  }
 </style>
 </head>
 <body>
@@ -163,6 +189,7 @@
   <div class="testimonials-title">What Our Clients Say</div>
   <div class="testimonials-list">
     <div class="testimonial-card">
+      <img class="testimonial-photo" src="assets/images/icon-cybersecurity.png" alt="Chris">
       <span class="testimonial-quote-icon">&#10077;</span>
       <div class="testimonial-text">
         "Food was really great! Chris was very helpful with our orders and needs, he went above and beyond. Thank you so much Chris for a great service. Overall 5 star for the taste of the food and the quality and Chris’ excellent service.
@@ -171,10 +198,11 @@
       <span class="testimonial-cite">— KGA Productions</span>
     </div>
     <div class="testimonial-card">
+      <img class="testimonial-photo" src="assets/images/icon-network.png" alt="Chris">
       <span class="testimonial-quote-icon">&#10077;</span>
       <div class="testimonial-text">
         "⭐️⭐️⭐️⭐️⭐️ 5 Stars – Ramen Cravings Crushed, Service Level: Chris! 🍜<br>
-          Second time at Shokudo, and once again, my ramen-loving soul left happy and extra full. Let’s get straight to the star of this visit — Chris, our server, who deserves an entire Michelin star for service alone! The man greeted us with a huge smile, was warm, friendly, and so on point, I felt like royalty without even lifting a finger.
+          Let’s get straight to the star of this visit — Chris, our server, who deserves an entire Michelin star for service alone! The man greeted us with a huge smile, was warm, friendly, and so on point, I felt like royalty without even lifting a finger.<br>
           Water? Already refilled.<br>
           To-go boxes? Magically appeared.<br>
           Dessert? He asked before I could even peek at the menu.<br>
@@ -188,12 +216,16 @@
       <span class="testimonial-cite">— Ma. Sherein Gaviola</span>
     </div>
     <div class="testimonial-card">
+      <img class="testimonial-photo" src="assets/images/icon-plc.png" alt="Adam K.">
       <span class="testimonial-quote-icon">&#10077;</span>
       <div class="testimonial-text">
         "Excellent service from start to finish. Highly recommended for any automation or IT/OT engineering needs."
       </div>
       <span class="testimonial-cite">— Adam K., Plant Engineer</span>
     </div>
+  </div>
+  <div class="copyright">
+    © 2025 Total Design Consulting LLC. Icons &amp; images are property of Total Design Consulting or used with permission.
   </div>
 </main>
 <footer>
