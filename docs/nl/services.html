@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Explore the services offered by Total Design Consulting including Cybersecurity, Automation, and IT/OT Engineering." name="description"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<title>Our Services - Total Design Consulting</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ef 100%);
+    color: #22223b;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  header {
+    background: #1f2937;
+    color: #fff;
+    padding: 1.2rem 0 0.8rem 0;
+    box-shadow: 0 2px 8px rgba(31,41,55,0.06);
+  }
+  header h1 {
+    margin: 0 0 0.3rem 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #60a5fa; /* Updated for contrast */
+  }
+  nav {
+    margin-top: 0.2rem;
+  }
+  nav a {
+    color: #e0e7ef;
+    margin: 0 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-size: 1.05rem;
+  }
+  nav a:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+  }
+  main {
+    padding: 2.5rem 1rem 2rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .services-title {
+    text-align: center;
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    color: #1f2937;
+    letter-spacing: 0.5px;
+  }
+  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  .service-card {
+    background: #fff;
+    border-radius: 1.1rem;
+    box-shadow: 0 4px 24px rgba(31,41,55,0.09);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    max-width: 340px;
+    min-width: 270px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.18s, box-shadow 0.18s;
+    border: 1px solid #e5e7eb;
+  }
+  .service-card:hover {
+    transform: translateY(-6px) scale(1.025);
+    box-shadow: 0 8px 32px rgba(37,99,235,0.12);
+    border-color: #60a5fa;
+  }
+  .service-icon {
+    margin-bottom: 1.1rem;
+    width: 48px;
+    height: 48px;
+    background: #e0e7ef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(31,41,55,0.07);
+  }
+  .service-icon img {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+  .service-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 0.2px;
+  }
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .service-list li {
+    margin-bottom: 0.7rem;
+    padding-left: 1.6rem;
+    position: relative;
+    color: #374151;
+    font-size: 1.04rem;
+  }
+  .service-list li:before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0.6rem;
+    width: 7px;
+    height: 7px;
+    background: #2563eb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  footer {
+    background: #1f2937;
+    color: #e0e7ef;
+    padding: 1.2rem 0;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    box-shadow: 0 -2px 8px rgba(31,41,55,0.06);
+  }
+  footer a {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer a:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+  }
+  @media (max-width: 900px) {
+    .services-grid {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .service-card {
+      max-width: 95vw;
+    }
+  }
+</style>
+<meta content="Total Design Consulting" property="og:title"/>
+<meta content="Secure. Automate. Deliver. Expert IT/OT services and cybersecurity solutions." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Total Design Consulting LLC",
+  "url": "https://www.totaldesignconsulting.com",
+  "sameAs": [],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+1-800-555-1234",
+    "contactType": "Customer Service",
+    "areaServed": "US",
+    "availableLanguage": ["English"]
+  }]
+}
+</script>
+<style>
+  header h1 {
+    text-align: center;
+  }
+
+  .language-switcher {
+    position: relative;
+    float: right;
+    margin-right: 1.5rem;
+    margin-top: -2.5rem;
+    z-index: 1;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    left: auto;
+    overflow: visible;
+    background: #2563eb;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    z-index: 100;
+  }
+</style>
+<script>
+function switchLanguage(page) {
+  const base = window.location.href.split('/').slice(0, -1).join('/') + '/';
+  window.location.href = base + page;
+}
+</script>
+</head>
+<body>
+<header>
+<a class="skip-link" href="#main">Ga naar hoofdinhoud</a>
+<h1>Totaal Ontwerp Advies</h1>
+<div class="language-switcher" style="text-align:right; padding: 0.5rem 1rem;">
+<a aria-label="Language Selection" href="javascript:void(0)" onclick="window.location.href='https://www.totaldesignconsulting.com/languages.html'; return false;">
+<img alt="Languages" src="assets/images/icon-globe.png" style="width:28px; height:28px; cursor:pointer;"/>
+</a>
+</div>
+<nav>
+<a href="index.html">Thuis</a> |
+    <a href="services.html">Diensten</a> |
+    <a href="contact.html">Contactpersoon</a> |
+    <a href="testimonials.html">Getuigenissen</a>
+</nav>
+</header>
+<main>
+<section class="hero">
+<div class="hero-title">Secure. Automate. Deliver.</div>
+<div class="hero-subtitle">
+    Your trusted partner in Cybersecurity, IT/OT Engineering, and Industrial Automation.
+  </div>
+</section>
+<div class="services-title">Our Services</div>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">
+<img alt="Cybersecurity" src="assets/images/icon-cybersecurity.png"/>
+</div>
+<div class="service-title">Cybersecurity Consulting</div>
+<ul class="service-list">
+<li>Risicobeoordeling en risicobeperkingsstrategieën</li>
+<li>Firewall- en eindpuntbeveiligingsontwerp</li>
+<li>Netwerksegmentatie en Zero Trust-architectuur</li>
+<li>Penetratietesten en audit naleving</li>
+</ul>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<img alt="Network" src="assets/images/icon-network.png"/>
+</div>
+<div class="service-title">Network Infrastructure Consulting</div>
+<ul class="service-list">
+<li>Hybride infrastructuurintegratie (IT &amp; OT)</li>
+<li>Redundante en high-availability netwerk ontwerp</li>
+<li>Industrieel protocol configuratie en diagnostiek</li>
+<li>Externe toegang en veilige VPN-implementatie</li>
+</ul>
+</div>
+<div class="service-card">
+<div class="service-icon">
+<img alt="PLC" src="assets/images/icon-plc.png"/>
+</div>
+<div class="service-title">Industrial Automation &amp; PLC Systems</div>
+<ul class="service-list">
+<li>PLC &amp; HMI ontwerp en probleemoplossing</li>
+<li>Procesbeheer en SCADA-optimalisatie</li>
+<li>Systeemdocumentatie en naleving</li>
+<li>Erfgoedmigratie en modernisering</li>
+</ul>
+</div>
+</div>
+</main>
+<footer>
+<p>© 2025 Total Design Consulting LLC | <a href="mailto:support@totaldesignconsulting.com">Neem contact met ons op</a></p>
+</footer>
+</body>
+</html>

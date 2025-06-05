@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Contact Total Design Consulting for inquiries, estimates, and support." name="description"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<title>Contact Us - Total Design Consulting</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ef 100%);
+    color: #22223b;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  header {
+    background: #1f2937;
+    color: #fff;
+    padding: 1.2rem 0 0.8rem 0;
+    box-shadow: 0 2px 8px rgba(31,41,55,0.06);
+  }
+  header h1 {
+    margin: 0 0 0.3rem 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #60a5fa;
+  }
+  nav {
+    margin-top: 0.2rem;
+  }
+  nav a {
+    color: #e0e7ef;
+    margin: 0 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-size: 1.05rem;
+  }
+  nav a:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1rem 2rem 1rem;
+    min-height: 70vh;
+  }
+  .contact-title {
+    text-align: center;
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 2.2rem;
+    color: #1f2937;
+    letter-spacing: 0.5px;
+  }
+  .contact-card {
+    background: #fff;
+    border-radius: 1.1rem;
+    box-shadow: 0 4px 24px rgba(31,41,55,0.09);
+    padding: 2.2rem 2rem 1.5rem 2rem;
+    max-width: 420px;
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+  label {
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.2rem;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f9fafb;
+    color: #22223b;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  textarea {
+    resize: none;
+  }
+  input:focus, textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px #93c5fd55;
+    background: #fff;
+  }
+  button {
+    margin-top: 0.5rem;
+    padding: 0.7rem 1.2rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.08rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s, box-shadow 0.18s;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.07);
+    letter-spacing: 0.2px;
+  }
+  button:hover, button:focus {
+    background-color: #1d4ed8;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+  }
+  .email-alt {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #374151;
+    font-size: 1.05rem;
+  }
+  .email-alt a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 500;
+  }
+  .email-alt a:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+  }
+  footer {
+    background: #1f2937;
+    color: #e0e7ef;
+    padding: 1.2rem 0;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    box-shadow: 0 -2px 8px rgba(31,41,55,0.06);
+  }
+  footer a {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer a:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+  }
+  @media (max-width: 600px) {
+    .contact-card {
+      padding: 1.2rem 0.7rem 1rem 0.7rem;
+      max-width: 98vw;
+    }
+    .contact-title {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+<meta content="Total Design Consulting" property="og:title"/>
+<meta content="Secure. Automate. Deliver. Expert IT/OT services and cybersecurity solutions." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Total Design Consulting LLC",
+  "url": "https://www.totaldesignconsulting.com",
+  "sameAs": [],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+1-800-555-1234",
+    "contactType": "Customer Service",
+    "areaServed": "US",
+    "availableLanguage": ["English"]
+  }]
+}
+</script>
+<style>
+  header h1 {
+    text-align: center;
+  }
+
+  .language-switcher {
+    position: relative;
+    float: right;
+    margin-right: 1.5rem;
+    margin-top: -2.5rem;
+    z-index: 1;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    left: auto;
+    overflow: visible;
+    background: #2563eb;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    z-index: 100;
+  }
+</style>
+<script>
+function switchLanguage(page) {
+  const base = window.location.href.split('/').slice(0, -1).join('/') + '/';
+  window.location.href = base + page;
+}
+</script>
+</head>
+<body>
+<header>
+<a class="skip-link" href="#main">Hüppa peamise sisu juurde</a>
+<h1>Kogu disaini konsultatsioon</h1>
+<div class="language-switcher" style="text-align:right; padding: 0.5rem 1rem;">
+<a aria-label="Language Selection" href="javascript:void(0)" onclick="window.location.href='https://www.totaldesignconsulting.com/languages.html'; return false;">
+<img alt="Languages" src="assets/images/icon-globe.png" style="width:28px; height:28px; cursor:pointer;"/>
+</a>
+</div>
+<nav>
+<a href="index.html">Kodu</a> |
+    <a href="services.html">Teenused</a> |
+    <a href="contact.html">Kontakt</a> |
+    <a href="testimonials.html">Soovitused</a>
+</nav>
+</header>
+<main>
+<section class="hero">
+<div class="hero-title">Secure. Automate. Deliver.</div>
+<div class="hero-subtitle">
+    Your trusted partner in Cybersecurity, IT/OT Engineering, and Industrial Automation.
+  </div>
+</section>
+<div class="contact-title">Contact Us</div>
+<div class="contact-card">
+<div style="margin-bottom:1.5rem; color:#374151; font-size:1.07rem; line-height:1.7;">
+      We understand there are many avenues of communication in the current era of technology, but we also want to uphold our commitment to create bespoke solutions for each client we partner with. To that end, all communication methods used at the firm are monitored by a human who is a direct employee of the firm. We do not outsource our customer service in any way. Click the button below to select the platform or method that works best for you!
+    </div>
+<div style="display:flex; flex-direction:column; align-items:center; gap:1rem; margin-bottom:1.5rem;">
+<!-- index.html or contact.html -->
+<a class="contact-method-btn" href="mailto:support@totaldesignconsulting.com" id="email-link" style="display:inline-block;padding:0.7rem 1.6rem;background:#2563eb;color:#fff;border-radius:2rem;font-weight:600;font-size:1.07rem;text-decoration:none;box-shadow:0 2px 8px rgba(37,99,235,0.09);transition:background 0.18s;">Kirjuta meile</a>
+<a contact-method-btn"="" href="sms:+18005551234
+   class=" id="sms-link" style="display:inline-block;padding:0.7rem 1.6rem;background:#10b981;color:#fff;border-radius:2rem;font-weight:600;font-size:1.07rem;text-decoration:none;box-shadow:0 2px 8px rgba(16,185,129,0.09);transition:background 0.18s;">Tekstisõnum</a>
+<a class="contact-method-btn" href="tel:+18005551234" id="call-link" style="display:inline-block;padding:0.7rem 1.6rem;background:#f59e42;color:#fff;border-radius:2rem;font-weight:600;font-size:1.07rem;text-decoration:none;box-shadow:0 2px 8px rgba(245,158,66,0.09);transition:background 0.18s;">Helista meile</a>
+<script>
+  // Email Link Template Fetch (already exists)
+  fetch('assets/email-template.txt')
+    .then(response => response.text())
+    .then(template => {
+      const emailLink = document.getElementById('email-link');
+      const subject = encodeURIComponent("Contact from Website");
+      const body = encodeURIComponent(template);
+      emailLink.href = `mailto:support@totaldesignconsulting.com?subject=${subject}&body=${body}`;
+    });
+
+  // SMS Link Template Fetch
+  fetch('assets/sms-template.txt')
+    .then(response => response.text())
+    .then(template => {
+      const smsLink = document.getElementById('sms-link');
+      const body = encodeURIComponent(template);
+      smsLink.href = `sms:+18005551234?body=${body}`;
+    });
+
+  // Optional: For future use with automated call scripting systems
+  // If using a third-party call service API, this area could generate call actions
+  // But for now, just ensures `tel:` remains static for instant dialing
+</script>
+</div>
+<div class="email-alt" style="margin-bottom:1.2rem;">
+<p>
+        Prefer email?
+        <a href="mailto:support@totaldesignconsulting.com?subject=Contact%20from%20Website&amp;body=Hello%20Total%20Design%20Consulting%2C%0A%0AMy%20name%20is%20[Your%20Name]%20and%20my%20email%20is%20[Your%20Email].%0A%0AI%20would%20like%20to%20inquire%20about%3A%0A%0A[Please%20describe%20your%20request%20or%20question%20here]%0A%0AThank%20you!" id="mailto-link">abi@totaldesignconsulting.com</a>
+</p>
+</div>
+<!--
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <label for="name">Your Name</label>
+      <input id="name" name="name" required type="text" autocomplete="name"/>
+      <label for="email">Your Email</label>
+      <input id="email" name="email" required type="email" autocomplete="email"/>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required rows="5"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    -->
+</div>
+</main>
+<footer>
+<p>© 2025 Total Design Consulting LLC | <a href="mailto:support@totaldesignconsulting.com">Võtke meiega ühendust</a></p>
+</footer>
+</body>
+</html>

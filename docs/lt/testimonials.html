@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Client testimonials for Total Design Consulting" name="description"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<title>Testimonials - Total Design Consulting</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ef 100%);
+    color: #22223b;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  header {
+    background: #1f2937;
+    color: #fff;
+    padding: 1.2rem 0 0.8rem 0;
+    box-shadow: 0 2px 8px rgba(31,41,55,0.06);
+  }
+  header h1 {
+    margin: 0 0 0.3rem 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #60a5fa;
+  }
+  nav {
+    margin-top: 0.2rem;
+  }
+  nav a {
+    color: #e0e7ef;
+    margin: 0 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-size: 1.05rem;
+  }
+  nav a:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+  }
+  main {
+    padding: 2.5rem 1rem 2rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 70vh;
+  }
+  .testimonials-title {
+    text-align: center;
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 2.2rem;
+    color: #1f2937;
+    letter-spacing: 0.5px;
+  }
+  .testimonials-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
+  .testimonial-card {
+    background: #fff;
+    border-radius: 1.1rem;
+    box-shadow: 0 4px 24px rgba(31,41,55,0.09);
+    border: 1px solid #e5e7eb;
+    max-width: 340px;
+    min-width: 270px;
+    flex: 1 1 300px;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    transition: transform 0.18s, box-shadow 0.18s;
+    text-align: left;
+  }
+  .testimonial-card:hover {
+    transform: translateY(-6px) scale(1.025);
+    box-shadow: 0 8px 32px rgba(37,99,235,0.12);
+    border-color: #60a5fa;
+  }
+  .testimonial-quote-icon {
+    color: #2563eb;
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.18;
+    position: absolute;
+    top: 1.1rem;
+    left: 1.2rem;
+    pointer-events: none;
+  }
+  .testimonial-text {
+    font-style: italic;
+    color: #374151;
+    margin-bottom: 1.1rem;
+    margin-top: 0.7rem;
+    font-size: 1.08rem;
+    line-height: 1.6;
+    min-height: 70px;
+    z-index: 1;
+  }
+  .testimonial-cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: 600;
+    color: #2563eb;
+    text-align: right;
+    width: 100%;
+    font-size: 1.01rem;
+    letter-spacing: 0.1px;
+  }
+  .testimonial-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.7rem;
+    border: 2px solid #e5e7eb;
+    background: #f3f4f6;
+    align-self: center;
+  }
+  .testimonial-card .testimonial-photo {
+    margin-top: 0.5rem;
+  }
+  .testimonial-card .testimonial-photo[alt="Chris"] {
+    border-color: #2563eb;
+  }
+  @media (max-width: 900px) {
+    .testimonials-list {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .testimonial-card {
+      max-width: 95vw;
+    }
+    .testimonials-title {
+      font-size: 1.5rem;
+    }
+  }
+  .copyright {
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  footer {
+    background: #1f2937;
+    color: #e0e7ef;
+    padding: 1.2rem 0;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    box-shadow: 0 -2px 8px rgba(31,41,55,0.06);
+  }
+  footer a {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer a:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+  }
+</style>
+<meta content="Total Design Consulting" property="og:title"/>
+<meta content="Secure. Automate. Deliver. Expert IT/OT services and cybersecurity solutions." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Total Design Consulting LLC",
+  "url": "https://www.totaldesignconsulting.com",
+  "sameAs": [],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+1-800-555-1234",
+    "contactType": "Customer Service",
+    "areaServed": "US",
+    "availableLanguage": ["English"]
+  }]
+}
+</script>
+<style>
+  header h1 {
+    text-align: center;
+  }
+
+  .language-switcher {
+    position: relative;
+    float: right;
+    margin-right: 1.5rem;
+    margin-top: -2.5rem;
+    z-index: 1;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    left: auto;
+    overflow: visible;
+    background: #2563eb;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    z-index: 100;
+  }
+</style>
+<script>
+function switchLanguage(page) {
+  const base = window.location.href.split('/').slice(0, -1).join('/') + '/';
+  window.location.href = base + page;
+}
+</script>
+</head>
+<body>
+<header>
+<a class="skip-link" href="#main">Pereiti prie pagrindinio turinio</a>
+<h1>Viso dizaino konsultacijos</h1>
+<div class="language-switcher" style="text-align:right; padding: 0.5rem 1rem;">
+<a aria-label="Language Selection" href="javascript:void(0)" onclick="window.location.href='https://www.totaldesignconsulting.com/languages.html'; return false;">
+<img alt="Languages" src="assets/images/icon-globe.png" style="width:28px; height:28px; cursor:pointer;"/>
+</a>
+</div>
+<nav>
+<a href="index.html">Namai</a> |
+    <a href="services.html">Paslaugos</a> |
+    <a href="contact.html">Kontaktas</a> |
+    <a href="testimonials.html">Atsiliepimai</a>
+</nav>
+</header>
+<main>
+<section class="hero">
+<div class="hero-title">Secure. Automate. Deliver.</div>
+<div class="hero-subtitle">
+    Your trusted partner in Cybersecurity, IT/OT Engineering, and Industrial Automation.
+  </div>
+</section>
+<div class="testimonials-title">What Our Clients Say</div>
+<div class="testimonials-list">
+<div class="testimonial-card">
+<img alt="Chris" class="testimonial-photo" src="assets/images/icon-cybersecurity.png"/>
+<span class="testimonial-quote-icon">We are pleased to inform you that your application has been approved. Please find attached the contract for your review and signature. If you have any questions or require further clarification, feel free to contact us at your earliest convenience. Thank you for choosing our services.❞
+
+Mes džiaugiamės pranešdami, kad jūsų paraiška buvo patvirtinta. Prašome rasti prieštą sutartį jūsų peržiūrai ir parašymui. Jei turite kokių nors klausimų ar reikia papildomo aiškinimo, nedvejodami susisiekite su mumis kuo skubiau. Dėkojame, kad pasirinkote mūsų paslaugas.</span>
+<div class="testimonial-text">
+        "Food was really great! Chris was very helpful with our orders and needs, he went above and beyond. Thank you so much Chris for a great service. Overall 5 star for the taste of the food and the quality and Chris’ excellent service.
+        Food: 5/5  |  Service: 5/5  |  Atmosphere: 5/5"
+      </div>
+<span class="testimonial-cite">— KGA Productions
+
+— KGA Produkcija</span>
+</div>
+<div class="testimonial-card">
+<img alt="Chris" class="testimonial-photo" src="assets/images/icon-network.png"/>
+<span class="testimonial-quote-icon">Please find attached the updated financial report for your review. Let me know if you have any questions or need further clarification. Thank you.❞
+
+Prašome rasti pridėtą atnaujintą finansinį ataskaitą jūsų peržiūrai. Praneškite man, jei turite kokių nors klausimų ar reikia papildomo paaiškinimo. Ačiū.</span>
+<div class="testimonial-text">
+        "⭐️⭐️⭐️⭐️⭐️ 5 Stars – Ramen Cravings Crushed, Service Level: Chris! 🍜<br/>
+          Let’s get straight to the star of this visit — Chris, our server, who deserves an entire Michelin star for service alone! The man greeted us with a huge smile, was warm, friendly, and so on point, I felt like royalty without even lifting a finger.<br/>
+          Water? Already refilled.<br/>
+          To-go boxes? Magically appeared.<br/>
+          Dessert? He asked before I could even peek at the menu.<br/>
+          Chris is the definition of proactive service with impeccable timing and grace. Honestly, if more servers had his level of attention and heart, the world would be a better-fed, happier place. Kudos to you, Chris — you didn’t just satisfy my tonkotsu ramen and edamame, you elevated the whole dining experience.<br/>
+          Edamame? As a must as always! A great way to start.<br/>
+          And the ramen? Flavorful, rich, and served in a glorious bowl big enough to share (unless you’re like me and “accidentally” finish it solo). Pro tip: add the extra egg — always.<br/>
+          I’ll definitely be back for the ramen. 😋🤤<br/>
+          Okay fine, for Chris too — ohhh I mean… the ramen. Wink.😉<br/>
+          Highly recommend. 10/10. Slurps guaranteed."
+      </div>
+<span class="testimonial-cite">— Ponia. Sherein Gaviola</span>
+</div>
+<div class="testimonial-card">
+<img alt="Adam K." class="testimonial-photo" src="assets/images/icon-plc.png"/>
+<span class="testimonial-quote-icon">We are pleased to inform you that your application has been approved. Please proceed with the next steps as outlined in the onboarding process. If you have any questions, feel free to reach out to our HR department. Thank you.❞</span>
+<div class="testimonial-text">
+        "Excellent service from start to finish. Highly recommended for any automation or IT/OT engineering needs."
+      </div>
+<span class="testimonial-cite">— Adam K., gamyklos inžinierius</span>
+</div>
+</div>
+<div class="copyright">
+    © 2025 Total Design Consulting LLC. Icons &amp; images are property of Total Design Consulting or used with permission.
+  </div>
+</main>
+<footer>
+<p>© 2025 Total Design Consulting LLC | <a href="mailto:support@totaldesignconsulting.com">Susisiekite su mumis</a></p>
+</footer>
+</body>
+</html>
