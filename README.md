@@ -48,9 +48,10 @@ This is the static marketing site for [Total Design Consulting LLC](https://www.
 - **404 page**: Friendly, branded error page.
 - **CSS**: All custom styles are in `assets/css/style.css` and used across all pages.
 - **Assets**: Place all images, CSS, and JS in the `assets/` folder.
-- **Accessibility**: Skip links, semantic HTML, and accessible navigation.
+- **Accessibility**: Skip links are present but visually subtle (positioned off-screen until focused), semantic HTML, and accessible navigation.
 - **SEO**: Meta tags, Open Graph, and structured data included.
 - **Internationalization**: Language switcher for English and NATO languages (e.g. `/de/index.html`, `/es/index.html`, `/fr/index.html`, etc.). Ensure translated files exist as needed.
+- **Uniformity**: All pages (home, services, contact, testimonials, 404, and language variants) use the same header, navigation, language switcher (top right), footer, and CSS for a consistent look and feel.
 
 ## Deployment
 
