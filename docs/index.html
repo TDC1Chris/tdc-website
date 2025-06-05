@@ -244,8 +244,12 @@
 </style>
 <script>
 function switchLanguage(page) {
-  const base = window.location.href.split('/').slice(0, -1).join('/') + '/';
-  window.location.href = base + page;
+  // Always use the root path for language switching
+  // Remove any /de/ or /es/ from the path before switching
+  let path = window.location.pathname;
+  path = path.replace(/\/(de|es)(\/index\.html)?/, '/');
+  const base = window.location.origin + path.replace(/index\.html$/, '');
+  window.location.href = base.replace(/\/$/, '') + '/' + page;
 }
 </script>
 </head>
@@ -268,9 +272,9 @@ function switchLanguage(page) {
 <div class="language-switcher">
 <label class="visually-hidden" for="language-select">Language</label>
 <select id="language-select" onchange="switchLanguage(this.value)">
-<option value="index.html">English</option>
-<option value="de/index.html">Deutsch</option>
-<option value="es/index.html">Español</option>
+  <option value="index.html">English</option>
+  <option value="de/index.html">Deutsch</option>
+  <option value="es/index.html">Español</option>
 </select>
 </div>
 
