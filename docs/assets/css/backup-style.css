@@ -1,0 +1,186 @@
+/* Optimized CSS for Total Design Consulting website with Dark Mode support */
+
+:root {
+  --color-primary: #2563eb;
+  --color-accent: #60a5fa;
+  --color-light: #f3f4f6;
+  --color-dark: #1f2937;
+  --color-text: #22223b;
+  --color-muted: #e0e7ef;
+  --font-base: 'Segoe UI', Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-light: #111827;
+    --color-dark: #f9fafb;
+    --color-text: #e0e7ef;
+    --color-muted: #374151;
+  }
+}
+
+body {
+  font-family: var(--font-base);
+  background: linear-gradient(135deg, var(--color-light) 0%, var(--color-muted) 100%);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+header {
+  background: var(--color-dark);
+  color: #fff;
+  padding: 1.2rem 0 0.8rem;
+  box-shadow: 0 2px 8px rgba(31,41,55,0.06);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+nav {
+  margin-top: 0.2rem;
+}
+
+nav a {
+  color: var(--color-muted);
+  margin: 0 14px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1rem;
+  min-height: 70vh;
+}
+
+h1, h2, h3 {
+  color: var(--color-dark);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.1rem;
+  letter-spacing: 0.5px;
+}
+
+.contact-method-btn {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 1.07rem;
+  text-decoration: none;
+  transition: background 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.contact-method-btn:hover {
+  filter: brightness(1.05);
+}
+
+.card {
+  background: #fff;
+  border-radius: 1.1rem;
+  box-shadow: 0 4px 24px rgba(31,41,55,0.09);
+  padding: 2rem;
+  max-width: 420px;
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-bottom: 2rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: #1f2937;
+    color: #f3f4f6;
+    border-color: #374151;
+  }
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f9fafb;
+  color: var(--color-text);
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(147, 197, 253, 0.33);
+  background: #fff;
+}
+
+button {
+  margin-top: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.07);
+  letter-spacing: 0.2px;
+}
+
+button:hover, button:focus {
+  background-color: #1d4ed8;
+  box-shadow: 0 4px 16px rgba(37,99,235,0.13);
+}
+
+footer {
+  background: var(--color-dark);
+  color: var(--color-muted);
+  padding: 1.2rem 0;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 2.5rem;
+  box-shadow: 0 -2px 8px rgba(31,41,55,0.06);
+}
+
+footer a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 1.2rem 0.7rem 1rem;
+    max-width: 98vw;
+  }
+  .page-title {
+    font-size: 1.5rem;
+  }
+}
