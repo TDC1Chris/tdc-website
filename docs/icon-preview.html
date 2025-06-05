@@ -35,12 +35,10 @@
       color: #374151;
     }
   </style>
-
 <meta content="Total Design Consulting" property="og:title"/>
 <meta content="Secure. Automate. Deliver. Expert IT/OT services and cybersecurity solutions." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="en_US" property="og:locale"/>
-
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
@@ -57,15 +55,66 @@
   }]
 }
 </script>
+<style>
+  header h1 {
+    text-align: center;
+  }
+
+  .language-switcher {
+    position: relative;
+    float: right;
+    margin-right: 1.5rem;
+    margin-top: -2.5rem;
+    z-index: 1;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    left: auto;
+    overflow: visible;
+    background: #2563eb;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    z-index: 100;
+  }
+</style>
+<script>
+function switchLanguage(page) {
+  const base = window.location.href.split('/').slice(0, -1).join('/') + '/';
+  window.location.href = base + page;
+}
+</script>
 </head>
-<body><a aria-label="Skip to main content" class="skip-link" href="#main">Skip to main content</a>
+<body>
 <header>
-<h1>Real Icon Preview</h1>
+<a aria-label="Skip to main content" class="skip-link" href="#main">Skip to main content</a>
+<h1>Total Design Consulting</h1>
+<div class="language-switcher">
+<label class="visually-hidden" for="language-select">Language</label>
+<select id="language-select" onchange="switchLanguage(this.value)">
+<option value="index.html">English</option>
+<option value="de/index.html">Deutsch</option>
+<option value="es/index.html">Español</option>
+</select>
+</div>
+
 <nav>
 <a href="index.html">Home</a> |
-      <a href="services.html">Services</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="testimonials.html">Testimonials</a>
+  <a href="services.html">Services</a> |
+  <a href="contact.html">Contact</a> |
+  <a href="testimonials.html">Testimonials</a>
 </nav>
 </header>
 <main>

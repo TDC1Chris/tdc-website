@@ -207,6 +207,47 @@
   }]
 }
 </script>
+<style>
+  header h1 {
+    text-align: center;
+  }
+
+  .language-switcher {
+    position: relative;
+    float: right;
+    margin-right: 1.5rem;
+    margin-top: -2.5rem;
+    z-index: 1;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    left: auto;
+    overflow: visible;
+    background: #2563eb;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    z-index: 100;
+  }
+</style>
+<script>
+function switchLanguage(page) {
+  const base = window.location.href.split('/').slice(0, -1).join('/') + '/';
+  window.location.href = base + page;
+}
+</script>
 </head>
 <body>
 <script>
@@ -222,46 +263,22 @@
 })();
 </script>
 <header>
-<h1>Willkommen bei Total Design Consulting</h1>
-<nav>
-<a href="index.html">Home</a> |
-    <a href="services.html">Services</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="testimonials.html">Testimonials</a>
-<div class="language-switcher" style="margin-left:auto;">
-<label class="visually-hidden" for="language-select">Language</label>
-<select id="language-select" onchange="switchLanguage(this.value)" style="padding:0.3rem 0.6rem;border-radius:6px;border:1px solid #ccc;font-size:0.95rem;">
-<option value="/docs/index.html">English</option>
-<option value="/docs/de/index.html">Deutsch</option>
-<option value="/docs/es/index.html">Español</option>
-</select>
-</div>
-<style>
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-  }
-</style>
+<a aria-label="Skip to main content" class="skip-link" href="#main">Skip to main content</a>
+<h1>Total Design Consulting</h1>
 <div class="language-switcher">
 <label class="visually-hidden" for="language-select">Language</label>
 <select id="language-select" onchange="switchLanguage(this.value)">
 <option value="index.html">English</option>
-<option value="index-de.html">Deutsch</option>
-<option value="index-es.html">Español</option>
+<option value="de/index.html">Deutsch</option>
+<option value="es/index.html">Español</option>
 </select>
 </div>
-<script>
-function switchLanguage(page) {
-  const base = window.location.href.split('/').slice(0, -1).join('/') + '/';
-  window.location.href = base + page;
-}
-</script>
+
+<nav>
+<a href="index.html">Home</a> |
+  <a href="services.html">Services</a> |
+  <a href="contact.html">Contact</a> |
+  <a href="testimonials.html">Testimonials</a>
 </nav>
 </header>
 <main>
