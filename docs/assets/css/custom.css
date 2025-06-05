@@ -1,0 +1,116 @@
+
+/* === Base Theme === */
+body {
+  background-color: #f4f7f5;
+  color: #1a1a1a;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4 {
+  color: #1A6622;
+  font-weight: 600;
+}
+
+a {
+  color: #1A6622;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #3CB371;
+  text-decoration: underline;
+}
+
+/* === Navbar === */
+.navbar {
+  background-color: #228B22;
+}
+
+.navbar-brand, .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #3CB371 !important;
+}
+
+/* === Hero Section === */
+.hero-box {
+  background: linear-gradient(to right, #228B22, #3CB371);
+  color: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* === Cards === */
+.card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: #1A6622;
+}
+
+.card-text {
+  color: #333;
+}
+
+/* === Buttons === */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #228B22;
+  border-color: #1A6622;
+}
+
+.btn-primary:hover {
+  background-color: #1A6622;
+  border-color: #1A6622;
+}
+
+.btn-outline-primary {
+  color: #1A6622;
+  border-color: #3CB371;
+}
+
+.btn-outline-primary:hover {
+  background-color: #3CB371;
+  color: white;
+}
+
+/* === Branded Buttons === */
+.btn-whatsapp {
+  background-color: #25D366;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1DA851;
+  color: white;
+}
+
+/* === Footer === */
+footer {
+  background-color: #1A6622;
+  color: white;
+}
+
+footer p {
+  margin: 0;
+}
+
