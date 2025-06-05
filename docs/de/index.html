@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Total Design Consulting – Cybersecurity, IT/OT Engineering, and Automation solutions." name="description"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<title>Total Design Consulting – Sicherheit, Automatisierung, IT-Dienstleistungen</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ef 100%);
+    color: #22223b;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  header {
+    background: #1f2937;
+    color: #fff;
+    padding: 1.2rem 0 0.8rem 0;
+    box-shadow: 0 2px 8px rgba(31,41,55,0.06);
+  }
+  header h1 {
+    margin: 0 0 0.3rem 0;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #60a5fa; /* Updated for contrast */
+  }
+  nav {
+    margin-top: 0.2rem;
+  }
+  nav a {
+    color: #e0e7ef;
+    margin: 0 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-size: 1.05rem;
+  }
+  nav a:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+  }
+  main {
+    padding: 2.5rem 1rem 2rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero {
+    background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+    color: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 24px rgba(31,41,55,0.09);
+    padding: 2.5rem 2rem 2.5rem 2rem;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.7rem;
+    letter-spacing: 1px;
+  }
+  .hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: #e0e7ef;
+    letter-spacing: 0.2px;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: #fff;
+    color: #2563eb;
+    font-weight: 600;
+    padding: 0.8rem 2.1rem;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(37,99,235,0.13);
+    transition: background 0.18s, color 0.18s;
+    border: none;
+    margin-top: 0.5rem;
+  }
+  .hero-cta:hover, .hero-cta:focus {
+    background: #2563eb;
+    color: #fff;
+    outline: none;
+  }
+  .services-overview {
+    margin-top: 2.5rem;
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  .service-mini-card {
+    background: #fff;
+    border-radius: 1.1rem;
+    box-shadow: 0 4px 24px rgba(31,41,55,0.09);
+    border: 1px solid #e5e7eb;
+    max-width: 270px;
+    min-width: 210px;
+    flex: 1 1 220px;
+    padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.18s, box-shadow 0.18s;
+    text-align: center;
+  }
+  .service-mini-card:hover {
+    transform: translateY(-6px) scale(1.025);
+    box-shadow: 0 8px 32px rgba(37,99,235,0.12);
+    border-color: #60a5fa;
+  }
+  .service-mini-icon {
+    margin-bottom: 1rem;
+    width: 40px;
+    height: 40px;
+    background: #e0e7ef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(31,41,55,0.07);
+  }
+  .service-mini-icon img {
+    width: 26px;
+    height: 26px;
+    display: block;
+  }
+  .service-mini-title {
+    font-size: 1.13rem;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 0.7rem;
+    letter-spacing: 0.1px;
+  }
+  .service-mini-desc {
+    color: #374151;
+    font-size: 1.01rem;
+    margin-bottom: 0.2rem;
+  }
+  footer {
+    background: #1f2937;
+    color: #e0e7ef;
+    padding: 1.2rem 0;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    box-shadow: 0 -2px 8px rgba(31,41,55,0.06);
+  }
+  footer a {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer a:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+  }
+  @media (max-width: 900px) {
+    .services-overview {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .hero {
+      padding: 1.5rem 0.7rem 1.5rem 0.7rem;
+      font-size: 1rem;
+    }
+    .hero-title {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+<meta content="Total Design Consulting" property="og:title"/>
+<meta content="Secure. Automate. Deliver. Expert IT/OT services and cybersecurity solutions." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Total Design Consulting LLC",
+  "url": "https://www.totaldesignconsulting.com",
+  "sameAs": [],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+1-800-555-1234",
+    "contactType": "Customer Service",
+    "areaServed": "US",
+    "availableLanguage": ["English"]
+  }]
+}
+</script>
+</head>
+<body>
+<script>
+(function() {
+  if (!localStorage.getItem('langRedirected')) {
+    const lang = navigator.language || navigator.userLanguage;
+    let base = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/');
+    if (lang.startsWith('de')) window.location.href = base + 'index-de.html';
+    else if (lang.startsWith('es')) window.location.href = base + 'index-es.html';
+    else window.location.href = base + 'index.html';
+    localStorage.setItem('langRedirected', 'true');
+  }
+})();
+</script>
+<header>
+<h1>Willkommen bei Total Design Consulting</h1>
+<nav>
+<a href="index.html">Home</a> |
+    <a href="services.html">Services</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="testimonials.html">Testimonials</a>
+<div class="language-switcher" style="margin-left:auto;">
+<label class="visually-hidden" for="language-select">Language</label>
+<select id="language-select" onchange="switchLanguage(this.value)" style="padding:0.3rem 0.6rem;border-radius:6px;border:1px solid #ccc;font-size:0.95rem;">
+<option value="/docs/index.html">English</option>
+<option value="/docs/de/index.html">Deutsch</option>
+<option value="/docs/es/index.html">Español</option>
+</select>
+</div>
+<style>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+</style>
+<div class="language-switcher">
+<label class="visually-hidden" for="language-select">Language</label>
+<select id="language-select" onchange="switchLanguage(this.value)">
+<option value="index.html">English</option>
+<option value="index-de.html">Deutsch</option>
+<option value="index-es.html">Español</option>
+</select>
+</div>
+<script>
+function switchLanguage(page) {
+  const base = window.location.href.split('/').slice(0, -1).join('/') + '/';
+  window.location.href = base + page;
+}
+</script>
+</nav>
+</header>
+<main>
+<section class="hero">
+<div class="hero-title">Secure. Automate. Deliver.</div>
+<div class="hero-subtitle">
+      Your trusted partner in Cybersecurity, IT/OT Engineering, and Industrial Automation.<br/>
+      We design secure, efficient, and scalable systems for businesses in need of a human touch.<br/>
+<br/>“Gratitude is not only the greatest of virtues, it is the parent of all the others.” -Marcus Tullius Cicero
+    </div>
+<a class="hero-cta" href="services.html">Explore Our Services</a>
+</section>
+<section style="width:100%;max-width:900px;margin:2.5rem auto 0 auto;">
+<div style="background:#fff;border-radius:1.1rem;box-shadow:0 4px 24px rgba(31,41,55,0.09);border:1px solid #e5e7eb;padding:2rem 1.5rem 1.5rem 1.5rem;margin-bottom:2rem;">
+<h2 style="color:#2563eb;text-align:center;margin-bottom:1rem;">Ihre Experten für Cybersecurity, IT und OT-Lösungen.</h2>
+<p style="font-size:1.08rem;color:#374151;line-height:1.7;margin-bottom:0.7rem;">
+        Integrity. A consulting firm which achieves the highest results with honest innovation that inspires industry leaders to do the same. Leading by example through handshake deals that are bonded by a person’s word and strength of character. Our clients have displayed application of innovative concepts that do not sacrifice the human factor innate to business operations. The greatest resource we have is each other.
+      </p>
+<p style="font-size:1.01rem;color:#6b7280;font-style:italic;">
+        This is the vision that I have for the future of the company and its’ effects on the world once successfully operational.
+      </p>
+</div>
+<div style="background:#fff;border-radius:1.1rem;box-shadow:0 4px 24px rgba(31,41,55,0.09);border:1px solid #e5e7eb;padding:2rem 1.5rem 1.5rem 1.5rem;">
+<h2 style="color:#2563eb;text-align:center;margin-bottom:1rem;">Mission Statement</h2>
+<p style="font-size:1.08rem;color:#374151;line-height:1.7;margin-bottom:0.7rem;">
+        Our mission is to assist clients to realize their fullest potential. We will help clients deliver consistent high quality work that builds customer trust and lasting success. Guided by core values of Authenticity, Integrity, and Balance, we empower businesses to build a reputation that speaks for itself. Repeatable, sustainable, trusted results lead to repeatable, sustainable, trusted success.
+      </p>
+<p style="font-size:1.01rem;color:#6b7280;font-style:italic;">
+        This is the purpose of the creation of the company. The driving idea behind the work being done and why we exist.
+      </p>
+</div>
+</section>
+<div class="services-overview">
+<div class="service-mini-card">
+<div class="service-mini-icon">
+<img alt="Cybersecurity" src="assets/images/icon-cybersecurity.png"/>
+</div>
+<div class="service-mini-title">Cybersecurity Consulting</div>
+<div class="service-mini-desc">Risk assessment, Zero Trust, and compliance for your digital assets.</div>
+</div>
+<div class="service-mini-card">
+<div class="service-mini-icon">
+<img alt="Network" src="assets/images/icon-network.png"/>
+</div>
+<div class="service-mini-title">Network Infrastructure</div>
+<div class="service-mini-desc">Robust IT/OT integration, high-availability, and secure remote access.</div>
+</div>
+<div class="service-mini-card">
+<div class="service-mini-icon">
+<img alt="PLC" src="assets/images/icon-plc.png"/>
+</div>
+<div class="service-mini-title">Industrial Automation</div>
+<div class="service-mini-desc">PLC, HMI, SCADA, and process control solutions for modern industry.</div>
+</div>
+</div>
+</main>
+<footer>
+<p>© 2025 Total Design Consulting LLC | <a href="mailto:support@totaldesignconsulting.com">E-Mail senden</a></p>
+</footer>
+</body>
+</html>
