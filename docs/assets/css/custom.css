@@ -1,94 +1,89 @@
 
-/* === Base Theme === */
+/* === Color Palette: Forest Green Theme === */
+:root {
+  --forest-green: #228B22;
+  --forest-green-dark: #1B5E20;
+  --forest-green-light: #A5D6A7;
+  --text-light: #f5f5f5;
+  --text-dark: #222;
+  --highlight: #4CAF50;
+  --transition-duration: 0.3s;
+}
+
+/* === Global Typography === */
 body {
-  background-color: #f4f7f5;
-  color: #1a1a1a;
   font-family: 'Segoe UI', sans-serif;
-  scroll-behavior: smooth;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #f8f9f8;
+  color: var(--text-dark);
+  transition: background-color var(--transition-duration), color var(--transition-duration);
 }
 
-h1, h2, h3, h4 {
-  color: #1A6622;
-  font-weight: 600;
+/* === Header === */
+header {
+  background-color: var(--forest-green);
+  color: var(--text-light);
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
-a {
-  color: #1A6622;
-  text-decoration: none;
-  transition: color 0.2s ease;
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
-a:hover {
-  color: #3CB371;
-  text-decoration: underline;
+header p {
+  font-size: 1.25rem;
+  font-weight: 300;
 }
 
 /* === Navbar === */
 .navbar {
-  background-color: #228B22;
+  background-color: var(--forest-green-dark);
 }
 
-.navbar-brand, .nav-link {
-  color: #fff !important;
-  font-weight: 500;
+.navbar .nav-link {
+  color: var(--text-light);
+  transition: color var(--transition-duration);
 }
 
-.nav-link:hover {
-  color: #3CB371 !important;
+.navbar .nav-link:hover {
+  color: var(--forest-green-light);
 }
 
 /* === Hero Section === */
 .hero-box {
-  background: linear-gradient(to right, #228B22, #3CB371);
-  color: white;
-  border-radius: 16px;
+  background: linear-gradient(to right, #43a047, #66bb6a);
+  border-radius: 1rem;
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
   text-align: center;
+  color: white;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+  margin-bottom: 2rem;
 }
 
 /* === Cards === */
 .card {
   border: none;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05);
+  transition: transform var(--transition-duration), box-shadow var(--transition-duration);
 }
 
-.card-title {
-  color: #1A6622;
-}
-
-.card-text {
-  color: #333;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.1);
 }
 
 /* === Buttons === */
-.btn {
-  border-radius: 8px;
-  font-weight: 500;
-  padding: 0.6rem 1.2rem;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+.btn-custom {
+  background-color: var(--forest-green);
+  color: white;
+  border: none;
+  transition: background-color var(--transition-duration);
 }
 
-.btn-primary {
-  background-color: #228B22;
-  border-color: #1A6622;
-}
-
-.btn-primary:hover {
-  background-color: #1A6622;
-  border-color: #1A6622;
-}
-
-.btn-outline-primary {
-  color: #1A6622;
-  border-color: #3CB371;
-}
-
-.btn-outline-primary:hover {
-  background-color: #3CB371;
+.btn-custom:hover {
+  background-color: var(--forest-green-dark);
   color: white;
 }
 
@@ -96,21 +91,33 @@ a:hover {
 .btn-whatsapp {
   background-color: #25D366;
   color: white;
-  font-weight: bold;
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color var(--transition-duration);
 }
 
 .btn-whatsapp:hover {
-  background-color: #1DA851;
+  background-color: #128C7E;
   color: white;
 }
 
 /* === Footer === */
 footer {
-  background-color: #1A6622;
-  color: white;
+  background-color: var(--forest-green-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 1rem;
 }
 
-footer p {
-  margin: 0;
+/* === Smooth Transitions Between Pages === */
+html {
+  scroll-behavior: smooth;
 }
 
+a {
+  transition: color var(--transition-duration), background-color var(--transition-duration);
+}

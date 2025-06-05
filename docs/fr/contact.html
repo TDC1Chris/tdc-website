@@ -1,211 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
-  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-..." rel="stylesheet"/>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="Contact Total Design Consulting for inquiries, estimates, and support." name="description"/>
-  <link href="assets/css/style.css" rel="stylesheet"/>
   <title>
-   Contact Us - Total Design Consulting
+   Total Design Consulting
   </title>
-  <style>
-   body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ef 100%);
-    color: #22223b;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-  }
-  header {
-    background: #1f2937;
-    color: #fff;
-    padding: 1.2rem 0 0.8rem 0;
-    box-shadow: 0 2px 8px rgba(31,41,55,0.06);
-  }
-  header h1 {
-    margin: 0 0 0.3rem 0;
-    font-size: 2rem;
-    letter-spacing: 1px;
-    font-weight: 600;
-    color: #60a5fa;
-  }
-  nav {
-    margin-top: 0.2rem;
-  }
-  nav a {
-    color: #e0e7ef;
-    margin: 0 14px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-    font-size: 1.05rem;
-  }
-  nav a:hover {
-    color: #60a5fa;
-    text-decoration: underline;
-  }
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2.5rem 1rem 2rem 1rem;
-    min-height: 70vh;
-  }
-  .contact-title {
-    text-align: center;
-    font-size: 2.1rem;
-    font-weight: 700;
-    margin-bottom: 2.2rem;
-    color: #1f2937;
-    letter-spacing: 0.5px;
-  }
-  .contact-card {
-    background: #fff;
-    border-radius: 1.1rem;
-    box-shadow: 0 4px 24px rgba(31,41,55,0.09);
-    padding: 2.2rem 2rem 1.5rem 2rem;
-    max-width: 420px;
-    width: 100%;
-    border: 1px solid #e5e7eb;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.1rem;
-  }
-  label {
-    font-weight: 500;
-    color: #374151;
-    margin-bottom: 0.2rem;
-  }
-  input, textarea {
-    width: 100%;
-    padding: 0.65rem 0.9rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font-size: 1rem;
-    background: #f9fafb;
-    color: #22223b;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    outline: none;
-  }
-  textarea {
-    resize: none;
-  }
-  input:focus, textarea:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 2px #93c5fd55;
-    background: #fff;
-  }
-  button {
-    margin-top: 0.5rem;
-    padding: 0.7rem 1.2rem;
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.08rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.18s, box-shadow 0.18s;
-    box-shadow: 0 2px 8px rgba(37,99,235,0.07);
-    letter-spacing: 0.2px;
-  }
-  button:hover, button:focus {
-    background-color: #1d4ed8;
-    box-shadow: 0 4px 16px rgba(37,99,235,0.13);
-  }
-  .email-alt {
-    margin-top: 1.5rem;
-    text-align: center;
-    color: #374151;
-    font-size: 1.05rem;
-  }
-  .email-alt a {
-    color: #2563eb;
-    text-decoration: none;
-    transition: color 0.2s;
-    font-weight: 500;
-  }
-  .email-alt a:hover {
-    color: #60a5fa;
-    text-decoration: underline;
-  }
-  footer {
-    background: #1f2937;
-    color: #e0e7ef;
-    padding: 1.2rem 0;
-    text-align: center;
-    font-size: 1rem;
-    margin-top: 2.5rem;
-    box-shadow: 0 -2px 8px rgba(31,41,55,0.06);
-  }
-  footer a {
-    color: #60a5fa;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  footer a:hover {
-    color: #93c5fd;
-    text-decoration: underline;
-  }
-  @media (max-width: 600px) {
-    .contact-card {
-      padding: 1.2rem 0.7rem 1rem 0.7rem;
-      max-width: 98vw;
-    }
-    .contact-title {
-      font-size: 1.5rem;
-    }
-  }
-  </style>
-  <meta content="Total Design Consulting" property="og:title"/>
-  <meta content="Secure. Automate. Deliver. Expert IT/OT services and cybersecurity solutions." property="og:description"/>
-  <meta content="website" property="og:type"/>
-  <meta content="en_US" property="og:locale"/>
-  <style>
-   header h1 {
-    text-align: center;
-  }
-
-  .language-switcher {
-    position: relative;
-    float: right;
-    margin-right: 1.5rem;
-    margin-top: -2.5rem;
-    z-index: 1;
-  }
-
-  .skip-link {
-    position: absolute;
-    left: -9999px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-  }
-
-  .skip-link:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    left: auto;
-    overflow: visible;
-    background: #2563eb;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    z-index: 100;
-  }
-  </style>
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-..." rel="stylesheet"/>
+  <link href="../assets/css/style.css" rel="stylesheet"/>
  </head>
  <body>
   <div class="container-fluid px-0">
+   <div class="hero-box">
+    <h2>
+     Secure. Automate. Deliver.
+    </h2>
+    <p>
+     Your trusted partner in Cybersecurity, IT/OT Engineering, and Industrial Automation.
+    </p>
+   </div>
    <header>
     <a class="skip-link" href="#main">
      Passer au contenu principal
