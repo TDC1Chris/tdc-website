@@ -11,3 +11,4 @@ wp-content/cache/
 .DS_Store
 .idea/
 .vscode/
+.env
