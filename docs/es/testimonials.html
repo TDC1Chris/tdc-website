@@ -238,26 +238,29 @@ function switchLanguage(page) {
 </script>
 </head>
 <body>
-<header>
-<a aria-label="Skip to main content" class="skip-link" href="#main">Skip to main content</a>
-<h1>Total Design Consulting</h1>
-<div class="language-switcher">
-<label class="visually-hidden" for="language-select">Language</label>
-<select id="language-select" onchange="switchLanguage(this.value)">
-<option value="index.html">English</option>
-<option value="de/index.html">Deutsch</option>
-<option value="es/index.html">Español</option>
-</select>
-</div>
 
+<header>
+<a class="skip-link" href="#main">Skip to main content</a>
+<h1>Total Design Consulting</h1>
+<div class="language-switcher" style="text-align:right; padding: 0.5rem 1rem;">
+<a aria-label="Language Selection" href="languages.html">
+<img alt="Languages" src="assets/images/icon-globe.png" style="width:28px; height:28px; cursor:pointer;"/>
+</a>
+</div>
 <nav>
-<a href="index.html">Inicio</a> |
-  <a href="services.html">Servicios</a> |
-  <a href="contact.html">Contacto</a> |
-  <a href="testimonials.html">Testimonios</a>
+<a href="index.html">Home</a> |
+    <a href="services.html">Services</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="testimonials.html">Testimonials</a>
 </nav>
 </header>
+
 <main>
+<section class="hero">
+<div class="hero-title">Secure. Automate. Deliver.</div>
+<div class="hero-subtitle">Your trusted partner in Cybersecurity, IT/OT Engineering, and Industrial Automation.</div>
+</section>
+
 <div class="testimonials-title">Lo que dicen nuestros clientes</div>
 <div class="testimonials-list">
 <div class="testimonial-card">
@@ -300,8 +303,10 @@ function switchLanguage(page) {
     © 2025 Total Design Consulting LLC. Los iconos e imágenes son propiedad de Total Design Consulting o se usan con permiso.
   </div>
 </main>
+
 <footer>
-<p>© 2025 Total Design Consulting LLC | <a href="mailto:support@totaldesignconsulting.com">Enviar correo</a></p>
+<p>© 2025 Total Design Consulting LLC | <a href="mailto:support@totaldesignconsulting.com">Contact Us</a></p>
 </footer>
+
 </body>
 </html>
