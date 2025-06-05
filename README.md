@@ -1,92 +1,65 @@
 # Total Design Consulting Website
 
-This repository contains the official website of **Total Design Consulting LLC**, a firm specializing in Cybersecurity, IT/OT Engineering, Safety, and Industrial Automation.
+This is a custom-built, modern static website for Total Design Consulting LLC.
 
-🔗 **Live Website:** [https://www.totaldesignconsulting.com](https://www.totaldesignconsulting.com)
+## Structure Overview
 
----
+This is the static marketing site for [Total Design Consulting LLC](https://www.totaldesignconsulting.com).
 
-## 🌐 Multilingual Support
+## Live Site
 
-The site is fully static and supports **all NATO-recognized languages** through dedicated subdirectories:
+[https://tdc1chris.github.io/tdc-website/](https://tdc1chris.github.io/tdc-website/)
 
-- `/en/` – English (default)
-- `/de/`, `/es/`, `/fr/`, etc. – NATO language equivalents
-- Central `languages.html` directory with one-click language switching
-
-Each language version is SEO-structured and serves localized versions of key pages: home, services, contact, and testimonials.
-
----
-
-## 🎯 Key Features
-
-### ✨ Unified Design
-- Global header, footer, navigation, and responsive hero sections
-- Cohesive styling across all pages and language versions
-- Optimized for both desktop and mobile experiences
-
-### ♿ Accessibility & Compliance
-- ARIA labels for all interactive elements
-- Semantic HTML5 structure
-- WCAG-compliant contrast and font sizing
-
-### ⚙️ Performance Optimizations
-- Optimized images and WebP-ready structure
-- Minimized inline CSS; all major styles externalized
-- Compatible with static hosting platforms like GitHub Pages or Netlify
-
-### 🔍 SEO Enhancements
-- Descriptive page titles and meta descriptions
-- Proper use of `<h1>` through `<h3>` headers
-- Language tags and canonical structure per version
-
----
-
-## 📁 Project Structure
-
-```
-docs/
-├── index.html
-├── services.html
-├── contact.html
-├── testimonials.html
-├── languages.html
-├── en/
-│   └── index.html
-├── de/
-│   └── index.html
-├── es/
-│   └── index.html
-└── ... (other NATO language directories)
+## Structure
+```bash
+- `/docs/`: Static files for GitHub Pages (main site source)
+    - index.html
+    - contact.html
+    - services.html
+    - testimonials.html
+    - 404.html
+    - favicon.ico
+    - /assets/
+        - /css/
+            - style.css
+        - /images/
+            - icon-cybersecurity.png
+            - icon-network.png
+            - icon-plc.png
+            - icon-globe.png
+            - banner.png
+        - /js/
+    - /[lang]/index.html   # NATO language support (e.g. /de/, /es/, /fr/, etc.)
+- `/src/`: WordPress theme and development source (optional)
+- `.github/`: GitHub workflows (CI/CD, linting)
+- `.gitignore`: GitHub Workflow security
+- README.md: Repo purpose, deployment instructions
+- LICENSE
 ```
 
----
+## Design & Features
 
-## 🚀 Deployment
+- **Modern, cohesive design**: All pages use a unified, professional style with a consistent color palette, typography, and layout.
+- **Responsive**: Layouts adapt for desktop and mobile.
+- **Hero section**: Prominent call-to-action on the homepage.
+- **Service cards**: Visual, icon-based service overviews.
+- **Testimonials**: Card-based client feedback with icons/photos.
+- **Contact page**: Multiple contact methods (email, SMS, phone), with a pre-filled email template.
+- **404 page**: Friendly, branded error page.
+- **CSS**: All custom styles are in `assets/css/style.css` and used across all pages.
+- **Assets**: Place all images, CSS, and JS in the `assets/` folder.
+- **Accessibility**: Skip links are present but visually subtle (positioned off-screen until focused), semantic HTML, and accessible navigation.
+- **SEO**: Meta tags, Open Graph, and structured data included.
+- **Internationalization**: Language switcher for English and NATO languages (e.g. `/de/index.html`, `/es/index.html`, `/fr/index.html`, etc.). Ensure translated files exist as needed.
+- **Uniformity**: All pages (home, services, contact, testimonials, 404, and language variants) use the same header, navigation, language switcher (top right), footer, and CSS for a consistent look and feel.
 
-Deployed using **GitHub Pages** via the `docs/` directory:
+## Deployment
 
-```
-https://tdc1chris.github.io/tdc-website/
-```
+All files in `docs/` are automatically served by GitHub Pages.
 
-To update the site:
-1. Commit your changes to the `main` branch.
-2. GitHub Pages will auto-deploy from the `docs/` folder.
+## Notes
 
----
-
-## 📦 Version History
-
-- **v9**: Initial multilingual support and NATO language selector
-- **v10**: SEO, accessibility, image optimization, refactor for maintainability
-- **v11**: Full design uniformity across all pages and languages
-
----
-
-## 🧠 About the Company
-
-**Total Design Consulting LLC** empowers businesses by delivering trusted, secure, and efficient engineering and cybersecurity solutions that bridge the digital and physical worlds.
-
-For business inquiries, visit [www.totaldesignconsulting.com](https://www.totaldesignconsulting.com) or contact us at [support@totaldesignconsulting.com](mailto:support@totaldesignconsulting.com)
-
+- Use the `assets/` folder for all CSS, JS, and media files.
+- To add a favicon, place `favicon.ico` in `/docs/` and add the appropriate `<link rel="icon" ...>` tag to each HTML `<head>`.
+- All HTML pages are hand-coded for performance and maintainability.
+- For language support, copy and translate `index.html` to `/[lang]/index.html` for each supported NATO language.
