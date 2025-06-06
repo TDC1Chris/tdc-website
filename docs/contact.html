@@ -1,136 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Total Design Consulting
-  </title>
-  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-..." rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – Total Design Consulting</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="assets/css/style.css" rel="stylesheet"/>
- </head>
- <body>
-  <div class="container-fluid px-0">
-   <div class="hero-box">
-    <h2>
-     Secure. Automate. Deliver.
-    </h2>
-    <p>
-     Your trusted partner in Cybersecurity, IT/OT Engineering, and Industrial Automation.
-    </p>
-   </div>
-   <header>
-    <a class="skip-link" href="#main">
-     Skip to main content
-    </a>
-    <h1>
-     Total Design Consulting
-    </h1>
-    <div class="language-switcher" style="text-align:right; padding: 0.5rem 1rem;">
-     <a aria-label="Language Selection" href="javascript:void(0)" onclick="window.location.href='https://www.totaldesignconsulting.com/languages.html'; return false;">
-      <img alt="Languages" src="assets/images/icon-globe.png" style="width:28px; height:28px; cursor:pointer;"/>
-     </a>
+</head>
+<body>
+  <header class="tdc-header py-3 mb-4">
+    <div class="container">
+      <nav class="nav justify-content-center">
+        <a class="nav-link tdc-nav-link" href="index.html">Home</a>
+        <a class="nav-link tdc-nav-link" href="services.html">Services</a>
+        <a class="nav-link tdc-nav-link active" href="contact.html">Contact</a>
+        <a class="nav-link tdc-nav-link" href="testimonials.html">Testimonials</a>
+      </nav>
     </div>
-    <nav>
-     <a href="index.html">
-      Home
-     </a>
-     |
-     <a href="services.html">
-      Services
-     </a>
-     |
-     <a href="contact.html">
-      Contact
-     </a>
-     |
-     <a href="testimonials.html">
-      Testimonials
-     </a>
-    </nav>
-   </header>
-   <main>
-    <section class="hero">
-     <div class="hero-title">
-      Secure. Automate. Deliver.
-     </div>
-     <div class="hero-subtitle">
-      Your trusted partner in Cybersecurity, IT/OT Engineering, and Industrial Automation.
-     </div>
+  </header>
+
+  <main>
+    <section class="container mb-5">
+      <div class="tdc-hero mx-auto shadow-lg rounded-4 p-5 text-center">
+        <h1 class="display-5 fw-bold mb-3 text-white">Contact Us</h1>
+        <p class="lead text-white mb-0">
+          We're here to help. Reach out to discuss your needs or request a consultation.
+        </p>
+      </div>
     </section>
-    <div class="contact-title">
-     Contact Us
-    </div>
-    <div class="contact-card">
-     <div style="margin-bottom:1.5rem; color:#374151; font-size:1.07rem; line-height:1.7;">
-      We understand there are many avenues of communication in the current era of technology, but we also want to uphold our commitment to create bespoke solutions for each client we partner with. To that end, all communication methods used at the firm are monitored by a human who is a direct employee of the firm. We do not outsource our customer service in any way. Click the button below to select the platform or method that works best for you!
-     </div>
-     <div style="display:flex; flex-direction:column; align-items:center; gap:1rem; margin-bottom:1.5rem;">
-      <!-- index.html or contact.html -->
-      <a class="contact-method-btn" href="mailto:support@totaldesignconsulting.com" id="email-link" style="display:inline-block;padding:0.7rem 1.6rem;background:#2563eb;color:#fff;border-radius:2rem;font-weight:600;font-size:1.07rem;text-decoration:none;box-shadow:0 2px 8px rgba(37,99,235,0.09);transition:background 0.18s;">
-       Email Us
-      </a>
-      <a contact-method-btn"="" href="sms:+18005551234
-   class=" id="sms-link" style="display:inline-block;padding:0.7rem 1.6rem;background:#10b981;color:#fff;border-radius:2rem;font-weight:600;font-size:1.07rem;text-decoration:none;box-shadow:0 2px 8px rgba(16,185,129,0.09);transition:background 0.18s;">
-       Text Message
-      </a>
-      <a class="contact-method-btn" href="tel:+18005551234" id="call-link" style="display:inline-block;padding:0.7rem 1.6rem;background:#f59e42;color:#fff;border-radius:2rem;font-weight:600;font-size:1.07rem;text-decoration:none;box-shadow:0 2px 8px rgba(245,158,66,0.09);transition:background 0.18s;">
-       Call Us
-      </a>
-      <script>
-       // Email Link Template Fetch (already exists)
-  fetch('assets/email-template.txt')
-    .then(response => response.text())
-    .then(template => {
-      const emailLink = document.getElementById('email-link');
-      const subject = encodeURIComponent("Contact from Website");
-      const body = encodeURIComponent(template);
-      emailLink.href = `mailto:support@totaldesignconsulting.com?subject=${subject}&body=${body}`;
-    });
 
-  // SMS Link Template Fetch
-  fetch('assets/sms-template.txt')
-    .then(response => response.text())
-    .then(template => {
-      const smsLink = document.getElementById('sms-link');
-      const body = encodeURIComponent(template);
-      smsLink.href = `sms:+18005551234?body=${body}`;
-    });
+    <section class="container mb-5">
+      <div class="row justify-content-center">
+        <div class="col-md-7">
+          <div class="card tdc-card shadow-sm">
+            <div class="card-body">
+              <h2 class="card-title text-success text-center mb-3">Get in Touch</h2>
+              <ul class="list-unstyled mb-4">
+                <li class="mb-2"><strong>Email:</strong> <a href="mailto:support@totaldesignconsulting.com">support@totaldesignconsulting.com</a></li>
+                <li class="mb-2"><strong>Phone:</strong> <a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                <li class="mb-2"><strong>SMS:</strong> <a href="sms:+1234567890">Text Us</a></li>
+              </ul>
+              <p class="mb-0 text-muted fst-italic">We respond to all inquiries within 1 business day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  // Optional: For future use with automated call scripting systems
-  // If using a third-party call service API, this area could generate call actions
-  // But for now, just ensures `tel:` remains static for instant dialing
-      </script>
-     </div>
-     <div class="email-alt" style="margin-bottom:1.2rem;">
-      <p>
-       Prefer email?
-       <a href="mailto:support@totaldesignconsulting.com?subject=Contact%20from%20Website&amp;body=Hello%20Total%20Design%20Consulting%2C%0A%0AMy%20name%20is%20[Your%20Name]%20and%20my%20email%20is%20[Your%20Email].%0A%0AI%20would%20like%20to%20inquire%20about%3A%0A%0A[Please%20describe%20your%20request%20or%20question%20here]%0A%0AThank%20you!" id="mailto-link">
-        support@totaldesignconsulting.com
-       </a>
-      </p>
-     </div>
-     <!--
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <label for="name">Your Name</label>
-      <input id="name" name="name" required type="text" autocomplete="name"/>
-      <label for="email">Your Email</label>
-      <input id="email" name="email" required type="email" autocomplete="email"/>
-      <label for="message">Message</label>
-      <textarea id="message" name="message" required rows="5"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    -->
+  <footer class="tdc-footer text-center py-4 mt-auto">
+    <div class="container">
+      <span class="text-white">&copy; 2025 Total Design Consulting LLC | <a href="mailto:support@totaldesignconsulting.com" class="text-white text-decoration-underline">Contact Us</a></span>
     </div>
-   </main>
-   <footer>
-    <p>
-     © 2025 Total Design Consulting LLC |
-     <a href="mailto:support@totaldesignconsulting.com">
-      Contact Us
-     </a>
-    </p>
-   </footer>
-  </div>
- </body>
+  </footer>
+</body>
 </html>
