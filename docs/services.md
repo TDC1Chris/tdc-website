@@ -1,25 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Services – Total Design Consulting</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="assets/css/style.css" rel="stylesheet"/>
-</head>
-<body>
-  <header class="tdc-header py-3 mb-4">
-    <div class="container">
-      <nav class="nav justify-content-center">
-        <a class="nav-link tdc-nav-link" href="index.html">Home</a>
-        <a class="nav-link tdc-nav-link active" href="services.html">Services</a>
-        <a class="nav-link tdc-nav-link" href="contact.html">Contact</a>
-        <a class="nav-link tdc-nav-link" href="testimonials.html">Testimonials</a>
-      </nav>
-    </div>
-  </header>
+---
+layout: default
+title: "Services – Total Design Consulting"
+nav: services
+---
 
-  <main>
     <section class="container mb-5">
       <div class="tdc-hero mx-auto shadow-lg rounded-4 p-5 text-center">
         <h1 class="display-5 fw-bold mb-3 text-white">Our Services</h1>
@@ -60,12 +44,3 @@
         </div>
       </div>
     </section>
-  </main>
-
-  <footer class="tdc-footer text-center py-4 mt-auto">
-    <div class="container">
-      <span class="text-white">&copy; 2025 Total Design Consulting LLC | <a href="mailto:support@totaldesignconsulting.com" class="text-white text-decoration-underline">Contact Us</a></span>
-    </div>
-  </footer>
-</body>
-</html>

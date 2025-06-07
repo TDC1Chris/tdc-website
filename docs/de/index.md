@@ -1,62 +1,10 @@
-<!DOCTYPE html>
-<html lang="de">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Total Design Consulting
-  </title>
-  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-..." rel="stylesheet"/>
-  <link href="../assets/css/custom.css" rel="stylesheet"/>
- </head>
- <body>
-  <div class="container-fluid px-0">
-   <div class="hero-title">
-    Secure. Automate. Deliver.
-   </div>
-   <script>
-    (function() {
-  if (!localStorage.getItem('langRedirected')) {
-    const lang = navigator.language || navigator.userLanguage;
-    let base = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/');
-    if (lang.startsWith('de')) window.location.href = base + 'index-de.html';
-    else if (lang.startsWith('es')) window.location.href = base + 'index-es.html';
-    else window.location.href = base + 'index.html';
-    localStorage.setItem('langRedirected', 'true');
-  }
-})();
-   </script>
-   <header>
-    <a class="skip-link" href="#main">
-     Zum Hauptinhalt springen
-    </a>
-    <h1>
-     Gesamte Designberatung
-    </h1>
-    <div class="language-switcher" style="text-align:right; padding: 0.5rem 1rem;">
-     <a aria-label="Language Selection" href="javascript:void(0)" onclick="window.location.href='https://www.totaldesignconsulting.com/languages.html'; return false;">
-      <img alt="Languages" src="assets/images/icon-globe.png" style="width:28px; height:28px; cursor:pointer;"/>
-     </a>
-    </div>
-    <nav>
-     <a href="index.html">
-      Startseite
-     </a>
-     |
-     <a href="services.html">
-      Dienstleistungen
-     </a>
-     |
-     <a href="contact.html">
-      Kontakt
-     </a>
-     |
-     <a href="testimonials.html">
-      Referenzen
-     </a>
-    </nav>
-   </header>
-   <main>
+---
+layout: default
+title: "Total Design Consulting"
+nav: home
+lang: de
+---
+
     <section class="hero">
      <div class="hero-subtitle">
       Your trusted partner in Cybersecurity, IT/OT Engineering, and Industrial Automation.
@@ -121,15 +69,3 @@
       </div>
      </div>
     </div>
-   </main>
-   <footer>
-    <p>
-     © 2025 Total Design Consulting LLC |
-     <a href="mailto:support@totaldesignconsulting.com">
-      Kontaktieren Sie uns
-     </a>
-    </p>
-   </footer>
-  </div>
- </body>
-</html>

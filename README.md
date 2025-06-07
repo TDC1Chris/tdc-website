@@ -12,24 +12,17 @@ This is the static marketing site for [Total Design Consulting LLC](https://www.
 
 ## Structure
 ```bash
-- `/docs/`: Static files for GitHub Pages (main site source)
-    - index.html
-    - contact.html
-    - services.html
-    - testimonials.html
+- `/docs/`: Jekyll site source
+    - _config.yml
+    - /_layouts/
+    - /_includes/
+    - index.md
+    - contact.md
+    - services.md
+    - testimonials.md
     - 404.html
-    - favicon.ico
     - /assets/
-        - /css/
-            - style.css
-        - /images/
-            - icon-cybersecurity.png
-            - icon-network.png
-            - icon-plc.png
-            - icon-globe.png
-            - banner.png
-        - /js/
-    - /[lang]/index.html   # NATO language support (e.g. /de/, /es/, /fr/, etc.)
+    - /[lang]/index.md (e.g. /de/, /fr/)
 - `/src/`: WordPress theme and development source (optional)
 - `.github/`: GitHub workflows (CI/CD, linting)
 - `.gitignore`: GitHub Workflow security
@@ -50,16 +43,25 @@ This is the static marketing site for [Total Design Consulting LLC](https://www.
 - **Assets**: Place all images, CSS, and JS in the `assets/` folder.
 - **Accessibility**: Skip links are present but visually subtle (positioned off-screen until focused), semantic HTML, and accessible navigation.
 - **SEO**: Meta tags, Open Graph, and structured data included.
-- **Internationalization**: Language switcher for English and NATO languages (e.g. `/de/index.html`, `/es/index.html`, `/fr/index.html`, etc.). Ensure translated files exist as needed.
+- **Internationalization**: Language switcher for English and NATO languages (e.g. `/de/index.md`, `/es/index.md`, `/fr/index.md`, etc.). Ensure translated files exist as needed.
 - **Uniformity**: All pages (home, services, contact, testimonials, 404, and language variants) use the same header, navigation, language switcher (top right), footer, and CSS for a consistent look and feel.
 
 ## Deployment
 
 All files in `docs/` are automatically served by GitHub Pages.
+## Local Development
+
+Install Jekyll and run:
+```bash
+bundle install
+bundle exec jekyll serve --source docs
+```
+This starts a local server at http://localhost:4000.
+
 
 ## Notes
 
 - Use the `assets/` folder for all CSS, JS, and media files.
 - To add a favicon, place `favicon.ico` in `/docs/` and add the appropriate `<link rel="icon" ...>` tag to each HTML `<head>`.
-- All HTML pages are hand-coded for performance and maintainability.
-- For language support, copy and translate `index.html` to `/[lang]/index.html` for each supported NATO language.
+- Pages are now built with Jekyll for easier templating.
+- For language support, copy and translate `index.md` to `/[lang]/index.md` for each supported NATO language.
