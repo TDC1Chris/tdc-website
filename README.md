@@ -46,9 +46,9 @@ This is the static marketing site for [Total Design Consulting LLC](https://www.
 - **Testimonials**: Card-based client feedback with icons/photos.
 - **Contact page**: Multiple contact methods (email, SMS, phone), with a pre-filled email template.
 - **404 page**: Friendly, branded error page.
-- **CSS**: All custom styles are in `assets/css/style.css` and used across all pages.
+- **CSS**: Core styles live in `assets/css/style.css`. Some pages also load `custom.css` for additional tweaks.
 - **Assets**: Place all images, CSS, and JS in the `assets/` folder.
-- **Accessibility**: Skip links are present but visually subtle (positioned off-screen until focused), semantic HTML, and accessible navigation.
+- **Accessibility**: A skip link is included on a few pages and styled to be visually subtle (positioned off-screen until focused). Semantic HTML and accessible navigation are used throughout.
 - **SEO**: Meta tags, Open Graph, and structured data included.
 - **Internationalization**: Language switcher for English and NATO languages (e.g. `/de/index.html`, `/es/index.html`, `/fr/index.html`, etc.). Ensure translated files exist as needed.
 - **Uniformity**: All pages (home, services, contact, testimonials, 404, and language variants) use the same header, navigation, language switcher (top right), footer, and CSS for a consistent look and feel.
@@ -63,3 +63,12 @@ All files in `docs/` are automatically served by GitHub Pages.
 - To add a favicon, place `favicon.ico` in `/docs/` and add the appropriate `<link rel="icon" ...>` tag to each HTML `<head>`.
 - All HTML pages are hand-coded for performance and maintainability.
 - For language support, copy and translate `index.html` to `/[lang]/index.html` for each supported NATO language.
+
+## Testing
+
+Install `pytest` and run the test suite from the repository root:
+
+```bash
+pip install pytest
+pytest
+```
