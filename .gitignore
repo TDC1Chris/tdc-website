@@ -12,3 +12,4 @@ wp-content/cache/
 .idea/
 .vscode/
 .env
+.venv
