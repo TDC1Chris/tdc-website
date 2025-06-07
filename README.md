@@ -57,6 +57,18 @@ This is the static marketing site for [Total Design Consulting LLC](https://www.
 
 All files in `docs/` are automatically served by GitHub Pages.
 
+## Development & Continuous Integration
+
+Run `npm install` to install the Node.js tooling. Two npm scripts are provided:
+
+```bash
+npm run build    # compile and minify assets into docs/assets/
+npm run lint     # check HTML and validate links
+```
+
+A GitHub Action defined at `.github/workflows/ci.yml` runs these commands on
+every pull request to ensure the site builds and passes the linters.
+
 ## Running Tests
 
 Unit tests are written with [pytest](https://pytest.org). After installing
