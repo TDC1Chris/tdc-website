@@ -57,6 +57,15 @@ This is the static marketing site for [Total Design Consulting LLC](https://www.
 
 All files in `docs/` are automatically served by GitHub Pages.
 
+## Running Tests
+
+Unit tests are written with [pytest](https://pytest.org). After installing
+`pytest`, run the test suite from the repository root:
+
+```bash
+pytest
+```
+
 ## Notes
 
 - Use the `assets/` folder for all CSS, JS, and media files.
