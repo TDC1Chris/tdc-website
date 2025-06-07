@@ -1,0 +1,13 @@
+:root {
+    --forest-dark: #0b3d0b;
+    --forest-light: #2e8b57;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    background: linear-gradient(to right, var(--forest-dark), var(--forest-light));
+    padding: 6rem 0;
+}
