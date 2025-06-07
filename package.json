@@ -1,0 +1,22 @@
+{
+  "name": "tdc-website",
+  "version": "1.0.0",
+  "description": "This is a custom-built, modern static website for Total Design Consulting LLC.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "sass src/scss:docs/assets/css --no-source-map --style=compressed",
+    "lint": "htmlhint \"docs/**/*.html\" && linkinator docs --silent"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "sass": "^1.74.0",
+    "htmlhint": "^1.1.0",
+    "linkinator": "^4.0.0"
+  }
+}
