@@ -13,3 +13,4 @@ wp-content/cache/
 .vscode/
 .env
 .venv/
+__pycache__/
