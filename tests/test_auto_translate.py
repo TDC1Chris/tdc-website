@@ -60,7 +60,6 @@ def test_ensure_all_files_present(tmp_path, monkeypatch):
     assert (es / "services.html").read_text() == "EN services"
     assert (es / "index.html").read_text() == "existing"
 
-=======
 import sys
 import types
 import xml.etree.ElementTree as ET
