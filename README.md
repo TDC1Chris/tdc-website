@@ -46,7 +46,7 @@ This is the static marketing site for [Total Design Consulting LLC](https://www.
 - **Testimonials**: Card-based client feedback with icons/photos.
 - **Contact page**: Multiple contact methods (email, SMS, phone), with a pre-filled email template.
 - **404 page**: Friendly, branded error page.
-- **CSS**: Most pages load `assets/css/style.css` for the main theme. Language landing pages, localized testimonials, `languages.html`, and the 404 page include `assets/css/custom.css` instead.
+- **CSS**: All pages load `assets/css/style.css` for the main theme.
 - **Assets**: Place all images, CSS, and JS in the `assets/` folder.
 - **Accessibility**: Select pages provide visually subtle skip links (positioned off-screen until focused). Semantic HTML and accessible navigation are used throughout.
 - **SEO**: Meta tags, Open Graph, and structured data included.
