@@ -12,7 +12,7 @@ This is the static marketing site for [Total Design Consulting LLC](https://www.
 
 ## Structure
 ```bash
-- `/docs/`: Static files for GitHub Pages (main site source)
+ - `/docs/`: Static files that GitHub Pages serves as the website
     - index.html
     - contact.html
     - services.html
@@ -31,6 +31,8 @@ This is the static marketing site for [Total Design Consulting LLC](https://www.
         - /js/
     - /[lang]/index.html   # NATO language support (e.g. /de/, /es/, /fr/, etc.)
 - `/src/`: WordPress theme and development source (optional)
+- `/jekyll-site/`: (optional) source Jekyll project. Build here and output to
+  `docs/`.
 - `.github/`: GitHub workflows (CI/CD, linting)
 - `.gitignore`: GitHub Workflow security
 - README.md: Repo purpose, deployment instructions
@@ -55,7 +57,22 @@ This is the static marketing site for [Total Design Consulting LLC](https://www.
 
 ## Deployment
 
-All files in `docs/` are automatically served by GitHub Pages.
+GitHub Pages is configured to serve the contents of `docs/`. The
+`.nojekyll` file inside that folder disables GitHub's default Jekyll
+processing so the HTML is served exactly as committed.
+
+If you maintain the site using Jekyll, place your Jekyll project in a
+`jekyll-site/` directory and build it into `docs/`:
+
+```bash
+cd jekyll-site
+bundle install
+bundle exec jekyll build -d ../docs
+```
+
+These steps copy the generated `_site` output into `docs/`, which GitHub
+Pages then publishes. You can automate this with a GitHub Action that runs
+the above commands whenever changes are pushed.
 
 ## Development & Continuous Integration
 
