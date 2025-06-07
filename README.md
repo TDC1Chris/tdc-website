@@ -69,6 +69,12 @@ npm run lint     # check HTML and validate links
 A GitHub Action defined at `.github/workflows/ci.yml` runs these commands on
 every pull request to ensure the site builds and passes the linters.
 
+Install the Python packages used by `auto_translate_site.py`:
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Running Tests
 
 Unit tests are written with [pytest](https://pytest.org). After installing
