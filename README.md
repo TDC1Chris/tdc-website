@@ -72,3 +72,12 @@ pytest
 - To add a favicon, place `favicon.ico` in `/docs/` and add the appropriate `<link rel="icon" ...>` tag to each HTML `<head>`.
 - All HTML pages are hand-coded for performance and maintainability.
 - For language support, copy and translate `index.html` to `/[lang]/index.html` for each supported NATO language.
+
+## Testing
+
+Install `pytest` and run the test suite from the repository root:
+
+```bash
+pip install pytest
+pytest
+```
