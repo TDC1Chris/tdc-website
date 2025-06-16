@@ -9,110 +9,128 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f8f9fa;
-      text-align: center;
+      overflow-x: hidden;
     }
-    header nav a {
-      margin: 0 10px;
-    }
-    .hero-img {
-      width: 100%;
-      height: 300px;
-      background: #ccc url('image1.jpg') center/cover no-repeat;
-    }
+
     .section {
-      padding: 2rem 1rem;
+      padding: 4rem 1rem;
     }
-    .quote {
-      font-style: italic;
-      background-color: #e0f7e0;
-      padding: 1rem;
-      margin: 2rem 0;
+
+    .centerline {
+      position: relative;
+      display: flex;
+      justify-content: center;
     }
-    .image-box {
-      width: 100%;
-      height: 150px;
-      background-color: #ddd;
-      margin: 1rem 0;
+
+    .centerline-dot {
+      width: 20px;
+      height: 20px;
+      background: #ccc;
+      border-radius: 50%;
+      position: relative;
+      transition: background 0.4s ease;
     }
-    footer {
-      background-color: #222;
-      color: white;
-      padding: 1rem 0;
+
+    .centerline-dot::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100px;
+      background-color: #ccc;
+      transition: background 0.4s ease;
     }
-    footer div {
-      margin-top: 0.5rem;
+
+    .glow .centerline-dot {
+      background: radial-gradient(circle, forestgreen 40%, darkgreen 100%);
+    }
+
+    .glow .centerline-dot::after {
+      background-color: forestgreen;
+    }
+
+    .fade-section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-in {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    h3 {
+      color: #1a4d1a;
+    }
+
+    @media (max-width: 768px) {
+      .text-md-end,
+      .text-md-start {
+        text-align: center !important;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="bg-dark text-white py-3">
-    <nav class="container d-flex justify-content-center flex-wrap">
-      <a href="#" class="text-white text-decoration-none">Home</a>
-      <a href="#" class="text-white text-decoration-none">About</a>
-      <a href="#" class="text-white text-decoration-none">Services</a>
-      <a href="#" class="text-white text-decoration-none">Portfolio</a>
-      <a href="#" class="text-white text-decoration-none">KB & Blog</a>
-      <a href="#" class="text-white text-decoration-none">Contact</a>
-    </nav>
-  </header>
+  <div class="container-fluid section">
 
-  <!-- Hero Image -->
-  <div class="hero-img"></div>
-
-  <!-- Company Title -->
-  <div class="section">
-    <h1>"Total Design Consulting"</h1>
-  </div>
-
-  <!-- Welcome / Company Intro / Vision / Mission -->
-  <div class="container section">
-    <div class="row">
-      <div class="col-md-6">
+    <!-- Row 1 -->
+    <div class="row align-items-center mb-5 fade-section">
+      <div class="col-md-5 text-md-end text-center">
         <h3>Welcome Page</h3>
-        <p>Brief welcome message goes here.</p>
-        <h3>Vision Statement</h3>
-        <p>Our vision is to...</p>
+        <p>Welcome message to Total Design Consulting.</p>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-2 centerline">
+        <div class="centerline-dot"></div>
+      </div>
+      <div class="col-md-5 text-md-start text-center">
         <h3>Company Intro</h3>
-        <p>Introduction about the company.</p>
+        <p>About the company and our consulting philosophy.</p>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row align-items-center mb-5 fade-section">
+      <div class="col-md-5 text-md-end text-center">
+        <h3>Vision Statement</h3>
+        <p>We envision a secure, automated, and ethical digital future.</p>
+      </div>
+      <div class="col-md-2 centerline">
+        <div class="centerline-dot"></div>
+      </div>
+      <div class="col-md-5 text-md-start text-center">
         <h3>Mission Statement</h3>
-        <p>Our mission is to...</p>
+        <p>Delivering high-integrity consulting across IT and OT systems.</p>
       </div>
     </div>
+
   </div>
 
-  <!-- Images Section -->
-  <div class="container section">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="image-box">Image 2</div>
-      </div>
-      <div class="col-md-6">
-        <div class="image-box">Image 3</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="image-box">Image 4</div>
-      </div>
-    </div>
-  </div>
+  <!-- JS Scroll Animation -->
+  <script>
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return rect.top < window.innerHeight - 100;
+    }
 
-  <!-- Quote of the Week -->
-  <div class="quote">
-    <h4>Quote of the Week</h4>
-    <p>"Innovation distinguishes between a leader and a follower." – Steve Jobs</p>
-  </div>
+    function animateSections() {
+      const sections = document.querySelectorAll('.fade-section');
+      sections.forEach(section => {
+        if (isInViewport(section)) {
+          section.classList.add('fade-in');
+          const dot = section.querySelector('.centerline');
+          if (dot) dot.classList.add('glow');
+        }
+      });
+    }
 
-  <!-- Footer -->
-  <footer class="d-flex justify-content-around flex-wrap">
-    <div>Socials</div>
-    <div>Footer</div>
-    <div>Legal</div>
-  </footer>
+    window.addEventListener('scroll', animateSections);
+    window.addEventListener('load', animateSections);
+  </script>
 
 </body>
 </html>
