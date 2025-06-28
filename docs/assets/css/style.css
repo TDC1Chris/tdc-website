@@ -199,6 +199,34 @@ footer a:hover {
   box-shadow: 0 2px 8px rgba(46, 125, 50, 0.07);
 }
 
+.hero-logo {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.tdc-portfolio-card {
+  background: var(--tdc-card-bg);
+  border-radius: 1.1rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: var(--tdc-card-shadow);
+  transition: transform 0.18s, box-shadow 0.18s;
+  overflow: hidden;
+}
+
+.tdc-portfolio-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(46, 125, 50, 0.13);
+  border-color: var(--tdc-green-light);
+}
+
+.tdc-portfolio-img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
 @media (max-width: 600px) {
   .tdc-card {
     padding: 1.2rem 0.7rem 1rem;
@@ -214,8 +242,12 @@ footer a:hover {
     padding: 2rem 1rem;
   }
   .tdc-card,
-  .tdc-service-card {
+  .tdc-service-card,
+  .tdc-portfolio-card {
     padding: 1.2rem 1rem 1rem 1rem;
+  }
+  .hero-logo {
+    max-width: 240px;
   }
 }
 
@@ -228,7 +260,14 @@ footer a:hover {
     padding: 1.2rem 0.5rem;
   }
   .tdc-card,
-  .tdc-service-card {
+  .tdc-service-card,
+  .tdc-portfolio-card {
     padding: 1rem 0.7rem 0.7rem 0.7rem;
+  }
+  .hero-logo {
+    max-width: 200px;
+  }
+  .tdc-portfolio-img {
+    height: 150px;
   }
 }

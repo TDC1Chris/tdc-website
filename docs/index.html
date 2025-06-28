@@ -10,18 +10,24 @@
 <body>
   <header class="tdc-header py-3 mb-4">
     <div class="container">
-      <nav class="nav justify-content-center">
-        <a class="nav-link tdc-nav-link active" href="index.html">Home</a>
-        <a class="nav-link tdc-nav-link" href="services.html">Services</a>
-        <a class="nav-link tdc-nav-link" href="contact.html">Contact</a>
-        <a class="nav-link tdc-nav-link" href="testimonials.html">Testimonials</a>
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand me-4" href="index.html">
+          <img src="assets/images/color-abbrev-logo.png" alt="Total Design Consulting Logo" height="40" class="d-inline-block align-text-top">
+        </a>
+        <div class="navbar-nav mx-auto">
+          <a class="nav-link tdc-nav-link active" href="index.html">Home</a>
+          <a class="nav-link tdc-nav-link" href="services.html">Services</a>
+          <a class="nav-link tdc-nav-link" href="contact.html">Contact</a>
+          <a class="nav-link tdc-nav-link" href="testimonials.html">Testimonials</a>
+        </div>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main>   
     <section class="container mb-5">
       <div class="tdc-hero mx-auto shadow-lg rounded-4 p-5 text-center">
+        <img src="assets/images/color-full-logo.png" alt="Total Design Consulting" class="hero-logo mb-4">
         <h1 class="display-5 fw-bold mb-3 text-white">Secure. Automate. Deliver.</h1>
         <p class="lead text-white mb-0">
           Your trusted partner in Cybersecurity, IT/OT Engineering, and Industrial Automation.
@@ -63,7 +69,7 @@
     <section class="container mb-5">
       <h2 class="text-center text-success mb-4">Core Services</h2>
       <div class="row g-4">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="card tdc-service-card h-100 shadow-sm text-center">
             <div class="card-body">
               <img src="assets/images/icon-cybersecurity.png" alt="Cybersecurity" class="mb-3 tdc-service-icon"/>
@@ -72,7 +78,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="card tdc-service-card h-100 shadow-sm text-center">
             <div class="card-body">
               <img src="assets/images/icon-network.png" alt="Network" class="mb-3 tdc-service-icon"/>
@@ -81,12 +87,54 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="card tdc-service-card h-100 shadow-sm text-center">
             <div class="card-body">
               <img src="assets/images/icon-plc.png" alt="Industrial Automation" class="mb-3 tdc-service-icon"/>
               <h3 class="card-title mb-2 text-success">Industrial Automation</h3>
               <p class="card-text">PLC, HMI, SCADA, and process control solutions for modern industry.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card tdc-service-card h-100 shadow-sm text-center">
+            <div class="card-body">
+              <img src="assets/images/icon-safety.png" alt="Safety" class="mb-3 tdc-service-icon"/>
+              <h3 class="card-title mb-2 text-success">Safety & Compliance</h3>
+              <p class="card-text">Workplace safety standards and regulatory compliance solutions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container mb-5">
+      <h2 class="text-center text-success mb-4">Recent Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card tdc-portfolio-card h-100 shadow-sm">
+            <img src="assets/images/portfolio-cybersecurity.png" alt="Cybersecurity Project" class="card-img-top tdc-portfolio-img">
+            <div class="card-body">
+              <h5 class="card-title text-success">Enterprise Cybersecurity Implementation</h5>
+              <p class="card-text">Complete security overhaul including Zero Trust architecture, threat assessment, and compliance framework for a Fortune 500 manufacturing company.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card tdc-portfolio-card h-100 shadow-sm">
+            <img src="assets/images/portfolio-ot-network.png" alt="OT Network Project" class="card-img-top tdc-portfolio-img">
+            <div class="card-body">
+              <h5 class="card-title text-success">OT Network Modernization</h5>
+              <p class="card-text">Seamless IT/OT integration project featuring secure remote access, network segmentation, and real-time monitoring for critical infrastructure.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card tdc-portfolio-card h-100 shadow-sm">
+            <img src="assets/images/portfolio-plc-upgrade.png" alt="PLC Upgrade Project" class="card-img-top tdc-portfolio-img">
+            <div class="card-body">
+              <h5 class="card-title text-success">PLC System Upgrade</h5>
+              <p class="card-text">Legacy PLC modernization with advanced SCADA integration, predictive maintenance capabilities, and enhanced safety protocols.</p>
             </div>
           </div>
         </div>
