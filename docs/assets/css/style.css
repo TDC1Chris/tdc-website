@@ -173,7 +173,16 @@ footer a:hover {
   color: #fff;
   border-radius: 1.5rem;
   box-shadow: var(--tdc-card-shadow);
-  max-width: 700px;
+  max-width: 800px;
+  padding: 3rem 2rem !important;
+}
+
+.hero-logo {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  margin-bottom: 2rem;
 }
 
 .tdc-service-card {
@@ -199,11 +208,33 @@ footer a:hover {
   box-shadow: 0 2px 8px rgba(46, 125, 50, 0.07);
 }
 
-.hero-logo {
-  max-width: 280px;
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+.tdc-service-icon-large {
+  width: 80px;
+  height: 80px;
+  background: #e8f5e9;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 0 4px 16px rgba(46, 125, 50, 0.1);
+}
+
+/* Clickable service card styling */
+a .tdc-service-card {
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+a .tdc-service-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 8px 32px rgba(46, 125, 50, 0.13);
+  border-color: var(--tdc-green-light);
+}
+
+a .tdc-service-card .card-title {
+  transition: color 0.18s;
+}
+
+a:hover .tdc-service-card .card-title {
+  color: var(--tdc-green-light) !important;
 }
 
 .tdc-portfolio-card {
@@ -219,6 +250,25 @@ footer a:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 8px 32px rgba(46, 125, 50, 0.13);
   border-color: var(--tdc-green-light);
+}
+
+/* Clickable portfolio card styling */
+a .tdc-portfolio-card {
+  cursor: pointer;
+}
+
+a .tdc-portfolio-card:hover {
+  transform: translateY(-8px) scale(1.025);
+  box-shadow: 0 12px 40px rgba(46, 125, 50, 0.15);
+  border-color: var(--tdc-green);
+}
+
+a .tdc-portfolio-card .card-title {
+  transition: color 0.18s;
+}
+
+a:hover .tdc-portfolio-card .card-title {
+  color: var(--tdc-green-light) !important;
 }
 
 .tdc-portfolio-img {
@@ -239,7 +289,8 @@ footer a:hover {
 
 @media (max-width: 991.98px) {
   .tdc-hero {
-    padding: 2rem 1rem;
+    padding: 2.5rem 1.5rem !important;
+    max-width: 90%;
   }
   .tdc-card,
   .tdc-service-card,
@@ -247,7 +298,7 @@ footer a:hover {
     padding: 1.2rem 1rem 1rem 1rem;
   }
   .hero-logo {
-    max-width: 240px;
+    max-width: 280px;
   }
 }
 
@@ -257,7 +308,8 @@ footer a:hover {
   }
   .tdc-hero {
     font-size: 1rem;
-    padding: 1.2rem 0.5rem;
+    padding: 2rem 1rem !important;
+    max-width: 95%;
   }
   .tdc-card,
   .tdc-service-card,
@@ -265,7 +317,8 @@ footer a:hover {
     padding: 1rem 0.7rem 0.7rem 0.7rem;
   }
   .hero-logo {
-    max-width: 200px;
+    max-width: 240px;
+    margin-bottom: 1.5rem;
   }
   .tdc-portfolio-img {
     height: 150px;
