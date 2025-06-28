@@ -13,19 +13,29 @@
   --tdc-green-light: #43a047;
   --tdc-green-gradient: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
   --tdc-bg-light: #f7faf7;
+  --tdc-bg-gradient: linear-gradient(135deg, #f7faf7 0%, #e8f5e8 20%, #f0f8f0 40%, #e3f2e3 60%, #f4f9f4 80%, #e8f5e8 100%);
   --tdc-bg-gray: #f3f4f6;
   --tdc-card-bg: #fff;
-  --tdc-card-shadow: 0 4px 24px rgba(46, 125, 50, 0.09);
+  --tdc-card-shadow: 0 6px 32px rgba(46, 125, 50, 0.12);
 }
 
 body {
   font-family: var(--font-base);
-  background: var(--tdc-bg-light);
+  background: linear-gradient(135deg, #f7faf7 0%, #e8f5e8 20%, #f0f8f0 40%, #e3f2e3 60%, #f4f9f4 80%, #e8f5e8 100%);
+  background-size: 200% 200%;
+  background-attachment: fixed;
+  animation: gradientShift 20s ease infinite;
   color: var(--color-text);
   margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .tdc-header {
@@ -143,16 +153,13 @@ button:hover, button:focus {
 }
 
 footer {
-  background: var(--color-dark);
-  color: var(--color-muted);
+  background: linear-gradient(135deg, #1b2e1b 0%, #2e5f2e 100%);
+  color: #fff;
   padding: 1.2rem 0;
   text-align: center;
   font-size: 1rem;
   margin-top: 2.5rem;
-  box-shadow: 0 -2px 8px rgba(31,41,55,0.06);
-
-  background: #1b2e1b;
-  color: #fff;
+  box-shadow: 0 -4px 16px rgba(31,41,55,0.15);
   width: 100%;
   margin-top: auto;
 }
