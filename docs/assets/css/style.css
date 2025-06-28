@@ -185,27 +185,32 @@ footer a:hover {
   margin-bottom: 2rem;
 }
 
+/* Service card styling for index page */
 .tdc-service-card {
   background: var(--tdc-card-bg);
-  border-radius: 1.1rem;
   border: 1px solid #e5e7eb;
   box-shadow: var(--tdc-card-shadow);
-  padding: 2rem 1.2rem 1.2rem 1.2rem;
+  border-radius: 1rem;
   transition: transform 0.18s, box-shadow 0.18s;
 }
-.tdc-service-card:hover {
-  transform: translateY(-6px) scale(1.025);
-  box-shadow: 0 8px 32px rgba(46, 125, 50, 0.13);
-  border-color: var(--tdc-green-light);
+
+.tdc-service-card .card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
 }
 
 .tdc-service-icon {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   background: #e8f5e9;
   border-radius: 50%;
-  padding: 7px;
-  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.07);
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.1);
+  object-fit: contain;
 }
 
 .tdc-service-icon-large {
@@ -214,7 +219,8 @@ footer a:hover {
   background: #e8f5e9;
   border-radius: 50%;
   padding: 15px;
-  box-shadow: 0 4px 16px rgba(46, 125, 50, 0.1);
+  box-shadow: 0 4px 16px rgba(46, 125, 50, 0.12);
+  object-fit: contain;
 }
 
 /* Clickable service card styling */
@@ -237,19 +243,22 @@ a:hover .tdc-service-card .card-title {
   color: var(--tdc-green-light) !important;
 }
 
+/* Portfolio card styling */
 .tdc-portfolio-card {
   background: var(--tdc-card-bg);
-  border-radius: 1.1rem;
   border: 1px solid #e5e7eb;
   box-shadow: var(--tdc-card-shadow);
+  border-radius: 1rem;
   transition: transform 0.18s, box-shadow 0.18s;
   overflow: hidden;
 }
 
-.tdc-portfolio-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 8px 32px rgba(46, 125, 50, 0.13);
-  border-color: var(--tdc-green-light);
+.tdc-portfolio-card .card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 /* Clickable portfolio card styling */
@@ -272,9 +281,13 @@ a:hover .tdc-portfolio-card .card-title {
 }
 
 .tdc-portfolio-img {
-  height: 200px;
-  object-fit: cover;
+  height: 180px;
+  object-fit: contain;
+  object-position: center;
+  background-color: #f8f9fa;
+  padding: 25px;
   border-radius: 0;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 @media (max-width: 600px) {
@@ -316,11 +329,27 @@ a:hover .tdc-portfolio-card .card-title {
   .tdc-portfolio-card {
     padding: 1rem 0.7rem 0.7rem 0.7rem;
   }
+  .tdc-service-card .card-body {
+    min-height: 180px;
+    padding: 1rem;
+  }
+  .tdc-service-icon {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+  }
+  .tdc-service-icon-large {
+    width: 70px;
+    height: 70px;
+    padding: 12px;
+  }
   .hero-logo {
     max-width: 240px;
     margin-bottom: 1.5rem;
   }
   .tdc-portfolio-img {
     height: 150px;
+    object-fit: contain;
+    padding: 15px;
   }
 }
