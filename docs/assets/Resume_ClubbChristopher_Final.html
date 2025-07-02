@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Clubb - Resume</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            margin: 0;
+            padding: 20px;
+            font-size: 11pt;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #2c5530;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .name {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #2c5530;
+            margin-bottom: 5px;
+        }
+        .title {
+            font-size: 12pt;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .contact {
+            font-size: 10pt;
+            color: #666;
+        }
+        .section {
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+        }
+        .section-title {
+            font-size: 13pt;
+            font-weight: bold;
+            color: #2c5530;
+            border-bottom: 1px solid #2c5530;
+            padding-bottom: 1px;
+            margin-bottom: 6px;
+            page-break-after: avoid;
+        }
+        .job-title {
+            font-weight: bold;
+            color: #2c5530;
+        }
+        .company {
+            font-weight: bold;
+        }
+        .duration {
+            font-style: italic;
+            color: #666;
+        }
+        .achievement {
+            margin-left: 15px;
+            margin-bottom: 1px;
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .skills-category {
+            flex: 1;
+            min-width: 180px;
+        }
+        .skills-category h4 {
+            color: #2c5530;
+            margin-bottom: 5px;
+            font-size: 11pt;
+        }
+        .two-column {
+            display: flex;
+            gap: 20px;
+        }
+        .column {
+            flex: 1;
+        }
+        .experience-item {
+            margin-bottom: 8px;
+            page-break-inside: avoid;
+        }
+        @media print {
+            body { 
+                margin: 0; 
+                padding: 12px; 
+                font-size: 10pt;
+                line-height: 1.25;
+            }
+            .section {
+                margin-bottom: 8px;
+            }
+            .header {
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+            }
+            .experience-item {
+                margin-bottom: 6px;
+            }
+            .page-break { 
+                page-break-before: always; 
+            }
+            .avoid-break {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name">Christopher Clubb</div>
+        <div class="title">Multilingual Cyber-OT Engineer | Systems Integration Specialist | Fortune 50 Proven</div>
+        <div class="contact">
+            chris.clubb321@gmail.com | (+1) 720-757-0947 | linkedin.com/in/cclubb321 | Hoboken, NJ
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PROFESSIONAL SUMMARY</div>
+        <p>Engineering and cybersecurity professional specializing in the convergence of operational technology (OT) and information technology (IT) across defense, manufacturing, and critical infrastructure sectors. Proven track record delivering multimillion-dollar automation projects for Fortune 50 manufacturers while maintaining zero major outages and exceptional safety records. Multilingual systems-thinking technologist who bridges mechanical, electrical, software, and human factors into secure, high-uptime solutions. TS/SCI cleared (Inactive) with extensive experience supporting senior leadership, classified communications, and mission-critical operations.</p>
+        
+        <p><strong>Core Competencies:</strong> Industrial Automation • Cybersecurity • Network Infrastructure • RF Systems • Safety & Compliance • Multilingual Technical Leadership • Process Optimization • Risk Management</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PROFESSIONAL EXPERIENCE</div>
+        
+        <div class="experience-item">
+            <div><span class="company">Shokudo Hoboken</span> — Hoboken, NJ</div>
+            <div><span class="job-title">Assistant General Manager</span> | <span class="duration">Oct 2024 – Present</span></div>
+            <div class="achievement">• Directed daily operations and compliance for high-volume Japanese restaurant serving 500+ guests weekly, implementing process improvements that increased table turnover by 12% and reduced customer wait times by 15%</div>
+            <div class="achievement">• Ensured 100% food safety compliance by executing ServSafe protocols and leading quarterly internal audits, resulting in zero violations during annual health inspections</div>
+            <div class="achievement">• Recruited, trained, and led a 15-member team, improving employee retention by 20% through structured operational briefings</div>
+            <div class="achievement">• Actively pursuing CISSP certification (expected 2025) to integrate advanced cybersecurity and enterprise risk management principles</div>
+        </div>
+
+        <div class="experience-item">
+            <div><span class="company">Automotion Parking Systems: STOPA Partner</span> — NYC Metropolitan Area</div>
+            <div><span class="job-title">Automated Systems Maintenance Manager</span> | <span class="duration">May 2024 – Oct 2024</span></div>
+            <div class="achievement">• Supervised maintenance and upgrades for 9 automated parking systems across NY, NJ, and D.C., increasing system uptime by 30%</div>
+            <div class="achievement">• Achieved 45% reduction in repair times by deploying predictive diagnostics and standardizing firmware upgrades</div>
+            <div class="achievement">• Led Agile-based cross-functional projects, accelerating system builds by 15% through biweekly sprints</div>
+            <div class="achievement">• Enhanced OSHA and NYC DOB compliance, reducing audit findings by 25%</div>
+        </div>
+
+        <div class="experience-item">
+            <div><span class="company">STOPA Anlagenbau GmbH: America</span> — North America (Remote & Travel)</div>
+            <div><span class="job-title">Software Engineer</span> | <span class="duration">Oct 2022 – May 2024</span></div>
+            <div class="achievement">• Commissioned automated storage systems for multimillion-dollar contracts with Fortune 50 clients including ABB, John Deere, Lincoln Electric, Crown Equipment, and TRUMPF America</div>
+            <div class="achievement">• Delivered LEAN training to 50+ operators using FactoryTalk and Siemens TIA Portal, boosting production efficiency by 75%</div>
+            <div class="achievement">• Provided remote monitoring and incident response for Fortune 50 clients, ensuring zero major outages</div>
+            <div class="achievement">• Developed OSHA/ISO-compliant risk mitigation plans, reducing operational risks by 20%</div>
+        </div>
+
+        <div class="experience-item">
+            <div><span class="company">Air Comm: Motorola Platinum Channel Partner</span> — Phoenix, AZ</div>
+            <div><span class="job-title">RF Software Engineer</span> | <span class="duration">Nov 2021 – Oct 2022</span></div>
+            <div class="achievement">• Optimized Motorola WAVE Radio deployments for 50+ commercial and government clients, contributing to 55% profit growth</div>
+            <div class="achievement">• Streamlined workflows with JIRA and Salesforce integration, reducing task completion times by 324%</div>
+            <div class="achievement">• Administered Motorola P25 systems for Arizona first responders, enhancing network reliability</div>
+            <div class="achievement">• Improved supply chain efficiency by 12% through standardized procurement processes</div>
+        </div>
+
+        <div class="experience-item">
+            <div><span class="company">US Forest Service</span> — Spokane Complex & Naches Ranger District, WA</div>
+            <div><span class="job-title">Wildland Firefighter (FFT2)</span> | <span class="duration">Summer Seasons 2018-2019</span></div>
+            <div class="achievement">• Served as Radio & Records Lead for wildland fire suppression crews, managing critical communications for Type 1 incidents (900+ overtime hours)</div>
+            <div class="achievement">• Maintained zero lost-time injuries while operating in high-risk environments including steep terrain and emergency response</div>
+            <div class="achievement">• Coordinated radio communications between ground crews, aerial resources, and incident command using ICS protocols</div>
+            <div class="achievement">• Documented incident activities and safety protocols using ICS-214 forms and After Action Reviews (AARs)</div>
+        </div>
+
+        <div class="experience-item">
+            <div><span class="company">United States Air Force</span> — Tampa, FL</div>
+            <div><span class="job-title">Client Systems Specialist, Cyber Transport Specialist, RF Transmissions Specialist</span> | <span class="duration">May 2011 – May 2014</span></div>
+            <div class="achievement">• Maintained TS/SCI clearance supporting NIPRNet/SIPRNet systems under DoD 8570 and DISA STIG standards for 4,000+ personnel</div>
+            <div class="achievement">• Delivered Tier III IT support for 6th AMC, CENTCOM, SOCOM, and JCSE, maintaining 99.9% system uptime</div>
+            <div class="achievement">• Communications Attaché to Secretary of the Air Force during USAF Corona South strategic planning conference</div>
+            <div class="achievement">• <strong>Award:</strong> 6th Air Mobility Command's Professional Development and Education Airman of the Year (2013)</div>
+        </div>
+    </div>
+
+    <div class="section avoid-break">
+        <div class="section-title">EDUCATION</div>
+        
+        <div style="margin-bottom: 10px;">
+            <div><span class="company">University of Colorado Boulder</span> — Boulder, CO</div>
+            <div><span class="job-title">Bachelor of Arts (Double Major)</span> — Linguistics & Asian Studies | <span class="duration">May 2018</span></div>
+            <div class="achievement">• Study Abroad: Sichuan University, Chengdu, China | Mandarin Language & TESOL</div>
+            <div class="achievement">• Award: Ambassador for International Exchange through Education — Sichuan University</div>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <div><span class="company">Defense Language Institute Foreign Language Center (DLIFLC)</span> — Monterey, CA</div>
+            <div><span class="job-title">Associate of Arts</span> — Urdu Language & South Asia Regional Studies | <span class="duration">Aug 2011</span></div>
+            <div class="achievement">• Award: 311th Training Squadron Honor Guard Captain</div>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <div><span class="company">United States Air Force Technical Training School</span> — Keesler AFB, MS</div>
+            <div><span class="job-title">Client Systems Specialist, Cyber Transport Specialist, RF Transmissions Specialist</span></div>
+            <div class="achievement">• Certifications: CompTIA A+, Network+, Security+, DoD 8570 TS/SCI</div>
+            <div class="achievement">• Award: Airman Leader Flight Chief (Yellow Rope)</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">CERTIFICATIONS & TECHNICAL SKILLS</div>
+        
+        <div class="skills-grid">
+            <div class="skills-category">
+                <h4>Security & Compliance:</h4>
+                • TS/SCI Clearance (Inactive)<br>
+                • DoD 8570/8140 Certified<br>
+                • CompTIA A+, Network+, Security+<br>
+                • ISC2 CertifiedCybersecurity<br>
+                • CISSP (In Progress - 2025)<br>
+                • OSHA 30-Hour Construction<br>
+                • NYC DOB Site Supervisor<br>
+                • ServSafe Manager
+            </div>
+            
+            <div class="skills-category">
+                <h4>Industrial Systems:</h4>
+                • Siemens Step7 PLC Engineer<br>
+                • Siemens TIA Portal Certified<br>
+                • Allen-Bradley FactoryTalk<br>
+                • SICK Safety Design<br>
+                • Motorola Radio Systems<br>
+                • Motorola P25 (Fire, EMS, Police)<br>
+                • Iridium Ground Station
+            </div>
+            
+            <div class="skills-category">
+                <h4>Networking & Cybersecurity:</h4>
+                • NIPRNet/SIPRNet Administration<br>
+                • TCP/IP • VLANs • DISA STIG<br>
+                • ISO Standards<br>
+                • Remote Monitoring Systems<br>
+                • SIEM/SOAR/SOC<br>
+                • Docker • VMware<br>
+                • Red Team/Blue Team • Kali Linux
+            </div>
+            
+            <div class="skills-category">
+                <h4>Emergency Services:</h4>
+                • US Forest Service FFT2 (Inactive)<br>
+                • ICS/NIMS Protocols<br>
+                • Emergency Communications<br>
+                • First Aid/CPR<br>
+                • Wildland Fire Suppression<br>
+                • Incident Documentation
+            </div>
+        </div>
+        
+        <div style="margin-top: 15px;">
+            <h4 style="color: #2c5530;">Programming & Tools:</h4>
+            Python • C/C++ • SQL • JavaScript • HTML • Siemens PLC Programming • GitHub • JIRA • SAP • Salesforce • AutoCAD • Microsoft 365 • Adobe Suite
+        </div>
+        
+        <div style="margin-top: 15px;">
+            <h4 style="color: #2c5530;">Languages:</h4>
+            🇺🇸 English (Native) • 🇩🇪 German (C2) • 🇮🇳 Hindi (C2) • 🇵🇰 Urdu (C2) • 🇪🇸 Spanish (C1) • 🇨🇳 Mandarin (A2) • 🇸🇦 Arabic (A1) • 🇸🇪 Swedish (A1)
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">LEADERSHIP & MILITARY SERVICE</div>
+        
+        <div style="margin-bottom: 10px;">
+            <div><span class="job-title">MacDill AFB | Base Honor Guard | Squadron Captain</span> — Tampa, FL | <span class="duration">Oct 2013 – May 2014</span></div>
+            <div class="achievement">• Led and trained a 40-member ceremonial unit, executing 65+ high-profile military ceremonies</div>
+        </div>
+        
+        <div style="margin-bottom: 10px;">
+            <div><span class="job-title">Keesler AFB | 2nd Air Force AETC | Airman Leader (Yellow Rope)</span> — Biloxi, MS | <span class="duration">Aug 2012 – Jan 2013</span></div>
+            <div class="achievement">• Demonstrated exceptional leadership qualities, leading a Flight of Airmen</div>
+        </div>
+        
+        <div style="margin-bottom: 10px;">
+            <div><span class="job-title">311th Training Squadron Honor Guard Captain</span> — Monterey, CA | <span class="duration">Jul 2011 – Aug 2012</span></div>
+            <div class="achievement">• Directed a 35-member Honor Guard, delivering full military honors at 20+ ceremonies</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">ACHIEVEMENTS & AWARDS</div>
+        <div class="two-column">
+            <div class="column">
+                • Professional Development Airman of the Year (2013) — 6th Air Mobility Command<br>
+                • Communications Attaché — Secretary of the Air Force, USAF Corona South Conference (2013)<br>
+                • Ambassador for International Exchange — Sichuan University, China (2017)<br>
+                • Honor Guard Captain — 311th Training Squadron, DLIFLC<br>
+            </div>
+            <div class="column">
+                • Airman Leader Flight Chief (Yellow Rope) — Keesler AFB<br>
+                • Zero major outages across Fortune 50 manufacturing clients<br>
+                • Zero lost-time injuries across high-risk environments<br>
+                • 99.9% system uptime for mission-critical DoD communications<br>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">KEY ACCOMPLISHMENTS</div>
+        • Zero major outages across Fortune 50 manufacturing clients (General Motors, John Deere, ABB, TRUMPF America, Greenheck)<br>
+        • 30% increase in PLC system uptime with 45% reduction in repair times through predictive diagnostics<br>
+        • 75% increase in production efficiency through LEAN training and standardized processes<br>
+        • 324% reduction in task completion times through workflow optimization and system integration<br>
+        • Zero lost-time injuries across high-risk environments (wildland firefighting, industrial automation, chemical handling)<br>
+        • Multilingual technical support for international Fortune 50 operations and global engineering teams<br>
+        • 99.9% system uptime for mission-critical DoD communications serving 4,000+ personnel
+    </div>
+</body>
+</html>

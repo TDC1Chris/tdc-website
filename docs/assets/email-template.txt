@@ -1,11 +1,42 @@
-Hello, Hola, Namaste, Guten Tag, Hallo, Salam, Hej!
+Subject: [Cybersecurity/Automation/IT Infrastructure] Consultation Request
 
-I am looking for some information from you and have some questions about [  ]
+Dear Christopher,
 
-I would like you to reply to my questions by [  ] day and [  ] time.
+I am reaching out regarding Total Design Consulting's services for our [cybersecurity/industrial automation/network infrastructure] needs.
 
-Contact me at [  ] 
+Our company/organization: [Company Name]
+Industry: [Manufacturing/Government/Technology/Other]
+Location: [City, State]
 
-Thanks, Danke, Tack, Gracias, Dhanyavaad, Ba Tashkar, Shkran!
+Current challenge or project:
+[Brief description of what you're looking to accomplish or problems you're facing]
 
-- Calvin and Hobbes 
+Specific areas of interest:
+☐ Cybersecurity assessment and implementation
+☐ Industrial automation and PLC programming
+☐ Network infrastructure design and security
+☐ Safety and compliance consulting
+☐ Other: [Please specify]
+
+Timeline: [When do you need this completed?]
+Budget range: [If comfortable sharing]
+
+I would appreciate the opportunity to discuss how your Fortune 50-proven expertise might help address our operational needs.
+
+Preferred contact method:
+☐ Phone call
+☐ Video conference
+☐ On-site meeting
+☐ Email discussion
+
+Best times to reach me: [Days/times]
+My direct contact: [Your phone/email]
+
+Thank you for your time, and I look forward to hearing from you.
+
+Best regards,
+[Your Name]
+[Your Title]
+[Your Company]
+[Your Phone Number]
+[Your Email Address]
