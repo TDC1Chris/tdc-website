@@ -5,6 +5,25 @@ All notable changes to the Total Design Consulting website will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2025-07-02 - Real-World Testimonials Integration
+
+### Added
+- **Authentic customer testimonials** from real AGM restaurant management experience
+- **Professional skills translation section** connecting hospitality excellence to consulting competencies
+- **Star rating displays** (5-star reviews) with professional skill badges
+- **Leadership competency mapping** showing transferable business skills
+
+### Enhanced
+- **Testimonials page redesign** with "Leadership Testimonials" branding
+- **Three-column responsive layout** showcasing different skill areas
+- **Skills demonstration** through real customer feedback on problem-solving, service delivery, and team management
+- **Professional context** explaining how hospitality management skills translate to consulting excellence
+
+### Changed
+- **Page title updated** from "Testimonials" to "Leadership Testimonials"
+- **Content strategy shift** from placeholder to authentic, verifiable customer feedback
+- **Visual presentation** with skill badges: Leadership Excellence, Operational Excellence, Team Leadership
+
 ## [1.1.0] - 2025-07-02 - Link Integrity & Performance Updates
 
 ### Added
