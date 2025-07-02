@@ -5,6 +5,25 @@ All notable changes to the Total Design Consulting website will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2025-07-02 - About Me Page Navigation Integration
+
+### Added
+- **Complete "About Me" page integration** with comprehensive personal and professional background
+- **Navigation menu updates** across all pages to include "About Me" link positioned after "Home"
+- **Consistent navigation structure** ensuring "About Me" is accessible from every page
+
+### Enhanced
+- **Site navigation completeness** with all major pages now properly linked
+- **User experience improvement** allowing visitors to learn about Christopher Clubb's background
+- **Professional credibility** through detailed personal story, experience, and credentials showcase
+
+### Features
+- **Professional biography** with global experience and cultural background
+- **Language competency display** with 8 languages and cultural context
+- **Career timeline** from Fortune 50 companies to current restaurant management
+- **Personal interests section** showing sustainability focus and hands-on approach
+- **Professional values explanation** emphasizing integrity and authentic relationships
+
 ## [1.2.0] - 2025-07-02 - Real-World Testimonials Integration
 
 ### Added
