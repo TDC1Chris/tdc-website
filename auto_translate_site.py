@@ -1,9 +1,47 @@
+#!/usr/bin/env python3
+"""
+NATO Language Translation System
+Copyright (c) 2025 Total Design Consulting LLC. All Rights Reserved.
+
+PROPRIETARY AND CONFIDENTIAL SOFTWARE
+=====================================
+
+This software is the proprietary and confidential property of Total Design Consulting LLC.
+All rights reserved. No part of this software may be reproduced, distributed, or 
+transmitted in any form or by any means, including photocopying, recording, or other 
+electronic or mechanical methods, without the prior written permission of Total Design 
+Consulting LLC, except in the case of brief quotations embodied in critical reviews 
+and certain other noncommercial uses permitted by copyright law.
+
+LICENSING NOTICE:
+- This software is licensed for use by authorized clients of Total Design Consulting LLC only
+- Unauthorized copying, modification, distribution, or use is strictly prohibited
+- Reverse engineering, decompilation, or disassembly is prohibited
+- This software is provided "as is" without warranty of any kind
+
+For licensing inquiries and permissions, contact:
+Total Design Consulting LLC
+Email: licensing@totaldesignconsulting.com
+Website: https://totaldesignconsulting.com
+
+NATO Language Translation System v1.0.0
+Developed by: Christopher Clubb, Multilingual Cyber-OT Engineer
+Technical Specifications: 27 Languages, 30 NATO Countries, AI-Powered with Human Verification
+Security Features: Cost controls, API validation, rate limiting, error handling
+"""
+
 import os
 import time
 from openai import OpenAI
 from bs4 import BeautifulSoup
 from pathlib import Path
 from dotenv import load_dotenv
+
+# Proprietary software identification
+SOFTWARE_NAME = "NATO Language Translation System"
+SOFTWARE_VERSION = "1.0.0"
+COPYRIGHT_NOTICE = "Copyright (c) 2025 Total Design Consulting LLC. All Rights Reserved."
+LICENSE_TYPE = "Proprietary - Licensed Software"
 
 load_dotenv()
 
@@ -37,8 +75,39 @@ def check_api_key_security():
     print("✅ SECURITY: API key found and appears valid")
     return True
 
-def estimate_translation_cost(num_languages, num_files):
-    """Estimate the cost of translation before running."""
+def check_software_license():
+    """
+    Proprietary Software License Verification
+    Total Design Consulting LLC - All Rights Reserved
+    """
+    print("=" * 70)
+    print(f"🏢 {SOFTWARE_NAME} v{SOFTWARE_VERSION}")
+    print(f"📋 {COPYRIGHT_NOTICE}")
+    print(f"🔐 License Type: {LICENSE_TYPE}")
+    print("=" * 70)
+    print("⚠️  PROPRIETARY SOFTWARE NOTICE:")
+    print("   This software is licensed for authorized use only.")
+    print("   Unauthorized copying, distribution, or modification is prohibited.")
+    print("   For licensing inquiries: licensing@totaldesignconsulting.com")
+    print("=" * 70)
+    
+    # License compliance check
+    license_file = Path(".tdc_license")
+    if not license_file.exists():
+        print("❌ LICENSE: No valid license file found!")
+        print("   Contact Total Design Consulting LLC for licensing.")
+        print("   This software requires a valid license to operate.")
+        return False
+    
+    return True
+
+def estimate_translation_cost(num_languages, num_files=7):
+    """
+    Estimate OpenAI API costs for translation operation.
+    
+    PROPRIETARY ALGORITHM - Total Design Consulting LLC
+    Cost estimation methodology is proprietary and confidential.
+    """
     # Rough estimation based on average content
     translations_per_file = 50  # Average translatable elements per page
     total_translations = num_languages * num_files * translations_per_file
@@ -408,11 +477,21 @@ def create_language_index():
 if __name__ == "__main__":
     import sys
     
+    # Proprietary Software License Check
+    if not check_software_license():
+        print("\n❌ SOFTWARE LICENSE REQUIRED")
+        print("   This is proprietary software owned by Total Design Consulting LLC.")
+        print("   Contact licensing@totaldesignconsulting.com for authorization.")
+        sys.exit(1)
+    
     # Parse command line arguments
     if len(sys.argv) > 1:
         if sys.argv[1] == "--help":
-            print("""
-NATO Language Translation Tool
+            print(f"""
+{SOFTWARE_NAME} v{SOFTWARE_VERSION}
+{COPYRIGHT_NOTICE}
+
+PROPRIETARY SOFTWARE - AUTHORIZED USE ONLY
 
 Usage:
     python auto_translate_site.py                    # Translate all languages
@@ -424,6 +503,8 @@ Supported NATO Languages:
 """)
             for code, name in NATO_LANGUAGES.items():
                 print(f"    {code}: {name}")
+            print(f"\nTotal Design Consulting LLC - Proprietary Software")
+            print(f"For licensing: licensing@totaldesignconsulting.com")
             sys.exit(0)
             
         elif sys.argv[1] == "--create-index":

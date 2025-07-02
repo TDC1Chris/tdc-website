@@ -5,6 +5,32 @@ All notable changes to the Total Design Consulting website will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2025-07-02 - Link Integrity & Performance Updates
+
+### Added
+- **Performance page** (`performance.html`) with benchmarks and disclaimers
+- **Complete anchor sections** in legal-terms-conditions.html (#privacy, #trademarks, #cookies, #security, #ethics)
+- **IP protection documentation** for proprietary translation technology
+- **Enhanced 404 error page** with corrected asset references
+
+### Fixed
+- **All broken links resolved** - comprehensive scan and repair of navigation links
+- **Resume file path corrections** - all footer links now point to correct `Resume_Christopher-Clubb.pdf`
+- **Missing anchor IDs** - added `#international-service` to services.html
+- **Footer link text consistency** - performance links now show "performance" instead of full URL
+- **Asset references** - replaced missing icon-globe.png with existing logo in 404.html
+
+### Enhanced
+- **Complete link integrity verification** across all 6 main pages (index, services, portfolio, contact, testimonials, legal)
+- **Footer navigation standardization** with Intel-style professional structure
+- **Legal compliance improvements** with proper anchor navigation for all footer legal links
+
+### Technical
+- **Zero broken internal links** confirmed across entire site
+- **All anchor sections functional** for footer navigation
+- **File reference validation** completed for all assets and downloads
+- **External link verification** for CDN and social media references
+
 ## [1.0.0] - 2025-07-02 - Production Ready Release 🎉
 
 ### Added
