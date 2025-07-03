@@ -5,6 +5,44 @@ All notable changes to the Total Design Consulting website will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2025-07-03 - Footer Modernization & Branding Enhancement
+
+### Enhanced
+- **Simplified footer design** across all pages with minimalistic, professional layout
+- **Brand integration** with green regal logo in footer for consistent visual identity
+- **Copyright date range** updated to show "2023-2025" indicating operational history
+- **Responsive footer layout** optimized for all screen sizes and devices
+
+### Changed
+- **Footer structure** from verbose multi-column layout to clean single-row design:
+  - Left side: Logo + copyright notice
+  - Right side: Essential links (Email, LinkedIn, Contact, Legal, Site Map)
+- **Reduced footer height** from ~200px to ~60px for better space utilization
+- **Streamlined navigation** with only essential links maintained
+- **Visual balance** achieved with logo placement and aligned content
+
+### Added
+- **Green regal logo** (green-logo-full-regal.png) integrated into footer branding
+- **Page-specific email templates** maintained for each service area
+- **Consistent link structure** across all 14+ HTML pages
+
+### Technical
+- **Bootstrap utility classes** optimized for responsive footer layout
+- **Flexbox implementation** for proper alignment and spacing
+- **Image sizing** standardized at 32px height for optimal visual balance
+- **Cross-page consistency** ensuring identical footer implementation
+
+### User Experience
+- **Improved visual hierarchy** with less footer distraction from main content
+- **Faster page scanning** with simplified navigation options
+- **Professional appearance** matching modern web design standards
+- **Brand recognition** enhanced through strategic logo placement
+
+### Maintenance
+- **Code cleanup** removing verbose footer content across all pages
+- **Consistency enforcement** ensuring uniform footer implementation
+- **Version control** proper documentation and change tracking
+
 ## [1.4.0] - 2025-07-02 - Homepage Layout Refinement & Vision/Mission Enhancement
 
 ### Enhanced

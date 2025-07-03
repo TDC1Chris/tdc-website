@@ -8,7 +8,44 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/color-logo-favicon.png">
   <link rel="apple-touch-icon" href="assets/images/color-logo-favicon.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <link href="assets/css/style.css" rel="stylesheet"/>
+  <style>
+    .tdc-service-card {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .tdc-service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+      border-color: #198754 !important;
+    }
+    .tdc-service-card a {
+      text-decoration: none !important;
+      color: inherit !important;
+    }
+    .tdc-service-card a .card-text,
+    .tdc-service-card a p,
+    .tdc-service-card a .lead {
+      color: #495057 !important;
+    }
+    .tdc-service-card a h1, 
+    .tdc-service-card a h2, 
+    .tdc-service-card a h3, 
+    .tdc-service-card a h4, 
+    .tdc-service-card a h5 {
+      color: #198754 !important;
+    }
+  </style>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
 </head>
 <body>
   <header class="tdc-header py-3 mb-4">
@@ -37,12 +74,23 @@
   <main>
     <section class="container mb-5 pt-4">
       <div class="text-center">
-        <h1 class="display-4 fw-bold text-success mb-3">Our Services</h1>
-        <p class="lead text-muted mb-0">
-          Discover how we help international organizations secure, automate, and deliver with confidence worldwide.
+        <h1 class="display-4 fw-bold text-success mb-3">Expert Engineering Services</h1>
+        <p class="lead text-muted mb-4">
+          As an independent consulting expert, I provide focused, personalized engineering solutions with the agility and direct access that large firms cannot match. Your project gets my full attention and senior-level expertise from day one.
         </p>
-        <p class="text-muted mt-2 mb-0">
-          <small><strong>Global Support in 8 Languages:</strong> 🇺🇸 English • 🇩🇪 German • 🇮🇳 Hindi • 🇵🇰 Urdu • 🇪🇸 Spanish • 🇨🇳 Mandarin • 🇸🇦 Arabic • 🇸🇪 Swedish</small>
+        
+        <!-- High-contrast CTA -->
+        <div class="mb-4">
+          <a href="https://calendly.com/totaldesignconsulting/service-consultation" target="_blank" class="btn btn-success btn-lg px-5 py-3 me-3 shadow">
+            <i class="fas fa-calendar-check me-2"></i>Schedule Consultation
+          </a>
+          <a href="portfolio.html" class="btn btn-outline-success btn-lg px-4 py-3">
+            View Case Studies
+          </a>
+        </div>
+        
+        <p class="text-muted mb-0">
+          <small>Serving Hoboken, NJ • Greater NYC Metro Area • Global Remote Solutions</small>
         </p>
       </div>
     </section>
@@ -51,94 +99,102 @@
       <div class="row g-4">
         <!-- Cybersecurity Service -->
         <div class="col-12" id="cybersecurity-service">
-          <div class="card tdc-service-card h-100 shadow-sm">
-            <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col-md-2 text-center">
-                  <img src="assets/images/icon-consulting-cybersecurity.png" alt="Cybersecurity" class="mb-3 mb-md-0 tdc-service-icon-large"/>
-                </div>
-                <div class="col-md-10">
-                  <h3 class="card-title mb-3 text-success">Cybersecurity Consulting</h3>
-                  <p class="card-text mb-3">Comprehensive risk assessments, Zero Trust architecture, compliance frameworks, and incident response planning tailored to your business needs. We help organizations protect their digital assets against evolving threats while maintaining operational efficiency.</p>
-                  <ul class="list-unstyled mb-0">
-                    <li class="mb-2"><i class="text-success">✓</i> Risk Assessment and Vulnerability Management</li>
-                    <li class="mb-2"><i class="text-success">✓</i> Zero Trust Architecture Implementation</li>
-                    <li class="mb-2"><i class="text-success">✓</i> Compliance and Regulatory Frameworks</li>
-                    <li class="mb-2"><i class="text-success">✓</i> Incident Response Planning</li>
-                  </ul>
+          <a href="cybersecurity-consulting.html" class="text-decoration-none">
+            <div class="card tdc-service-card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-md-2 text-center">
+                    <img src="assets/images/icon-consulting-cybersecurity.png" alt="Cybersecurity" class="mb-3 mb-md-0 tdc-service-icon-large"/>
+                  </div>
+                  <div class="col-md-10">
+                    <h3 class="card-title mb-3 text-success">Cybersecurity Consulting</h3>
+                    <p class="card-text mb-3 text-dark">Comprehensive risk assessments, Zero Trust architecture, compliance frameworks, and incident response planning tailored to your business needs. We help organizations protect their digital assets against evolving threats while maintaining operational efficiency.</p>
+                    <ul class="list-unstyled mb-0">
+                      <li class="mb-2"><i class="text-success">✓</i> Risk Assessment and Vulnerability Management</li>
+                      <li class="mb-2"><i class="text-success">✓</i> Zero Trust Architecture Implementation</li>
+                      <li class="mb-2"><i class="text-success">✓</i> Compliance and Regulatory Frameworks</li>
+                      <li class="mb-2"><i class="text-success">✓</i> Incident Response Planning</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Network Infrastructure Service -->
         <div class="col-12" id="network-service">
-          <div class="card tdc-service-card h-100 shadow-sm">
-            <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col-md-2 text-center">
-                  <img src="assets/images/icon-consulting-it.png" alt="Network Infrastructure" class="mb-3 mb-md-0 tdc-service-icon-large"/>
-                </div>
-                <div class="col-md-10">
-                  <h3 class="card-title mb-3 text-success">Network Infrastructure</h3>
-                  <p class="card-text mb-3">Design, implementation, and management of robust IT/OT networks, secure remote access solutions, and high-availability systems. We bridge the gap between traditional IT and operational technology for seamless integration.</p>
-                  <ul class="list-unstyled mb-0">
-                    <li class="mb-2"><i class="text-success">✓</i> IT/OT Network Integration and Segmentation</li>
-                    <li class="mb-2"><i class="text-success">✓</i> Secure Remote Access Solutions</li>
-                    <li class="mb-2"><i class="text-success">✓</i> High Availability System Design</li>
-                    <li class="mb-2"><i class="text-success">✓</i> Network Monitoring and Management</li>
-                  </ul>
+          <a href="network-infrastructure.html" class="text-decoration-none">
+            <div class="card tdc-service-card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-md-2 text-center">
+                    <img src="assets/images/icon-consulting-it.png" alt="Network Infrastructure" class="mb-3 mb-md-0 tdc-service-icon-large"/>
+                  </div>
+                  <div class="col-md-10">
+                    <h3 class="card-title mb-3 text-success">Network Infrastructure</h3>
+                    <p class="card-text mb-3 text-dark">Design, implementation, and management of robust IT/OT networks, secure remote access solutions, and high-availability systems. We bridge the gap between traditional IT and operational technology for seamless integration.</p>
+                    <ul class="list-unstyled mb-0">
+                      <li class="mb-2"><i class="text-success">✓</i> IT/OT Network Integration and Segmentation</li>
+                      <li class="mb-2"><i class="text-success">✓</i> Secure Remote Access Solutions</li>
+                      <li class="mb-2"><i class="text-success">✓</i> High Availability System Design</li>
+                      <li class="mb-2"><i class="text-success">✓</i> Network Monitoring and Management</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Industrial Automation Service -->
         <div class="col-12" id="automation-service">
-          <div class="card tdc-service-card h-100 shadow-sm">
-            <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col-md-2 text-center">
-                  <img src="assets/images/icon-plc-engineering.png" alt="Industrial Automation" class="mb-3 mb-md-0 tdc-service-icon-large"/>
-                </div>
-                <div class="col-md-10">
-                  <h3 class="card-title mb-3 text-success">Industrial Automation</h3>
-                  <p class="card-text mb-3">PLC, HMI, SCADA, and process control solutions for modern industry, ensuring efficiency, reliability, and scalability. We modernize legacy systems while implementing cutting-edge automation technologies.</p>
-                  <ul class="list-unstyled mb-0">
-                    <li class="mb-2"><i class="text-success">✓</i> PLC Programming and System Integration</li>
-                    <li class="mb-2"><i class="text-success">✓</i> HMI and SCADA Development</li>
-                    <li class="mb-2"><i class="text-success">✓</i> Process Control and Optimization</li>
-                    <li class="mb-2"><i class="text-success">✓</i> Legacy System Modernization</li>
-                  </ul>
+          <a href="industrial-automation.html" class="text-decoration-none">
+            <div class="card tdc-service-card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-md-2 text-center">
+                    <img src="assets/images/icon-plc-engineering.png" alt="Industrial Automation" class="mb-3 mb-md-0 tdc-service-icon-large"/>
+                  </div>
+                  <div class="col-md-10">
+                    <h3 class="card-title mb-3 text-success">Industrial Automation</h3>
+                    <p class="card-text mb-3 text-dark">PLC, HMI, SCADA, and process control solutions for modern industry, ensuring efficiency, reliability, and scalability. We modernize legacy systems while implementing cutting-edge automation technologies.</p>
+                    <ul class="list-unstyled mb-0">
+                      <li class="mb-2"><i class="text-success">✓</i> PLC Programming and System Integration</li>
+                      <li class="mb-2"><i class="text-success">✓</i> HMI and SCADA Development</li>
+                      <li class="mb-2"><i class="text-success">✓</i> Process Control and Optimization</li>
+                      <li class="mb-2"><i class="text-success">✓</i> Legacy System Modernization</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
 
         <!-- Safety and Compliance Service -->
         <div class="col-12" id="safety-service">
-          <div class="card tdc-service-card h-100 shadow-sm">
-            <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col-md-2 text-center">
-                  <img src="assets/images/icon-consulting-safety.png" alt="Safety and Compliance" class="mb-3 mb-md-0 tdc-service-icon-large"/>
-                </div>
-                <div class="col-md-10">
-                  <h3 class="card-title mb-3 text-success">Safety and Compliance</h3>
-                  <p class="card-text mb-3">Workplace safety standards, regulatory compliance solutions, and risk management frameworks. We help organizations maintain the highest safety standards while meeting industry regulations and best practices.</p>
-                  <ul class="list-unstyled mb-0">
-                    <li class="mb-2"><i class="text-success">✓</i> Safety System Design and Implementation</li>
-                    <li class="mb-2"><i class="text-success">✓</i> Regulatory Compliance Assessment</li>
-                    <li class="mb-2"><i class="text-success">✓</i> Risk Management and Mitigation</li>
-                    <li class="mb-2"><i class="text-success">✓</i> Safety Training and Documentation</li>
-                  </ul>
+          <a href="safety-compliance.html" class="text-decoration-none">
+            <div class="card tdc-service-card h-100 shadow-sm">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-md-2 text-center">
+                    <img src="assets/images/icon-consulting-safety.png" alt="Safety and Compliance" class="mb-3 mb-md-0 tdc-service-icon-large"/>
+                  </div>
+                  <div class="col-md-10">
+                    <h3 class="card-title mb-3 text-success">Safety and Compliance</h3>
+                    <p class="card-text mb-3 text-dark">Workplace safety standards, regulatory compliance solutions, and risk management frameworks. We help organizations maintain the highest safety standards while meeting industry regulations and best practices.</p>
+                    <ul class="list-unstyled mb-0">
+                      <li class="mb-2"><i class="text-success">✓</i> Safety System Design and Implementation</li>
+                      <li class="mb-2"><i class="text-success">✓</i> Regulatory Compliance Assessment</li>
+                      <li class="mb-2"><i class="text-success">✓</i> Risk Management and Mitigation</li>
+                      <li class="mb-2"><i class="text-success">✓</i> Safety Training and Documentation</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -147,8 +203,9 @@
     <section class="container mb-5" id="international-service">
       <div class="row">
         <div class="col-12">
-          <div class="card tdc-service-card h-100 shadow-sm border-success">
-            <div class="card-body">
+          <a href="translation-technology.html" class="text-decoration-none">
+            <div class="card tdc-service-card h-100 shadow-sm border-success">
+              <div class="card-body">
               <div class="row align-items-center">
                 <div class="col-md-2">
                   <div class="row g-2">
@@ -217,7 +274,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -226,7 +283,7 @@
     <section class="container mb-5">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-center text-success mb-4">Automation & Custom Solutions</h2>
+          <h2 class="text-center text-success mb-4">Software Automation & Custom Scripting Solutions</h2>
           <p class="text-center text-muted mb-4">
             Leveraging programming expertise to create custom automation solutions that streamline operations and expand market reach.
           </p>
@@ -234,70 +291,7 @@
       </div>
       
       <div class="row g-4">
-        <!-- Featured: NATO Translation System -->
-        <div class="col-lg-8">
-          <div class="card tdc-service-card h-100 shadow-sm border-success">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-8">
-                  <h4 class="text-success mb-3">🌍 Proprietary Translation Technology™</h4>
-                  <p class="card-text mb-3">
-                    Custom-developed NATO language translation software that creates human-confirmed, professional-quality 
-                    multilingual websites for international business expansion. Available through licensing agreements.
-                  </p>
-                  
-                  <div class="row g-3 mb-3">
-                    <div class="col-md-6">
-                      <h6 class="text-muted small mb-2">Proprietary Features:</h6>
-                      <ul class="list-unstyled small">
-                        <li class="mb-1">• <strong>27 Languages:</strong> Complete NATO country coverage</li>
-                        <li class="mb-1">• <strong>Licensed Software:</strong> Proprietary technology with enterprise support</li>
-                        <li class="mb-1">• <strong>Quality Assurance:</strong> Human-confirmed accuracy</li>
-                        <li class="mb-1">• <strong>Smart Processing:</strong> Preserves technical terminology</li>
-                      </ul>
-                    </div>
-                    <div class="col-md-6">
-                      <h6 class="text-muted small mb-2">Business Benefits:</h6>
-                      <ul class="list-unstyled small">
-                        <li class="mb-1">• <strong>Instant Market Access:</strong> 30 international markets</li>
-                        <li class="mb-1">• <strong>Professional Quality:</strong> Human-verified communications</li>
-                        <li class="mb-1">• <strong>Competitive Advantage:</strong> Proprietary technology reduces costs 70-90%</li>
-                        <li class="mb-1">• <strong>Licensed Solution:</strong> Enterprise software with support</li>
-                      </ul>
-                    </div>
-                  </div>
-                  
-                  <div class="d-flex flex-wrap gap-2">
-                    <span class="badge bg-success me-1">Proprietary Software</span>
-                    <span class="badge bg-secondary me-1">Human-Verified</span>
-                    <span class="badge bg-secondary me-1">Licensed Technology</span>
-                    <span class="badge bg-secondary me-1">Enterprise Support</span>
-                    <span class="badge bg-secondary">27 Languages</span>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="text-center">
-                    <div style="font-size: 2.5rem;" class="mb-2">🇺🇳</div>
-                    <h6 class="text-success">NATO Standards</h6>
-                    <div class="small text-muted mb-3">
-                      <div class="row g-1">
-                        <div class="col-3">🇩🇪</div><div class="col-3">🇫🇷</div><div class="col-3">🇪🇸</div><div class="col-3">🇮🇹</div>
-                        <div class="col-3">🇳🇱</div><div class="col-3">🇵🇱</div><div class="col-3">🇹🇷</div><div class="col-3">🇬🇷</div>
-                      </div>
-                      <small class="text-muted"><em>+19 more</em></small>
-                    </div>
-                    <div class="small">
-                      <strong class="text-success">Real Project</strong><br>
-                      <em>Production-ready system</em>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Additional Automation Services -->
+        <!-- Process Automation -->
         <div class="col-lg-4">
           <div class="card tdc-service-card h-100 shadow-sm">
             <div class="card-body text-center">
@@ -305,21 +299,65 @@
               <h5 class="text-success mb-3">Process Automation</h5>
               <ul class="list-unstyled text-start">
                 <li class="mb-2"><i class="text-success">✓</i> Custom Python scripts for data processing</li>
-                <li class="mb-2"><i class="text-success">✓</i> API integration and workflow automation</li>
-                <li class="mb-2"><i class="text-success">✓</i> Report generation and monitoring systems</li>
-                <li class="mb-2"><i class="text-success">✓</i> Database synchronization and migration</li>
-                <li class="mb-2"><i class="text-success">✓</i> Security validation and compliance checks</li>
+                <li class="mb-2"><i class="text-success">✓</i> Automated file handling and batch operations</li>
+                <li class="mb-2"><i class="text-success">✓</i> Legacy system integration and modernization</li>
+                <li class="mb-2"><i class="text-success">✓</i> Document generation and template automation</li>
+                <li class="mb-2"><i class="text-success">✓</i> Email automation and notification systems</li>
               </ul>
               <div class="mt-3">
                 <span class="badge bg-secondary me-1">Python</span>
-                <span class="badge bg-secondary me-1">APIs</span>
+                <span class="badge bg-secondary me-1">PowerShell</span>
                 <span class="badge bg-secondary">Scripting</span>
               </div>
             </div>
           </div>
         </div>
+         
+        <!-- Business Intelligence -->
+        <div class="col-lg-4">
+          <div class="card tdc-service-card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <img src="assets/images/icon-consulting-it.png" alt="Business Intelligence" class="mb-3" style="height: 64px;">
+              <h5 class="text-success mb-3">Business Intelligence</h5>
+              <ul class="list-unstyled text-start">
+                <li class="mb-2"><i class="text-success">✓</i> Interactive Power BI dashboards</li>
+                <li class="mb-2"><i class="text-success">✓</i> Executive reporting and KPI tracking</li>
+                <li class="mb-2"><i class="text-success">✓</i> Data warehouse design and ETL processes</li>
+                <li class="mb-2"><i class="text-success">✓</i> Financial modeling and forecasting</li>
+                <li class="mb-2"><i class="text-success">✓</i> Real-time performance monitoring</li>
+              </ul>
+              <div class="mt-3">
+                <span class="badge bg-secondary me-1">Power BI</span>
+                <span class="badge bg-secondary me-1">SQL</span>
+                <span class="badge bg-secondary">Excel</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Integration -->
+        <div class="col-lg-4">
+          <div class="card tdc-service-card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <img src="assets/images/icon-consulting-cybersecurity.png" alt="System Integration" class="mb-3" style="height: 64px;">
+              <h5 class="text-success mb-3">System Integration</h5>
+              <ul class="list-unstyled text-start">
+                <li class="mb-2"><i class="text-success">✓</i> REST API development and integration</li>
+                <li class="mb-2"><i class="text-success">✓</i> Database synchronization and migration</li>
+                <li class="mb-2"><i class="text-success">✓</i> Cloud platform connectivity (AWS, Azure)</li>
+                <li class="mb-2"><i class="text-success">✓</i> Third-party software integration</li>
+                <li class="mb-2"><i class="text-success">✓</i> Enterprise workflow orchestration</li>
+              </ul>
+              <div class="mt-3">
+                <span class="badge bg-secondary me-1">APIs</span>
+                <span class="badge bg-secondary me-1">Cloud</span>
+                <span class="badge bg-secondary">Integration</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      
+
       <div class="row mt-4">
         <div class="col-12">
           <div class="text-center">
@@ -333,86 +371,22 @@
     </section>
   </main>
 
-  <footer class="tdc-footer text-white py-5 mt-auto">
+  <footer class="tdc-footer text-white py-3 mt-auto">
     <div class="container">
-      <!-- Main Footer Navigation -->
-      <div class="row g-4 mb-4">
-        <div class="col-md-3">
-          <h6 class="text-white mb-3">Company</h6>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Company Overview</a></li>
-            <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">Contact TDC</a></li>
-            <li class="mb-2"><a href="testimonials.html" class="text-white-50 text-decoration-none">Client Success</a></li>
-            <li class="mb-2"><a href="portfolio.html" class="text-white-50 text-decoration-none">Portfolio</a></li>
-            <li class="mb-2"><a href="assets/Resume_Christopher-Clubb.pdf" class="text-white-50 text-decoration-none">Leadership</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-md-3">
-          <h6 class="text-white mb-3">Services</h6>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="services.html#cybersecurity-service" class="text-white-50 text-decoration-none">Cybersecurity</a></li>
-            <li class="mb-2"><a href="services.html#network-service" class="text-white-50 text-decoration-none">Network Infrastructure</a></li>
-            <li class="mb-2"><a href="services.html#automation-service" class="text-white-50 text-decoration-none">Industrial Automation</a></li>
-            <li class="mb-2"><a href="services.html#safety-service" class="text-white-50 text-decoration-none">Safety & Compliance</a></li>
-            <li class="mb-2"><a href="services.html#international-service" class="text-white-50 text-decoration-none">International Support</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-md-3">
-          <h6 class="text-white mb-3">Technology</h6>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="portfolio.html#translation-automation" class="text-white-50 text-decoration-none">Translation Technology™</a></li>
-            <li class="mb-2"><a href="services.html" class="text-white-50 text-decoration-none">Proprietary Software</a></li>
-            <li class="mb-2"><a href="mailto:licensing@totaldesignconsulting.com" class="text-white-50 text-decoration-none">Technology Licensing</a></li>
-            <li class="mb-2"><a href="portfolio.html" class="text-white-50 text-decoration-none">Innovation Showcase</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-md-3">
-          <h6 class="text-white mb-3">International</h6>
-          <ul class="list-unstyled">
-            <li class="mb-2"><span class="text-white-50">🇺🇸 United States (Primary)</span></li>
-            <li class="mb-2"><span class="text-white-50">🇩🇪 Germany (Native-Level)</span></li>
-            <li class="mb-2"><span class="text-white-50">🌍 27 NATO Languages</span></li>
-            <li class="mb-2"><span class="text-white-50">🕒 Global Time Zone Coverage</span></li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Social Media Links -->
-      <div class="row mb-4">
-        <div class="col-12 text-center">
-          <a href="mailto:support@totaldesignconsulting.com" class="text-white-50 me-3 text-decoration-none">Email</a>
-          <a href="https://linkedin.com/company/total-design-consulting" class="text-white-50 me-3 text-decoration-none">LinkedIn</a>
-          <a href="tel:+1-555-TDC-HELP" class="text-white-50 text-decoration-none">Contact</a>
-        </div>
-      </div>
-      
-      <!-- Legal Information -->
-      <div class="row border-top border-secondary pt-4">
+      <div class="row">
         <div class="col-12">
-          <div class="d-flex flex-wrap justify-content-center justify-content-md-start align-items-center mb-3">
-            <span class="text-white me-4">&copy; 2025 Total Design Consulting LLC</span>
-            <a href="legal-terms-conditions.html" class="text-white-50 text-decoration-none me-3">Terms of Use</a>
-            <a href="legal-terms-conditions.html#trademarks" class="text-white-50 text-decoration-none me-3">*Trademarks</a>
-            <a href="legal-terms-conditions.html#privacy" class="text-white-50 text-decoration-none me-3">Privacy</a>
-            <a href="legal-terms-conditions.html#cookies" class="text-white-50 text-decoration-none me-3">Cookies</a>
-            <a href="legal-terms-conditions.html#security" class="text-white-50 text-decoration-none me-3">Security Policy</a>
-            <a href="contact.html" class="text-white-50 text-decoration-none">Site Map</a>
-          </div>
-          
-          <!-- Professional Disclaimers -->
-          <div class="small text-white-50 lh-sm">
-            <p class="mb-2">
-              TDC technologies may require specific hardware, software, or service configurations. // No system or component can be absolutely secure. // Your costs and results may vary based on implementation. // Performance varies by use case, configuration, and other factors.              Learn more at <a href="performance.html" class="text-white-50">performance</a>.
-            </p>
-            <p class="mb-2">
-              See our complete <a href="legal-terms-conditions.html" class="text-white-50">Legal Notices and Disclaimers</a>. // Total Design Consulting LLC is committed to ethical business practices and respecting human rights in all operations. See TDC's <a href="legal-terms-conditions.html#ethics" class="text-white-50">Global Ethics Principles</a>.
-            </p>
-            <p class="mb-0">
-              TDC's products and services are intended for lawful business purposes only and must comply with all applicable local, state, federal, and international laws. NATO Language Translation System™ and Total Design Consulting™ are trademarks of Total Design Consulting LLC. All other trademarks are the property of their respective owners.
-            </p>
+          <div class="d-flex flex-wrap justify-content-center justify-content-md-between align-items-center">
+            <div class="d-flex align-items-center mb-2 mb-md-0">
+              <img src="assets/images/green-logo-full-regal.png" alt="Total Design Consulting" height="32" class="me-3">
+              <span class="text-white">&copy; 2023-2025 Total Design Consulting LLC</span>
+            </div>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="mailto:support@totaldesignconsulting.com?subject=Services%20Inquiry%20-%20Total%20Design%20Consulting&body=Hello%20Total%20Design%20Consulting%20Team%2C%0A%0AI%20am%20interested%20in%20learning%20more%20about%20your%20services.%0A%0ACompany%2FOrganization%3A%20%5BYour%20Company%20Name%5D%0AIndustry%3A%20%5BYour%20Industry%5D%0ALocation%3A%20%5BCity%2C%20State%2FCountry%5D%0A%0AServices%20of%20Interest%3A%0A%5B%5D%20Cybersecurity%20Consulting%0A%5B%5D%20Network%20Infrastructure%0A%5B%5D%20Industrial%20Automation%0A%5B%5D%20Safety%20%26%20Compliance%0A%5B%5D%20International%20Support%0A%5B%5D%20Translation%20Technology%0A%0AProject%20Description%3A%0A%5BPlease%20provide%20a%20brief%20overview%20of%20your%20requirements%5D%0A%0ATimeline%3A%20%5BWhen%20would%20you%20like%20to%20start%3F%5D%0ABudget%20Range%3A%20%5BOptional%5D%0A%0APreferred%20Contact%20Method%3A%20%5BEmail%2FPhone%2FVideo%20Call%5D%0APhone%20Number%3A%20%5BYour%20phone%20number%5D%0ABest%20Time%20to%20Contact%3A%20%5BYour%20preferred%20time%5D%0A%0AThank%20you%20for%20your%20time.%20I%20look%20forward%20to%20hearing%20from%20you.%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D%0A%5BYour%20Title%5D" class="text-white-50 text-decoration-none">Email</a>
+              <a href="https://linkedin.com/company/total-design-consulting" class="text-white-50 text-decoration-none">LinkedIn</a>
+              <a href="contact.html" class="text-white-50 text-decoration-none">Contact</a>
+              <a href="legal-terms-conditions.html" class="text-white-50 text-decoration-none">Legal</a>
+              <a href="sitemap.html" class="text-white-50 text-decoration-none">Site Map</a>
+            </div>
           </div>
         </div>
       </div>

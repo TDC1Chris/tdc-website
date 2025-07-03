@@ -9,7 +9,17 @@
   <link rel="apple-touch-icon" href="assets/images/color-logo-favicon.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <link href="assets/css/style.css" rel="stylesheet"/>
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
 </head>
 <body>
   <header class="tdc-header py-3 mb-4">
@@ -40,187 +50,192 @@
       <div class="text-center">
         <h1 class="display-4 fw-bold text-success mb-3">Portfolio</h1>
         <p class="lead text-muted mb-0">
-          Multilingual Cyber-OT Engineer: From weld bead to firewall rule, delivering Fortune 50-proven reliability across defense, manufacturing, and critical infrastructure worldwide
+          Proven results across Fortune 50 manufacturing, defense, and critical infrastructure projects
         </p>
-       <!-- <p class="text-muted mt-2 mb-0">
-          <small><strong>Serving International Clients in 8 Languages:</strong> 🇺🇸 English • 🇩🇪 German • 🇮🇳 Hindi • 🇵🇰 Urdu • 🇪🇸 Spanish • 🇨🇳 Mandarin • 🇸🇦 Arabic • 🇸🇪 Swedish</small>
-        </p> -->
       </div>
     </section>
 
-    <!-- Core Competencies Section -->
+    <!-- Featured Case Studies -->
     <section class="container mb-5">
-      <h2 class="text-center text-success mb-4">What I Bring to Your Project</h2>
-      <div class="row g-4">
-        <!-- Competency 1: Cybersecurity -->
-        <div class="col-lg-3 col-md-6" id="cybersecurity-project">
-          <div class="card tdc-portfolio-card h-100 shadow-sm">
-            <img src="assets/images/icon-consulting-cybersecurity.png" alt="Cybersecurity Expertise" class="card-img-top tdc-portfolio-img">
-            <div class="card-body">
-              <h5 class="card-title text-success">Cybersecurity Assessment</h5>
-              <p class="card-text">CompTIA Security+ certified approach to identify vulnerabilities and implement practical security measures that fit your budget and operations.</p>
-              <div class="mb-3">
-                <span class="badge bg-success me-2">CompTIA Security+</span>
-                <span class="badge bg-secondary me-2">Risk Assessment</span>
-                <span class="badge bg-secondary">Budget-Conscious</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Competency 2: Network Infrastructure -->
-        <div class="col-lg-3 col-md-6" id="network-project">
-          <div class="card tdc-portfolio-card h-100 shadow-sm">
-            <img src="assets/images/icon-consulting-it.png" alt="Network Infrastructure" class="card-img-top tdc-portfolio-img">
-            <div class="card-body">
-              <h5 class="card-title text-success">Network Design</h5>
-              <p class="card-text">CompTIA Network+ and A+ expertise in designing reliable, secure networks that grow with your business and support remote work needs.</p>
-              <div class="mb-3">
-                <span class="badge bg-success me-2">CompTIA Network+</span>
-                <span class="badge bg-secondary me-2">CompTIA A+</span>
-                <span class="badge bg-secondary">Scalable Design</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Competency 3: Industrial Automation -->
-        <div class="col-lg-3 col-md-6" id="plc-project">
-          <div class="card tdc-portfolio-card h-100 shadow-sm">
-            <img src="assets/images/icon-plc-engineering.png" alt="Industrial Automation" class="card-img-top tdc-portfolio-img">
-            <div class="card-body">
-              <h5 class="card-title text-success">PLC Programming</h5>
-              <p class="card-text">Siemens certified expertise proven at Fortune 50 manufacturers, including General Motors, John Deere, and ABB. TIA Portal and Step7 systems with comprehensive safety integration.</p>
-              <div class="mb-3">
-                <span class="badge bg-success me-2">Fortune 50 Proven</span>
-                <span class="badge bg-secondary me-2">Siemens TIA Portal</span>
-                <span class="badge bg-secondary">GM • John Deere • ABB</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Competency 4: International Translation Services -->
-        <div class="col-lg-3 col-md-6" id="translation-automation">
-          <div class="card tdc-portfolio-card h-100 shadow-sm">
-            <img src="assets/images/icon-consulting-it.png" alt="Translation Services" class="card-img-top tdc-portfolio-img">
-            <div class="card-body">
-              <h5 class="card-title text-success">🌐 Proprietary Translation Technology™</h5>
-              <p class="card-text">Licensed software workflow with human-confirmed accuracy for technical documentation across 27 languages. Proprietary technology for international business expansion.</p>
-              <div class="mb-3">
-                <span class="badge bg-success me-2">Proprietary Software</span>
-                <span class="badge bg-secondary me-2">27 Languages</span>
-                <span class="badge bg-secondary">Licensed Technology</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h2 class="text-center text-success mb-5">Case Studies</h2>
       
-      <!-- Unique Value Add -->
-      <div class="row mt-4">
-        <div class="col-12">
-          <div class="card tdc-card shadow-sm border-success">
-            <div class="card-body text-center">
-              <h6 class="text-success mb-3">🌐 Global Engineering Communication</h6>
-              <p class="mb-3">
-                <strong>8 Languages Spoken:</strong> 🇺🇸 English (Native) • 🇩🇪 German (C2) • 🇮🇳 Hindi (C2) • 🇵🇰 Urdu (C2) • 🇪🇸 Spanish (C1) • 🇨🇳 Mandarin (A2) • 🇸🇦 Arabic (A1) • 🇸🇪 Swedish (A1)
-              </p>
-              <div class="row g-2">
-                <div class="col-md-6">
-                  <p class="small text-muted mb-0">
-                    <strong>🇩🇪 German Manufacturing:</strong> Direct communication with Siemens, STOPA, and TRUMPF engineering teams
-                  </p>
-                </div>
-                <div class="col-md-6">
-                  <p class="small text-muted mb-0">
-                    <strong>🌏 Global Fortune 50:</strong> Multilingual support for international operations and supply chains
-                  </p>
-                </div>
-              </div>
-              <div class="mt-3">
-                <span class="badge bg-success me-1">Technical Translation</span>
-                <span class="badge bg-secondary me-1">Cross-Cultural Teams</span>
-                <span class="badge bg-secondary">Global Standards</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Project: NATO Translation System -->
-    <section class="container mb-5">
-      <div class="row">
-        <div class="col-12">
-          <div class="card tdc-card shadow-sm border-success">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-8">
-                  <h5 class="text-success mb-3">🌍 Featured Project: NATO Language Translation System™</h5>
-                  <p class="card-text mb-3">
-                    Developed a comprehensive proprietary translation workflow supporting all 30 NATO member countries' languages. 
-                    This production-ready system automates the translation process while ensuring human-confirmed accuracy and professional quality for international business expansion.
-                  </p>
-                  
-                  <div class="row g-3 mb-3">
-                    <div class="col-md-6">
-                      <h6 class="text-muted small mb-2">Proprietary Technology:</h6>
-                      <ul class="list-unstyled small">
-                        <li>• <strong>27 Language Support:</strong> Complete NATO coverage with cultural adaptation</li>
-                        <li>• <strong>Proprietary Workflow:</strong> AI-assisted translation with human verification</li>
-                        <li>• <strong>Quality Assurance:</strong> Human-confirmed accuracy for technical content</li>
-                        <li>• <strong>Smart Processing:</strong> Preserves technical terms, brand names, certifications</li>
-                      </ul>
-                    </div>
-                    <div class="col-md-6">
-                      <h6 class="text-muted small mb-2">Business Value:</h6>
-                      <ul class="list-unstyled small">
-                        <li>• <strong>Market Expansion:</strong> Instant access to 30 international markets</li>
-                        <li>• <strong>Professional Quality:</strong> Human-verified business communications</li>
-                        <li>• <strong>Competitive Advantage:</strong> Proprietary technology reduces costs 70-90%</li>
-                        <li>• <strong>Scalable System:</strong> Licensed software with enterprise support</li>
-                      </ul>
-                    </div>
-                  </div>
-                  
-                  <div class="d-flex flex-wrap gap-2 mb-3">
-                    <span class="badge bg-success">Proprietary Software</span>
-                    <span class="badge bg-secondary">Human-Verified</span>
-                    <span class="badge bg-secondary">Licensed Technology</span>
-                    <span class="badge bg-secondary">Trade Secret</span>
-                    <span class="badge bg-secondary">27 Languages</span>
-                    <span class="badge bg-secondary">NATO Coverage</span>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="text-center">
-                    <div class="mb-3">
-                      <div style="font-size: 3rem;">🇺🇳</div>
-                      <h6 class="text-success">30 NATO Countries</h6>
-                      <p class="small text-muted mb-2">Human-confirmed translations</p>
-                    </div>
-                    <div class="small text-muted">
-                      <div class="row g-1 text-center">
-                        <div class="col-3">🇩🇪</div><div class="col-3">🇫🇷</div><div class="col-3">🇪🇸</div><div class="col-3">🇮🇹</div>
-                        <div class="col-3">🇳🇱</div><div class="col-3">🇵🇱</div><div class="col-3">🇹🇷</div><div class="col-3">🇬🇷</div>
-                        <div class="col-3">🇸🇪</div><div class="col-3">🇳🇴</div><div class="col-3">🇩🇰</div><div class="col-3">🇫🇮</div>
-                      </div>
-                      <div class="mt-2">
-                        <small><em>+15 more languages</em></small>
-                      </div>
-                    </div>
-                  </div>
+      <!-- Case Study 1: Fortune 50 Manufacturing Automation -->
+      <div class="row mb-5 align-items-center">
+        <div class="col-lg-8">
+          <div class="card tdc-card h-100 shadow-sm border-success">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-3">
+                <img src="assets/images/icon-plc-engineering.png" alt="Manufacturing Automation" class="me-3" style="width: 50px; height: 50px;">
+                <div>
+                  <h3 class="text-success mb-1">Fortune 50 Manufacturing Automation</h3>
+                  <p class="text-muted mb-0">General Motors • John Deere • ABB</p>
                 </div>
               </div>
               
-              <div class="text-center mt-3">
-                <p class="small text-muted mb-0">
-                  <strong>Application:</strong> Proprietary technology enables verified international communications for cybersecurity and automation consulting services
-                </p>
-                <p class="small text-muted mb-0 mt-2">
-                  <em>© 2025 Total Design Consulting LLC. NATO Language Translation System™ is proprietary software. All rights reserved.</em>
-                </p>
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <h6 class="text-success">Challenge</h6>
+                  <p class="small mb-0">Legacy PLC systems causing 15+ hour production delays. Manual processes limiting throughput and creating safety risks.</p>
+                </div>
+                <div class="col-md-6">
+                  <h6 class="text-success">Solution</h6>
+                  <p class="small mb-0">Comprehensive automation upgrade with Siemens TIA Portal, SICK safety systems, and integrated SCADA monitoring.</p>
+                </div>
+              </div>
+              
+              <div class="row g-3 mb-3">
+                <div class="col-md-4 text-center">
+                  <div class="h4 text-success mb-1">75%</div>
+                  <small class="text-muted">Efficiency Increase</small>
+                </div>
+                <div class="col-md-4 text-center">
+                  <div class="h4 text-success mb-1">Zero</div>
+                  <small class="text-muted">Safety Incidents</small>
+                </div>
+                <div class="col-md-4 text-center">
+                  <div class="h4 text-success mb-1">18 Months</div>
+                  <small class="text-muted">ROI Timeline</small>
+                </div>
+              </div>
+              
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-success">Siemens TIA Portal</span>
+                <span class="badge bg-secondary">SICK Safety</span>
+                <span class="badge bg-secondary">SCADA Integration</span>
+                <span class="badge bg-secondary">Fortune 50 Proven</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card shadow-sm border-0 bg-light h-100">
+            <div class="card-body d-flex align-items-center justify-content-center" style="min-height: 300px;">
+              <div class="text-center text-muted">
+                <div class="mb-3" style="font-size: 4rem;">🏭</div>
+                <h5 class="text-muted">Manufacturing Floor</h5>
+                <p class="small mb-0">Automated production line<br/>with safety integration</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study 2: Enterprise Cybersecurity Implementation -->
+      <div class="row mb-5 align-items-center">
+        <div class="col-lg-4 order-lg-1">
+          <div class="card shadow-sm border-0 bg-light h-100">
+            <div class="card-body d-flex align-items-center justify-content-center" style="min-height: 300px;">
+              <div class="text-center text-muted">
+                <div class="mb-3" style="font-size: 4rem;">🛡️</div>
+                <h5 class="text-muted">Security Operations</h5>
+                <p class="small mb-0">Zero Trust architecture<br/>with threat monitoring</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 order-lg-2">
+          <div class="card tdc-card h-100 shadow-sm border-success">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-3">
+                <img src="assets/images/icon-consulting-cybersecurity.png" alt="Cybersecurity" class="me-3" style="width: 50px; height: 50px;">
+                <div>
+                  <h3 class="text-success mb-1">Enterprise Cybersecurity Transformation</h3>
+                  <p class="text-muted mb-0">Critical Infrastructure • Defense Sector</p>
+                </div>
+              </div>
+              
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <h6 class="text-success">Challenge</h6>
+                  <p class="small mb-0">Legacy systems vulnerable to advanced persistent threats. Compliance gaps with federal security requirements.</p>
+                </div>
+                <div class="col-md-6">
+                  <h6 class="text-success">Solution</h6>
+                  <p class="small mb-0">Zero Trust architecture implementation with network segmentation, endpoint detection, and compliance framework.</p>
+                </div>
+              </div>
+              
+              <div class="row g-3 mb-3">
+                <div class="col-md-4 text-center">
+                  <div class="h4 text-success mb-1">99.9%</div>
+                  <small class="text-muted">Threat Detection</small>
+                </div>
+                <div class="col-md-4 text-center">
+                  <div class="h4 text-success mb-1">100%</div>
+                  <small class="text-muted">Compliance</small>
+                </div>
+                <div class="col-md-4 text-center">
+                  <div class="h4 text-success mb-1">80%</div>
+                  <small class="text-muted">Faster Response</small>
+                </div>
+              </div>
+              
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-success">Zero Trust</span>
+                <span class="badge bg-secondary">CompTIA Security+</span>
+                <span class="badge bg-secondary">Federal Compliance</span>
+                <span class="badge bg-secondary">TS/SCI Cleared</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study 3: International Network Modernization -->
+      <div class="row mb-5 align-items-center">
+        <div class="col-lg-8">
+          <div class="card tdc-card h-100 shadow-sm border-success">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-3">
+                <img src="assets/images/icon-consulting-it.png" alt="Network Infrastructure" class="me-3" style="width: 50px; height: 50px;">
+                <div>
+                  <h3 class="text-success mb-1">Global Network Infrastructure</h3>
+                  <p class="text-muted mb-0">International Manufacturing • Multi-Site Operations</p>
+                </div>
+              </div>
+              
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <h6 class="text-success">Challenge</h6>
+                  <p class="small mb-0">Unreliable connectivity between US and German facilities. Language barriers preventing effective technical support.</p>
+                </div>
+                <div class="col-md-6">
+                  <h6 class="text-success">Solution</h6>
+                  <p class="small mb-0">Redundant WAN design with multilingual technical documentation and 24/7 support in German and English.</p>
+                </div>
+              </div>
+              
+              <div class="row g-3 mb-3">
+                <div class="col-md-4 text-center">
+                  <div class="h4 text-success mb-1">99.8%</div>
+                  <small class="text-muted">Network Uptime</small>
+                </div>
+                <div class="col-md-4 text-center">
+                  <div class="h4 text-success mb-1">50%</div>
+                  <small class="text-muted">Faster Resolution</small>
+                </div>
+                <div class="col-md-4 text-center">
+                  <div class="h4 text-success mb-1">8</div>
+                  <small class="text-muted">Languages Supported</small>
+                </div>
+              </div>
+              
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-success">CompTIA Network+</span>
+                <span class="badge bg-secondary">Multilingual Support</span>
+                <span class="badge bg-secondary">Global Operations</span>
+                <span class="badge bg-secondary">24/7 Coverage</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card shadow-sm border-0 bg-light h-100">
+            <div class="card-body d-flex align-items-center justify-content-center" style="min-height: 300px;">
+              <div class="text-center text-muted">
+                <div class="mb-3" style="font-size: 4rem;">🌐</div>
+                <h5 class="text-muted">Global Network</h5>
+                <p class="small mb-0">Multi-site connectivity<br/>with redundant paths</p>
               </div>
             </div>
           </div>
@@ -671,7 +686,9 @@
                 </div>
               </div>
             </div>
-            <a href="contact.html" class="btn btn-success btn-lg me-3">Start the Conversation</a>
+            <a href="https://calendly.com/totaldesignconsulting/project-consultation" target="_blank" class="btn btn-success btn-lg me-3">
+              <i class="fas fa-calendar-check me-2"></i>Discuss Your Project
+            </a>
             <a href="services.html" class="btn btn-outline-success btn-lg">View Our Services</a>
           </div>
         </div>
@@ -679,100 +696,22 @@
     </section>
   </main>
 
-  <footer class="tdc-footer text-white py-5 mt-auto">
+    <footer class="tdc-footer text-white py-3 mt-auto">
     <div class="container">
-      <!-- Main Footer Navigation -->
-      <div class="row g-4 mb-4">
-        <div class="col-md-3">
-          <h6 class="text-white mb-3">Company</h6>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Company Overview</a></li>
-            <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none">Contact TDC</a></li>
-            <li class="mb-2"><a href="testimonials.html" class="text-white-50 text-decoration-none">Client Success</a></li>
-            <li class="mb-2"><a href="portfolio.html" class="text-white-50 text-decoration-none">Portfolio</a></li>
-            <li class="mb-2"><a href="assets/Resume_Christopher-Clubb.pdf" class="text-white-50 text-decoration-none">Leadership</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-md-3">
-          <h6 class="text-white mb-3">Services</h6>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="services.html#cybersecurity-service" class="text-white-50 text-decoration-none">Cybersecurity</a></li>
-            <li class="mb-2"><a href="services.html#network-service" class="text-white-50 text-decoration-none">Network Infrastructure</a></li>
-            <li class="mb-2"><a href="services.html#automation-service" class="text-white-50 text-decoration-none">Industrial Automation</a></li>
-            <li class="mb-2"><a href="services.html#safety-service" class="text-white-50 text-decoration-none">Safety & Compliance</a></li>
-            <li class="mb-2"><a href="services.html#international-service" class="text-white-50 text-decoration-none">International Support</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-md-3">
-          <h6 class="text-white mb-3">Technology</h6>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="portfolio.html#translation-automation" class="text-white-50 text-decoration-none">Translation Technology™</a></li>
-            <li class="mb-2"><a href="services.html" class="text-white-50 text-decoration-none">Proprietary Software</a></li>
-            <li class="mb-2"><a href="mailto:licensing@totaldesignconsulting.com" class="text-white-50 text-decoration-none">Technology Licensing</a></li>
-            <li class="mb-2"><a href="portfolio.html" class="text-white-50 text-decoration-none">Innovation Showcase</a></li>
-          </ul>
-        </div>
-        
-        <div class="col-md-3">
-          <h6 class="text-white mb-3">International</h6>
-          <ul class="list-unstyled">
-            <li class="mb-2"><span class="text-white-50">🇺🇸 United States (Primary)</span></li>
-            <li class="mb-2"><span class="text-white-50">🇩🇪 Germany (Native-Level)</span></li>
-            <li class="mb-2"><span class="text-white-50">🌍 27 NATO Languages</span></li>
-            <li class="mb-2"><span class="text-white-50">🕒 Global Time Zone Coverage</span></li>
-          </ul>
-        </div>
-      </div>
-      
-      <!-- Social Media Links -->
-      <div class="row mb-4">
-        <div class="col-12 text-center">
-          <a href="mailto:support@totaldesignconsulting.com" class="text-white-50 me-3 text-decoration-none">
-            <i class="fas fa-envelope"></i> Email
-          </a>
-          <a href="https://linkedin.com/company/total-design-consulting" class="text-white-50 me-3 text-decoration-none">
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
-          <a href="tel:+1-555-TDC-HELP" class="text-white-50 text-decoration-none">
-            <i class="fas fa-phone"></i> Contact
-          </a>
-        </div>
-      </div>
-      
-      <!-- Legal Information -->
-      <div class="row border-top border-secondary pt-4">
+      <div class="row">
         <div class="col-12">
-          <div class="d-flex flex-wrap justify-content-center justify-content-md-start align-items-center mb-3">
-            <span class="text-white me-4">&copy; 2025 Total Design Consulting LLC</span>
-            <a href="legal-terms-conditions.html" class="text-white-50 text-decoration-none me-3">Terms of Use</a>
-            <a href="legal-terms-conditions.html#trademarks" class="text-white-50 text-decoration-none me-3">*Trademarks</a>
-            <a href="legal-terms-conditions.html#privacy" class="text-white-50 text-decoration-none me-3">Privacy</a>
-            <a href="legal-terms-conditions.html#cookies" class="text-white-50 text-decoration-none me-3">Cookies</a>
-            <a href="legal-terms-conditions.html#security" class="text-white-50 text-decoration-none me-3">Security Policy</a>
-            <a href="contact.html" class="text-white-50 text-decoration-none">Site Map</a>
-          </div>
-          
-          <!-- Professional Disclaimers -->
-          <div class="small text-white-50 lh-sm">
-            <p class="mb-2">
-              TDC technologies may require specific hardware, software, or service configurations. 
-              // No system or component can be absolutely secure. 
-              // Your costs and results may vary based on implementation. 
-              // Performance varies by use case, configuration, and other factors. 
-              Learn more at <a href="performance.html" class="text-white-50">performance</a>.
-            </p>
-            <p class="mb-2">
-              See our complete <a href="legal-terms-conditions.html" class="text-white-50">Legal Notices and Disclaimers</a>. 
-              // Total Design Consulting LLC is committed to ethical business practices and respecting human rights in all operations. 
-              See TDC's <a href="legal-terms-conditions.html#ethics" class="text-white-50">Global Ethics Principles</a>.
-            </p>
-            <p class="mb-0">
-              TDC's products and services are intended for lawful business purposes only and must comply with all applicable local, state, federal, and international laws. 
-              NATO Language Translation System™ and Total Design Consulting™ are trademarks of Total Design Consulting LLC. 
-              All other trademarks are the property of their respective owners.
-            </p>
+          <div class="d-flex flex-wrap justify-content-center justify-content-md-between align-items-center">
+            <div class="d-flex align-items-center mb-2 mb-md-0">
+              <img src="assets/images/green-logo-full-regal.png" alt="Total Design Consulting" height="32" class="me-3">
+              <span class="text-white">&copy; 2023-2025 Total Design Consulting LLC</span>
+            </div>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="mailto:support@totaldesignconsulting.com?subject=Portfolio%20and%20Project%20Inquiry&body=Hello%20Total%20Design%20Consulting%20Team%2C%0A%0AI%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%3A%0A%0ACompany%2FOrganization%3A%20%5BYour%20Company%20Name%5D%0A%0AProject%20Interest%3A%0A%5B%5D%20Similar%20to%20your%20Cybersecurity%20Assessment%20project%0A%5B%5D%20Similar%20to%20your%20Network%20Infrastructure%20project%0A%5B%5D%20Similar%20to%20your%20Industrial%20Automation%20project%0A%5B%5D%20Something%20different%3A%20%5BPlease%20describe%5D%0A%0AProject%20Description%3A%0A%5BPlease%20provide%20details%20about%20your%20project%20needs%5D%0A%0ATimeline%3A%20%5BWhen%20would%20you%20like%20to%20start%3F%5D%0ABudget%20Range%3A%20%5BOptional%5D%0A%0AContact%20Information%3A%0APhone%3A%20%5BYour%20phone%20number%5D%0APreferred%20Contact%20Method%3A%20%5BEmail%2FPhone%2FVideo%20Call%5D%0A%0AThank%20you%21%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D" class="text-white-50 text-decoration-none">Email</a>
+              <a href="https://linkedin.com/company/total-design-consulting" class="text-white-50 text-decoration-none">LinkedIn</a>
+              <a href="contact.html" class="text-white-50 text-decoration-none">Contact</a>
+              <a href="legal-terms-conditions.html" class="text-white-50 text-decoration-none">Legal</a>
+              <a href="sitemap.html" class="text-white-50 text-decoration-none">Site Map</a>
+            </div>
           </div>
         </div>
       </div>
