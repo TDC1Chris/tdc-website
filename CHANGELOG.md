@@ -5,6 +5,34 @@ All notable changes to the Total Design Consulting website will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2025-07-02 - Homepage Layout Refinement & Vision/Mission Enhancement
+
+### Enhanced
+- **Homepage Vision/Mission section** with modern alternating card layout
+- **Professional presentation** of company values and mission statement
+- **Responsive design improvements** for optimal viewing across all devices
+- **Visual hierarchy optimization** creating better user engagement and readability
+
+### Changed
+- **Vision/Mission layout** updated to alternating offset card design:
+  - Row 1: Vision content card (left) + Image placeholder (right)
+  - Row 2: Image placeholder (left) + Mission content card (right)
+- **Card design consistency** with equal-sized elements and professional spacing
+- **Image placeholder integration** for future professional photography
+- **Mobile responsiveness** ensuring layout works across all screen sizes
+
+### Technical
+- **Bootstrap layout optimization** using order classes for responsive behavior
+- **Card component standardization** across Vision and Mission sections
+- **CSS consistency** maintaining design system integrity
+- **Layout testing** verified across desktop, tablet, and mobile viewports
+
+### User Experience
+- **Improved visual flow** with alternating content presentation
+- **Enhanced readability** through better content organization
+- **Professional aesthetics** matching modern web design standards
+- **Consistent branding** maintained throughout layout changes
+
 ## [1.3.0] - 2025-07-02 - About Me Page Navigation Integration
 
 ### Added
