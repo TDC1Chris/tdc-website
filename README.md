@@ -1,135 +1,162 @@
 # Total Design Consulting Website
 
-## 🚀 Version 1.2.0 - Real-World Testimonials Integration
+## 🌍 Version 2.0.1 - Multilingual Website with Technical Optimization
 
-This is a custom-built, modern static website for Total Design Consulting LLC, featuring professional branding, international focus, and comprehensive portfolio showcase.
+This is a modern, multilingual static website for Total Design Consulting LLC, featuring professional international branding, comprehensive localization, and Fortune 50-proven technical expertise.
 
 ## Overview
 
-This is the static marketing site for [Total Design Consulting LLC](https://www.totaldesignconsulting.com), showcasing multilingual cyber-OT engineering services with Fortune 50 client experience.
+This is the production marketing site for [Total Design Consulting LLC](https://totaldesignconsulting.com), showcasing multilingual cyber-OT engineering services with authentic German and Spanish content, plus index pages for Hindi, Urdu, Mandarin, and Swedish markets.
 
 ## Live Site
 
-[https://tdc1chris.github.io/tdc-website/](https://tdc1chris.github.io/tdc-website/)
+🌐 **Production:** [https://totaldesignconsulting.com](https://totaldesignconsulting.com)  
+🔧 **Development:** [https://tdc1chris.github.io/tdc-website/](https://tdc1chris.github.io/tdc-website/)
 
-## Structure
+## 📁 Repository Structure
+
+> **📋 See [REPOSITORY-STRUCTURE.md](REPOSITORY-STRUCTURE.md) for detailed organization**
+
 ```bash
- - `/docs/`: Production static files served by GitHub Pages
-    - index.html                    # Homepage with hero section and company overview
-    - services.html                 # Service offerings with international focus
-    - portfolio.html                # Professional experience and client showcase
-    - contact.html                  # Multi-channel contact with pre-filled templates
-    - testimonials.html             # Client testimonials and success stories
-    - legal-terms-conditions.html   # Legal compliance and terms
-    - 404.html                      # Branded error page
-    - robots.txt                    # SEO configuration
-    - CNAME                         # Custom domain configuration
-    - /assets/
-        - /css/
-            - style.css             # Main stylesheet with TDC branding
-            - custom.css            # Additional customizations
-        - /images/                  # Professional icons and branding assets
-            - color-logo-*.png      # TDC logo variants
-            - icon-*.png            # Service and capability icons
-        - Resume_*.pdf              # Downloadable resume versions
-        - email-template.txt        # Pre-filled client contact template
-        - sms-template.txt          # SMS contact template
-- `/src/`: Development source files
-- `/tests/`: Testing and validation files
-- `.github/`: GitHub workflows for CI/CD
+tdc-website/
+├── docs/                       # Production website (GitHub Pages)
+│   ├── *.html                 # Main English pages
+│   ├── de/                    # German site (Deutsch)
+│   ├── es/                    # Spanish site (Español)
+│   ├── hi/, ur/, zh/, sv/     # Index pages for emerging markets
+│   └── assets/                # Images, CSS, documents, templates
+├── documentation/             # Project guides and status tracking
+│   ├── guides/               # Implementation and security guides
+│   ├── project-status/       # Progress tracking and milestones
+│   └── release-notes/        # Version-specific release documentation
+├── scripts/                   # Automation and utility scripts
+│   ├── development/          # Development tools and automation
+│   └── utilities/            # Maintenance and update scripts
+├── archive/                   # Legacy files and old tests
+├── src/                       # Development source files
+└── [config files]            # package.json, requirements.txt, etc.
 ```
 
-## Key Features
+## 🌟 Key Features
 
-### Professional Branding & Design
-- **Modern, cohesive design**: Unified professional style with consistent TDC branding
-- **Responsive layout**: Optimized for desktop, tablet, and mobile devices
-- **Professional color palette**: Success green (#198754) with clean, modern typography
+### 🌐 Multilingual Excellence
+- **Authentic German site** (`/de/`) - Professional German business language
+- **Comprehensive Spanish site** (`/es/`) - Latin American Spanish localization  
+- **International index pages** for Hindi, Urdu, Mandarin, and Swedish markets
+- **Persistent language switcher** visible on all pages with flag emojis
+- **SEO-optimized** with hreflang tags for international search visibility
 
-### Content & Messaging
-- **Authentic experience**: Real Fortune 50 client references (GM, John Deere, ABB, TRUMPF, etc.)
-- **International focus**: 8-language capability prominently featured with flags
-- **Security clearance**: Properly documented TS/SCI status (Inactive) for legal compliance
-- **Comprehensive portfolio**: Detailed project experience and measurable results
-- **Professional credentials**: All certifications and expertise accurately represented
+### 🎨 Professional Design & UX
+- **Modern, responsive design** with Bootstrap 5.3.2 and FontAwesome 6.0.0
+- **High-contrast CTAs** optimized for lead generation and conversions
+- **Consistent branding** across all 7 language versions
+- **Mobile-first approach** ensuring optimal experience on all devices
 
-### Functional Features
-- **Multi-channel contact**: Email, SMS, and phone with pre-filled templates
-- **Downloadable resume**: Professional PDF and HTML versions
-- **SEO optimized**: Meta tags, structured data, and search engine friendly
-- **Legal compliance**: Terms & conditions, privacy considerations
-- **Performance focused**: Fast loading, minimal dependencies
+### 🔧 Technical Excellence  
+- **SIEM integration expertise** prominently featured across cybersecurity services
+- **Fortune 50 proven solutions** with authentic client experience (GM, ABB, TRUMPF)
+- **Zero Trust architecture** and modern cybersecurity frameworks
+- **IT/OT integration** specializing in critical infrastructure protection
 
-### International Business Ready
-- **Multilingual capabilities**: Native-level German, Hindi, Urdu, plus 4 additional languages
-- **Global client focus**: Fortune 50 and international manufacturer experience
-- **Cross-cultural communication**: Technical translation and global standards expertise
-- **Time zone considerations**: 24/7 international support capability
-- **CSS**: All pages load `assets/css/style.css` for the main theme.
-- **Assets**: Place all images, CSS, and JS in the `assets/` folder.
-- **Accessibility**: Select pages provide visually subtle skip links (positioned off-screen until focused). Semantic HTML and accessible navigation are used throughout.
-- **SEO**: Meta tags, Open Graph, and structured data included.
-- **Internationalization**: Language switcher for English and NATO languages (e.g. `/de/index.html`, `/es/index.html`, `/fr/index.html`, etc.). Ensure translated files exist as needed.
-- **Uniformity**: All pages (home, services, contact, testimonials, 404, and language variants) use the same header, navigation, language switcher (top right), footer, and CSS for a consistent look and feel.
+### 📈 Lead Generation & SEO
+- **Calendly integration** for seamless consultation scheduling
+- **Pre-filled contact templates** for email and SMS engagement
+- **International SEO** with proper hreflang implementation
+- **Performance optimized** with standardized CDN dependencies
+- **Accessibility compliant** with verified alt attributes and semantic HTML
 
-## Deployment
+### 🌐 International Business Focus
+- **30+ language capabilities** with cultural expertise prominently displayed  
+- **Global service coverage** spanning North America, Europe, MENA, and Asia-Pacific
+- **Time zone coverage** with follow-the-sun support model
+- **Cross-cultural communication** and technical translation expertise
 
-GitHub Pages is configured to serve the contents of `docs/`. The
-`.nojekyll` file inside that folder disables GitHub's default Jekyll
-processing so the HTML is served exactly as committed.
+## 🚀 Deployment & Architecture
 
-If you maintain the site using Jekyll, place your Jekyll project in a
-`jekyll-site/` directory and build it into `docs/`:
+### Production Deployment
+- **GitHub Pages** serves content directly from `/docs/` directory
+- **Custom domain** configured via CNAME for totaldesignconsulting.com
+- **SSL/TLS enabled** for secure browsing experience
+- **Global CDN** for fast international loading times
 
+### Technical Stack
+- **Static HTML5** with semantic markup for SEO and accessibility
+- **Bootstrap 5.3.2** for responsive design and component consistency  
+- **FontAwesome 6.0.0** for professional iconography
+- **Custom CSS** in `/docs/assets/css/style.css` for TDC branding
+- **No JavaScript dependencies** for maximum performance and security
+
+### Development Workflow
+
+- **Direct HTML editing** in `/docs/` for immediate deployment
+- **Version control** with detailed changelog tracking in `CHANGELOG.md`
+- **Documentation-driven** with comprehensive guides in `/documentation/`
+- **Script automation** available in `/scripts/` for common maintenance tasks
+
+## 🛠️ Development Setup
+
+### Prerequisites
 ```bash
-cd jekyll-site
-bundle install
-bundle exec jekyll build -d ../docs
-```
+# Node.js dependencies (optional - for development tooling)
+npm install
 
-These steps copy the generated `_site` output into `docs/`, which GitHub
-Pages then publishes. You can automate this with a GitHub Action that runs
-the above commands whenever changes are pushed.
-
-## Development & Continuous Integration
-
-Run `npm install` to install the Node.js tooling. Two npm scripts are provided:
-
-```bash
-npm run build    # compile and minify assets into docs/assets/
-npm run lint     # check HTML and validate links
-```
-
-A GitHub Action defined at `.github/workflows/ci.yml` runs these commands on
-every pull request to ensure the site builds and passes the linters.
-
-Install the Python packages used by `auto_translate_site.py`:
-
-```bash
+# Python dependencies (for automation scripts)
 pip install -r requirements.txt
 ```
 
-## Running Tests
-
-Unit tests are written with [pytest](https://pytest.org). After installing
-`pytest`, run the test suite from the repository root:
-
+### Available Scripts
 ```bash
-pytest
+# Development utilities (in /scripts/utilities/)
+python scripts/utilities/validate_translation_setup.py    # Validate translations
+python scripts/utilities/add_analytics.py                 # Add analytics
+python scripts/utilities/update_copyright.py              # Update copyright dates
+
+# Development tools (in /scripts/development/)  
+python scripts/development/auto_translate_site.py         # Translation assistance
 ```
 
-## Notes
+### Local Development
+1. Edit files directly in `/docs/` for immediate GitHub Pages deployment
+2. Test changes by opening HTML files in browser or local server
+3. Use browser dev tools for responsive design testing
+4. Validate changes across all language versions
 
-- Use the `assets/` folder for all CSS, JS, and media files.
-- To add a favicon, place `favicon.ico` in `/docs/` and add the appropriate `<link rel="icon" ...>` tag to each HTML `<head>`.
-- All HTML pages are hand-coded for performance and maintainability.
-- For language support, copy and translate `index.html` to `/[lang]/index.html` for each supported NATO language.
+## 📋 Maintenance & Updates
 
-## Testing
+### Regular Tasks
+- Update `CHANGELOG.md` for all significant changes
+- Run validation scripts after major updates
+- Review and update documentation in `/documentation/guides/`
+- Monitor international SEO performance and hreflang implementation
 
-Install `pytest` and run the test suite from the repository root:
+### Content Updates
+- **English content**: Edit files directly in `/docs/`
+- **German content**: Update files in `/docs/de/`
+- **Spanish content**: Update files in `/docs/es/`
+- **Index pages**: Maintain Hindi, Urdu, Mandarin, Swedish in respective `/docs/[lang]/` folders
 
-```bash
-pip install pytest
-pytest
-```
+### Technical Updates
+- All pages use Bootstrap 5.3.2 and FontAwesome 6.0.0 CDN
+- Maintain consistency across all language versions
+- Validate HTML structure and accessibility compliance
+- Monitor and optimize Core Web Vitals performance
+
+## 📊 Analytics & Performance
+
+- **Google Analytics** configured across all pages
+- **International tracking** with language-specific insights  
+- **Lead generation metrics** via Calendly integration
+- **Performance monitoring** for global loading times
+
+## 🔒 Security & Compliance
+
+- **HTTPS enforced** via GitHub Pages SSL
+- **No sensitive data** in repository (see `.gitignore`)
+- **Privacy compliant** with legal terms across all languages
+- **Accessibility standards** maintained for international users
+
+---
+
+**Current Version:** 2.0.1  
+**Last Updated:** July 7, 2025  
+**Repository Maintainer:** Christopher Clubb, Total Design Consulting LLC
