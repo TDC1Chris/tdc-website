@@ -5,6 +5,46 @@ All notable changes to the Total Design Consulting website will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2025-07-07 - Repository Reorganization & Structure Optimization 📁
+
+### 🏗️ Major Restructuring
+- **Comprehensive repository reorganization** into logical directory structure
+- **Professional project layout** following software engineering best practices
+- **Clear separation of concerns** between production, documentation, scripts, and archives
+- **Improved maintainability** with organized file hierarchy
+
+### 📁 New Directory Structure
+- **`/documentation/`** - Centralized project documentation
+  - `/guides/` - Implementation guides and strategies (Security, Localization, IP Protection)
+  - `/project-status/` - Progress tracking and milestone documentation
+  - `/release-notes/` - Version-specific release documentation
+- **`/scripts/`** - Automation and utility scripts
+  - `/development/` - Development tools and translation automation
+  - `/utilities/` - Maintenance scripts (analytics, copyright updates, validation)
+- **`/archive/`** - Legacy files and historical content
+  - `/old-tests/` - Preserved test files for reference
+- **`/docs/assets/`** - Enhanced organization
+  - `/documents/` - Resumes and downloadable files
+  - `/templates/` - Email and SMS templates
+
+### 📚 Documentation Enhancements
+- **`REPOSITORY-STRUCTURE.md`** - Comprehensive structure documentation with file descriptions
+- **Updated `README.md`** - Modernized with current v2.0.1 features, deployment info, and workflows
+- **File naming conventions** clearly documented for consistency
+- **Maintenance guidelines** for ongoing project development
+
+### 🔧 Development Workflow Improvements
+- **Script organization** by function and frequency of use
+- **Clear development setup** instructions with prerequisites
+- **Automated maintenance tasks** properly catalogued and accessible
+- **Version control** optimized for the new structure
+
+### ♻️ Cleanup & Optimization
+- **Removed empty directories** (`/tests/` consolidated into `/archive/old-tests/`)
+- **Preserved all production files** in `/docs/` for continued GitHub Pages deployment
+- **Maintained backward compatibility** for existing URLs and functionality
+- **Enhanced asset organization** without breaking existing references
+
 ## [2.0.1] - 2025-01-15 - Visual Review & Technical Consistency 🔧
 
 ### 🔧 Technical Fixes
