@@ -1,2 +1,15 @@
 User-agent: *
-Disallow: /
+Allow: /
+
+# XML Sitemap for search engines
+Sitemap: https://totaldesignconsulting.com/sitemap.xml
+
+# HTML Sitemap for users
+Sitemap: https://totaldesignconsulting.com/sitemap.html
+
+# Allow all search engines to index the site
+# This is a business website that should be discoverable
+
+# Optional: Block sensitive directories (none currently)
+# Disallow: /admin/
+# Disallow: /private/

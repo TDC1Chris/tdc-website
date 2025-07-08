@@ -1,48 +1,382 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- English Pages -->
   <url>
-    <loc>https://totaldesignconsulting.com/</loc>
+    <loc>https://totaldesignconsulting.com/index.html</loc>
+    <lastmod>2025-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://totaldesignconsulting.com/de/index.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://totaldesignconsulting.com/es/index.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://totaldesignconsulting.com/hi/index.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://totaldesignconsulting.com/ur/index.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://totaldesignconsulting.com/zh/index.html"/>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://totaldesignconsulting.com/sv/index.html"/>
   </url>
+  
   <url>
     <loc>https://totaldesignconsulting.com/about-me.html</loc>
+    <lastmod>2025-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://totaldesignconsulting.com/services.html</loc>
+    <lastmod>2025-07-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://totaldesignconsulting.com/cybersecurity-consulting.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  
   <url>
     <loc>https://totaldesignconsulting.com/portfolio.html</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  
   <url>
     <loc>https://totaldesignconsulting.com/testimonials.html</loc>
+    <lastmod>2025-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
   <url>
     <loc>https://totaldesignconsulting.com/contact.html</loc>
+    <lastmod>2025-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/cybersecurity-consulting.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <url>
     <loc>https://totaldesignconsulting.com/translation-technology.html</loc>
+    <lastmod>2025-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
+  <!-- German Pages -->
   <url>
-    <loc>https://totaldesignconsulting.com/legal-terms-conditions.html</loc>
+    <loc>https://totaldesignconsulting.com/de/index.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/de/uber-mich.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/de/dienstleistungen.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/de/portfolio.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/de/referenzen.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/de/kontakt.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/de/rechtliche-hinweise.html</loc>
+    <lastmod>2025-07-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  
+  <!-- Spanish Pages -->
+  <url>
+    <loc>https://totaldesignconsulting.com/es/index.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/es/sobre-mi.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/es/servicios.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/es/portafolio.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/es/testimonios.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/es/contacto.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/es/terminos-legales.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Hindi Pages -->
+  <url>
+    <loc>https://totaldesignconsulting.com/hi/index.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/hi/mere-baare-mein.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/hi/services.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/hi/portfolio.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/hi/testimonials.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/hi/contact.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/hi/legal-terms-conditions.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Urdu Pages -->
+  <url>
+    <loc>https://totaldesignconsulting.com/ur/index.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/ur/mere-baare-mein.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/ur/services.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/ur/portfolio.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/ur/testimonials.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/ur/contact.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/ur/legal-terms-conditions.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Chinese Pages -->
+  <url>
+    <loc>https://totaldesignconsulting.com/zh/index.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/zh/guan-yu-wo.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/zh/services.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/zh/portfolio.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/zh/testimonials.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/zh/contact.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/zh/legal-terms-conditions.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Swedish Pages -->
+  <url>
+    <loc>https://totaldesignconsulting.com/sv/index.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/sv/om-mig.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/sv/services.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/sv/portfolio.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/sv/testimonials.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/sv/contact.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/sv/legal-terms-conditions.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Additional Pages -->
+  <url>
+    <loc>https://totaldesignconsulting.com/sitemap.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <url>
+    <loc>https://totaldesignconsulting.com/legal-terms-conditions.html</loc>
+    <lastmod>2025-07-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
 </urlset>
