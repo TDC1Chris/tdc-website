@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfölj - Total Design Consulting</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/png" href="../assets/images/color-logo-favicon.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="../assets/images/color-logo-abbrev-flat.png" alt="Total Design Consulting Logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Hem</a>
+                </li>
+                <li class="nav-item">
+                    <a href="om-mig.html" class="nav-link">Om mig</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Tjänster</a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link active">Portfölj</a>
+                </li>
+                <li class="nav-item">
+                    <a href="testimonials.html" class="nav-link">Omdömen</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Kontakt</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Språk ▼</a>
+                    <div class="dropdown-content">
+                        <a href="../index.html">English</a>
+                        <a href="../de/index.html">Deutsch</a>
+                        <a href="../es/index.html">Español</a>
+                        <a href="../hi/index.html">हिन्दी</a>
+                        <a href="../ur/index.html">اردو</a>
+                        <a href="../zh/index.html">中文</a>
+                        <a href="index.html">Svenska</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero portfolio-hero">
+        <div class="hero-content">
+            <h1>Vår Portfölj</h1>
+            <p>Utforska våra framgångsrika projekt och levererade lösningar</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <div class="container">
+            <!-- Filter Buttons -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Alla projekt</button>
+                <button class="filter-btn" data-filter="cybersecurity">Cybersäkerhet</button>
+                <button class="filter-btn" data-filter="it-consulting">IT-konsultation</button>
+                <button class="filter-btn" data-filter="ot-systems">OT-system</button>
+                <button class="filter-btn" data-filter="safety">Säkerhet</button>
+                <button class="filter-btn" data-filter="plc">PLC-teknik</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Project 1: Enterprise Cybersecurity -->
+                <div class="portfolio-item" data-category="cybersecurity">
+                    <div class="portfolio-image">
+                        <img src="../assets/images/icon-consulting-cybersecurity.png" alt="Företagscybersäkerhet">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Företagscybersäkerhetstransformation</h3>
+                        <p class="portfolio-category">Cybersäkerhet</p>
+                        <p>Implementerade ett omfattande cybersäkerhetsprogram för ett globalt tillverkningsföretag, vilket minskade säkerhetsincidenter med 85%.</p>
+                        <div class="portfolio-tech">
+                            <span>ISO 27001</span>
+                            <span>NIST Framework</span>
+                            <span>SOC Implementation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Cloud Migration -->
+                <div class="portfolio-item" data-category="it-consulting">
+                    <div class="portfolio-image">
+                        <img src="../assets/images/icon-consulting-it.png" alt="Molnmigration">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Molninfrastrukturmigration</h3>
+                        <p class="portfolio-category">IT-konsultation</p>
+                        <p>Ledde en fullständig molnmigration för en finansiell tjänsteorganisation, vilket resulterade i 40% kostnadsminskning och förbättrad skalbarhet.</p>
+                        <div class="portfolio-tech">
+                            <span>AWS</span>
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Industrial Automation -->
+                <div class="portfolio-item" data-category="ot-systems plc">
+                    <div class="portfolio-image">
+                        <img src="../assets/images/icon-plc-engineering.png" alt="Industriell automation">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Industriell automationslösning</h3>
+                        <p class="portfolio-category">OT-system & PLC</p>
+                        <p>Designade och implementerade ett automatiserat produktionskontrollsystem som ökade effektiviteten med 30% och minskade driftsstopp.</p>
+                        <div class="portfolio-tech">
+                            <span>Siemens PLC</span>
+                            <span>SCADA</span>
+                            <span>HMI Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Safety Management System -->
+                <div class="portfolio-item" data-category="safety">
+                    <div class="portfolio-image">
+                        <img src="../assets/images/icon-consulting-safety.png" alt="Säkerhetsledningssystem">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Integrerat säkerhetsledningssystem</h3>
+                        <p class="portfolio-category">Säkerhet</p>
+                        <p>Utvecklade ett omfattande säkerhetsledningssystem för en kemisk anläggning, vilket uppnådde noll säkerhetsincidenter under 18 månader.</p>
+                        <div class="portfolio-tech">
+                            <span>Risk Assessment</span>
+                            <span>Safety Protocols</span>
+                            <span>Training Programs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Network Security -->
+                <div class="portfolio-item" data-category="cybersecurity ot-systems">
+                    <div class="portfolio-image">
+                        <img src="../assets/images/icon-safety-and-security.png" alt="Nätverkssäkerhet">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Industriell nätverkssäkerhet</h3>
+                        <p class="portfolio-category">Cybersäkerhet & OT</p>
+                        <p>Säkrade ett kritiskt industriellt nätverk genom segmentering, övervakning och implementation av robusta säkerhetskontroller.</p>
+                        <div class="portfolio-tech">
+                            <span>Network Segmentation</span>
+                            <span>IDS/IPS</span>
+                            <span>OT Security</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Compliance Audit -->
+                <div class="portfolio-item" data-category="cybersecurity">
+                    <div class="portfolio-image">
+                        <img src="../assets/images/icon-audits-grc-1.png" alt="Efterlevnadsrevision">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Efterlevnadsrevision och åtgärdning</h3>
+                        <p class="portfolio-category">GRC</p>
+                        <p>Genomförde omfattande säkerhetsrevisioner och åtgärdningsprogram som resulterade i framgångsrik regulatory compliance för flera kunder.</p>
+                        <div class="portfolio-tech">
+                            <span>SOX Compliance</span>
+                            <span>PCI DSS</span>
+                            <span>GDPR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies-section">
+        <div class="container">
+            <h2>Detaljerade fallstudier</h2>
+            <div class="case-studies-grid">
+                <div class="case-study">
+                    <h3>Fallstudie: Global tillverkningsföretag</h3>
+                    <div class="case-study-stats">
+                        <div class="stat">
+                            <span class="stat-number">85%</span>
+                            <span class="stat-label">Minskning av säkerhetsincidenter</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">12 mån</span>
+                            <span class="stat-label">Projektvaraktighet</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Utbildade anställda</span>
+                        </div>
+                    </div>
+                    <p><strong>Utmaning:</strong> Företaget hade frekventa säkerhetsbrott och bristfälliga säkerhetsprocedurer.</p>
+                    <p><strong>Lösning:</strong> Implementerade ett holistiskt cybersäkerhetsprogram inklusive policy development, teknisk förstärkning och personalutbildning.</p>
+                    <p><strong>Resultat:</strong> Dramatisk förbättring av säkerhetsställning och efterlevnad av branschstandarder.</p>
+                </div>
+
+                <div class="case-study">
+                    <h3>Fallstudie: Finansiell tjänsteleverantör</h3>
+                    <div class="case-study-stats">
+                        <div class="stat">
+                            <span class="stat-number">40%</span>
+                            <span class="stat-label">Kostnadsminskning</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">Uppetid</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50%</span>
+                            <span class="stat-label">Förbättrad prestanda</span>
+                        </div>
+                    </div>
+                    <p><strong>Utmaning:</strong> Äldre IT-infrastruktur som begränsade tillväxt och ökade kostnader.</p>
+                    <p><strong>Lösning:</strong> Designade och genomförde en fullständig molnmigrationsstrategi med fokus på säkerhet och efterlevnad.</p>
+                    <p><strong>Resultat:</strong> Förbättrad skalbarhet, minskade kostnader och förbättrad operationell effektivitet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="technologies-section">
+        <div class="container">
+            <h2>Teknologier vi arbetar med</h2>
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3>Cybersäkerhet</h3>
+                    <div class="tech-list">
+                        <span>Splunk</span>
+                        <span>Nessus</span>
+                        <span>Wireshark</span>
+                        <span>Metasploit</span>
+                        <span>Burp Suite</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3>Molnplattformar</h3>
+                    <div class="tech-list">
+                        <span>AWS</span>
+                        <span>Microsoft Azure</span>
+                        <span>Google Cloud</span>
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3>Industriella system</h3>
+                    <div class="tech-list">
+                        <span>Siemens PLC</span>
+                        <span>Allen-Bradley</span>
+                        <span>Wonderware</span>
+                        <span>Ignition SCADA</span>
+                        <span>Modbus</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Imponerad av vårt arbete?</h2>
+            <p>Låt oss diskutera hur vi kan skapa framgång för ditt projekt.</p>
+            <a href="contact.html" class="btn btn-primary">Starta ditt projekt</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../assets/images/color-logo-abbrev-flat.png" alt="Total Design Consulting" class="footer-logo">
+                    <p>Expertlösningar inom cybersäkerhet, IT och industriella system.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Snabblänkar</h4>
+                    <ul>
+                        <li><a href="index.html">Hem</a></li>
+                        <li><a href="om-mig.html">Om mig</a></li>
+                        <li><a href="services.html">Tjänster</a></li>
+                        <li><a href="portfolio.html">Portfölj</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>Email: christopher@totaldesignconsulting.com</p>
+                    <p>Telefon: +1 (555) 123-4567</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Juridisk</h4>
+                    <ul>
+                        <li><a href="legal-terms-conditions.html">Villkor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Total Design Consulting. Alla rättigheter förbehållna.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

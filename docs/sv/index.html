@@ -1,199 +1,317 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Total Design Consulting - Cybersäkerhet, IT-infrastruktur och Industriell Automation</title>
-    <meta name="description" content="Total Design Consulting (TDC) specialiserar sig på cybersäkerhet, IT-infrastruktur och industriell automation. Vi levererar professionella tekniska konsulttjänster för företag världen över, och säkerställer en trygg digital transformation.">
-    <meta name="keywords" content="cybersäkerhet, IT-konsult, industriell automation, systemintegration, digital transformation, teknisk konsultation">
-    
-    <!-- SEO and Social Media Meta Tags -->
-    <meta property="og:title" content="Total Design Consulting - Cybersäkerhet, IT-infrastruktur och Industriell Automation">
-    <meta property="og:description" content="Total Design Consulting (TDC) specialiserar sig på cybersäkerhet, IT-infrastruktur och industriell automation. Vi levererar professionella tekniska konsulttjänster.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://totaldesignconsulting.net/sv/">
-    <meta property="og:image" content="https://totaldesignconsulting.net/assets/images/color-logo-full-gloss.png">
-    
-    <!-- Hreflang for SEO -->
-    <link rel="alternate" hreflang="en" href="https://totaldesignconsulting.net/">
-    <link rel="alternate" hreflang="de" href="https://totaldesignconsulting.net/de/">
-    <link rel="alternate" hreflang="es" href="https://totaldesignconsulting.net/es/">
-    <link rel="alternate" hreflang="hi" href="https://totaldesignconsulting.net/hi/">
-    <link rel="alternate" hreflang="ur" href="https://totaldesignconsulting.net/ur/">
-    <link rel="alternate" hreflang="zh-CN" href="https://totaldesignconsulting.net/zh/">
-    <link rel="alternate" hreflang="sv" href="https://totaldesignconsulting.net/sv/">
-    <link rel="alternate" hreflang="x-default" href="https://totaldesignconsulting.net/">
-    
-    <link rel="canonical" href="https://totaldesignconsulting.net/sv/">
-    <link rel="icon" href="../assets/images/color-logo-favicon.png" type="image/png">
-    <link rel="stylesheet" href="../assets/css/style.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Total Design Consulting - Expert cybersäkerhet, nätverksinfrastruktur, industriell automation och säkerhetsefterlevnadskonsulttjänster. Vi servar Hoboken, NJ och globala kunder med personaliserade ingenjörslösningar."/>
+  <title>Total Design Consulting - Expert Engineering Solutions</title>
+  <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/color-logo-favicon.png">
+  <link rel="apple-touch-icon" href="../assets/images/color-logo-favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link href="../assets/css/style.css" rel="stylesheet"/>
+  
+  <!-- Hreflang for SEO -->
+  <link rel="alternate" hreflang="en" href="https://totaldesignconsulting.com/index.html" />
+  <link rel="alternate" hreflang="de" href="https://totaldesignconsulting.com/de/index.html" />
+  <link rel="alternate" hreflang="es" href="https://totaldesignconsulting.com/es/index.html" />
+  <link rel="alternate" hreflang="sv" href="https://totaldesignconsulting.com/sv/index.html" />
+  <link rel="alternate" hreflang="x-default" href="https://totaldesignconsulting.com/index.html" />
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="../assets/images/color-logo-abbrev-flat.png" alt="Total Design Consulting">
-                </a>
+  <header class="tdc-header py-3 mb-4">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand me-4" href="index.html">
+          <img src="../assets/images/color-logo-abbrev-gloss.png" alt="Total Design Consulting Logo" height="50" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-nav mx-auto">
+            <a class="nav-link tdc-nav-link active" href="index.html">Hem</a>
+            <a class="nav-link tdc-nav-link" href="om-mig.html">Om mig</a>
+            <a class="nav-link tdc-nav-link" href="services.html">Tjänster</a>
+            <a class="nav-link tdc-nav-link" href="testimonials.html">Omdömen</a>
+            <a class="nav-link tdc-nav-link" href="portfolio.html">Portfölj</a>
+            <a class="nav-link tdc-nav-link" href="contact.html">Kontakt</a>
+          </div>
+          <div class="navbar-nav ms-auto">
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-success" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                🇸🇪 Svenska
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item" href="../index.html">🇺🇸 English</a></li>
+                <li><a class="dropdown-item" href="../es/index.html">🇪🇸 Español</a></li>
+                <li><a class="dropdown-item" href="../de/index.html">🇩🇪 Deutsch</a></li>
+                <li><a class="dropdown-item" href="../hi/index.html">🇮🇳 हिन्दी</a></li>
+                <li><a class="dropdown-item" href="../ur/index.html">🇵🇰 اردو</a></li>
+                <li><a class="dropdown-item" href="../zh/index.html">🇨🇳 中文</a></li>
+                <li><a class="dropdown-item" href="index.html">🇸🇪 Svenska</a></li>
+              </ul>
             </div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link active">Hem</a></li>
-                <li class="nav-item"><a href="../services.html" class="nav-link">Tjänster</a></li>
-                <li class="nav-item"><a href="../about-me.html" class="nav-link">Om Oss</a></li>
-                <li class="nav-item"><a href="../portfolio.html" class="nav-link">Portfolio</a></li>
-                <li class="nav-item"><a href="../testimonials.html" class="nav-link">Testimonials</a></li>
-                <li class="nav-item"><a href="../contact.html" class="nav-link">Kontakt</a></li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link">Svenska ▼</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="../">English</a></li>
-                        <li><a href="../de/">Deutsch</a></li>
-                        <li><a href="../es/">Español</a></li>
-                        <li><a href="../hi/">हिन्दी</a></li>
-                        <li><a href="../ur/">اردو</a></li>
-                        <li><a href="../zh/">中文</a></li>
-                        <li><a href="index.html">Svenska</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+          </div>
         </div>
-    </nav>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Säkra Din Digitala Framtid</h1>
-            <p class="hero-subtitle">Professionell cybersäkerhet, IT-infrastruktur och industriell automation</p>
-            <p class="hero-description">Total Design Consulting (TDC) levererar omfattande tekniska säkerhetslösningar för företag. Från nätverksskydd till industriella kontrollsystem - vi säkerställer att din verksamhet fungerar säkert i den digitala eran.</p>
-            
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">År av expertis</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">500+</div>
-                    <div class="stat-label">Framgångsrika projekt</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">99.9%</div>
-                    <div class="stat-label">Systemtillförlitlighet</div>
-                </div>
-            </div>
-            
-            <div class="hero-cta">
-                <a href="../contact.html" class="cta-button primary">Kontakta Oss</a>
-                <a href="../services.html" class="cta-button secondary">Utforska Tjänster</a>
-            </div>
+  <main>   
+    <section class="container mb-5 pt-4">
+      <div class="text-center">
+        <img src="../assets/images/color-logo-full-gloss.png" alt="Total Design Consulting" class="hero-logo mb-3">
+        <h1 class="display-4 fw-bold text-success mb-3">Säkra. Automatisera. Leverera.</h1>
+        <p class="lead text-muted mb-4">
+          Flerspråkig Cyber-OT-ingenjör som levererar Fortune 50-bevisad tillförlitlighet inom försvar, tillverkning och kritisk infrastruktur världen över. Ärlig expertis, snabb implementering och skräddarsydda lösningar för dina unika utmaningar.
+        </p>
+        
+        <!-- High-contrast CTA with Scheduling -->
+        <div class="mb-4">
+          <a href="https://calendly.com/totaldesignconsulting-christopher" target="_blank" class="btn btn-success btn-lg px-5 py-3 me-3 shadow">
+            <i class="fas fa-calendar-check me-2"></i>Boka gratis konsultation
+          </a>
+          <a href="testimonials.html" class="btn btn-outline-success btn-lg px-4 py-3">
+            Kundomdömen
+          </a>
         </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="row g-3 text-center">
+              <div class="col-md-3">
+                <div class="p-3">
+                  <div class="h4 text-success mb-1">Mänsklig beröring</div>
+                  <small class="text-muted">Personlig approach</small>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="p-3">
+                  <div class="h4 text-success mb-1">30+ språk</div>
+                  <small class="text-muted">Global räckvidd</small>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="p-3">
+                  <div class="h4 text-success mb-1">15+ års</div>
+                  <small class="text-muted">Branschexpertis</small>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="p-3">
+                  <div class="h4 text-success mb-1">500+ projekt</div>
+                  <small class="text-muted">Framgångsrika leveranser</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Services Overview -->
-    <section class="services-overview">
-        <div class="container">
-            <h2>Våra Kärntjänster</h2>
-            <p class="section-subtitle">Omfattande tekniska lösningar för ditt företag</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <img src="../assets/images/icon-consulting-cybersecurity.png" alt="Cybersäkerhetskonsultation">
-                    <h3>Cybersäkerhetskonsultation</h3>
-                    <p>Omfattande säkerhetsbedömningar, hotanalys och skyddsstrategier för att säkra dina digitala tillgångar.</p>
-                </div>
-                
-                <div class="service-card">
-                    <img src="../assets/images/icon-consulting-it.png" alt="IT-infrastruktur">
-                    <h3>IT-infrastruktur</h3>
-                    <p>Design och implementation av robust nätverksarkitektur med optimerad prestanda och skalbarhet.</p>
-                </div>
-                
-                <div class="service-card">
-                    <img src="../assets/images/icon-plc-engineering.png" alt="Industriell Automation">
-                    <h3>Industriell Automation</h3>
-                    <p>Smart tillverkningslösningar, PLC-programmering och SCADA-systemintegration för ökad effektivitet.</p>
-                </div>
-                
-                <div class="service-card">
-                    <img src="../assets/images/icon-safety-and-security.png" alt="Säkerhetsefterlevnad">
-                    <h3>Säkerhetsefterlevnad</h3>
-                    <p>ISO 27001, IEC 62443 och andra internationella standarder för att säkerställa branschefterlevnad.</p>
-                </div>
+    <!-- Services Preview -->
+    <section class="container mb-5">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold text-success mb-3">Våra expertområden</h2>
+        <p class="lead text-muted">Omfattande lösningar för moderna affärsutmaningar</p>
+      </div>
+      <div class="row g-4 mb-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="card tdc-card shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="icon-wrapper mb-3">
+                <img src="../assets/images/icon-consulting-cybersecurity.png" alt="Cybersäkerhet" height="64">
+              </div>
+              <h3 class="card-title text-success mb-3">Cybersäkerhet</h3>
+              <p class="card-text">Skydda dina digitala tillgångar med avancerade säkerhetslösningar och efterlevnadsstrategier.</p>
+              <a href="services.html#cybersecurity" class="btn btn-outline-success">Läs mer</a>
             </div>
-            
-            <div class="services-cta">
-                <a href="../services.html" class="cta-button primary">Se Alla Tjänster</a>
-            </div>
+          </div>
         </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card tdc-card shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="icon-wrapper mb-3">
+                <img src="../assets/images/icon-consulting-it.png" alt="IT-infrastruktur" height="64">
+              </div>
+              <h3 class="card-title text-success mb-3">IT-infrastruktur</h3>
+              <p class="card-text">Designa och optimera robusta nätverkslösningar för maximal prestanda och tillförlitlighet.</p>
+              <a href="services.html#infrastructure" class="btn btn-outline-success">Läs mer</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card tdc-card shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="icon-wrapper mb-3">
+                <img src="../assets/images/icon-plc-engineering.png" alt="Industriell automation" height="64">
+              </div>
+              <h3 class="card-title text-success mb-3">Industriell automation</h3>
+              <p class="card-text">Strömlinjeforma operationer med smarta automationslösningar och PLC-programmering.</p>
+              <a href="services.html#automation" class="btn btn-outline-success">Läs mer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="services.html" class="btn btn-success btn-lg px-5">Se alla tjänster</a>
+      </div>
     </section>
 
     <!-- Why Choose Us -->
-    <section class="why-choose-us">
-        <div class="container">
-            <h2>Varför Välja Oss</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <h3>Global Expertis, Lokal Service</h3>
-                    <p>Omfattande internationell projektexpertis med djup förståelse för lokala tekniska krav och regleringar.</p>
+    <section class="container mb-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h2 class="display-5 fw-bold text-success mb-4">Varför välja Total Design Consulting?</h2>
+          <div class="row g-4">
+            <div class="col-12">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-shield-alt text-success fa-2x"></i>
                 </div>
-                
-                <div class="feature">
-                    <h3>Kompletta Lösningar</h3>
-                    <p>Från behovsanalys till systemimplementation, utbildning och kontinuerlig support - vi täcker hela kedjan.</p>
+                <div class="flex-grow-1 ms-3">
+                  <h4 class="text-success">Bevisad expertis</h4>
+                  <p class="text-muted">15+ års branschexpertis med framgångsrika projekt inom Fortune 50-företag.</p>
                 </div>
-                
-                <div class="feature">
-                    <h3>Banbrytande Teknik</h3>
-                    <p>Vi håller oss uppdaterade med de senaste säkerhetsteknologierna och automationslösningarna för din verksamhet.</p>
-                </div>
-                
-                <div class="feature">
-                    <h3>24/7 Support</h3>
-                    <p>Dygnet-runt teknisk support för att säkerställa att dina system alltid fungerar optimalt.</p>
-                </div>
+              </div>
             </div>
+            <div class="col-12">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-globe text-success fa-2x"></i>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <h4 class="text-success">Global räckvidd</h4>
+                  <p class="text-muted">Flerspråkig support och internationell erfarenhet för projekt världen över.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="d-flex">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-rocket text-success fa-2x"></i>
+                </div>
+                <div class="flex-grow-1 ms-3">
+                  <h4 class="text-success">Snabb leverans</h4>
+                  <p class="text-muted">Agila metoder och effektiva processer för snabba, kvalitativa resultat.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="col-lg-6">
+          <img src="../assets/images/color-logo-full-gloss.png" alt="Total Design Consulting" class="img-fluid">
+        </div>
+      </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Redo att Påbörja Din Digitala Transformation?</h2>
-            <p>Kontakta vårt expertteam för skräddarsydda tekniska lösningar</p>
-            <div class="cta-buttons">
-                <a href="../contact.html" class="cta-button primary">Boka Gratis Konsultation</a>
-                <a href="https://calendly.com/totaldesignconsulting/30min" target="_blank" class="cta-button secondary">Boka Online</a>
+    <!-- Client Testimonials Preview -->
+    <section class="container mb-5">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold text-success mb-3">Vad våra kunder säger</h2>
+        <p class="lead text-muted">Läs om de positiva upplevelserna från våra värdefulla kunder</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="card tdc-card shadow-sm h-100">
+            <div class="card-body">
+              <div class="text-warning mb-3">★★★★★</div>
+              <p class="card-text">"Exceptionella resultat för vårt cybersäkerhetsprojekt. Deras expertis och professionalism gjorde hela processen smidig och framgångsrik."</p>
+              <footer class="blockquote-footer">
+                <cite title="Source Title">Sarah Johnson, CTO</cite>
+              </footer>
             </div>
+          </div>
         </div>
+        <div class="col-lg-4">
+          <div class="card tdc-card shadow-sm h-100">
+            <div class="card-body">
+              <div class="text-warning mb-3">★★★★★</div>
+              <p class="card-text">"Molnmigrationen var felfri. De minskade våra IT-kostnader med 40% samtidigt som de förbättrade prestanda och säkerhet."</p>
+              <footer class="blockquote-footer">
+                <cite title="Source Title">Marcus Chen, IT-direktör</cite>
+              </footer>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card tdc-card shadow-sm h-100">
+            <div class="card-body">
+              <div class="text-warning mb-3">★★★★★</div>
+              <p class="card-text">"Deras industriella automationslösning revolutionerade vår produktionsprocess. 30% ökning av effektiviteten."</p>
+              <footer class="blockquote-footer">
+                <cite title="Source Title">Anna Lindberg, Produktionschef</cite>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="testimonials.html" class="btn btn-outline-success btn-lg">Läs alla omdömen</a>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="../assets/images/green-logo-full-regal.png" alt="Total Design Consulting">
+    <!-- Call to Action -->
+    <section class="container mb-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="card tdc-card shadow">
+            <div class="card-body text-center py-5">
+              <h2 class="display-5 fw-bold text-success mb-3">Redo att starta ditt projekt?</h2>
+              <p class="lead text-muted mb-4">Låt oss diskutera hur vi kan hjälpa dig att uppnå dina tekniska mål.</p>
+              <div class="row justify-content-center">
+                <div class="col-md-8">
+                  <div class="d-flex flex-wrap gap-3 justify-content-center">
+                    <a href="https://calendly.com/totaldesignconsulting-christopher" target="_blank" class="btn btn-success btn-lg px-5">
+                      <i class="fas fa-calendar-check me-2"></i>Boka konsultation
+                    </a>
+                    <a href="contact.html" class="btn btn-outline-success btn-lg px-4">
+                      <i class="fas fa-envelope me-2"></i>Kontakta oss
+                    </a>
+                    <a href="portfolio.html" class="btn btn-outline-success btn-lg px-4">
+                      <i class="fas fa-folder-open me-2"></i>Se portfölj
+                    </a>
+                  </div>
                 </div>
-                <div class="footer-links">
-                    <a href="../legal-terms-conditions.html">Juridiska Villkor</a>
-                    <a href="../contact.html">Kontakt</a>
-                    <a href="../sitemap.html">Webbkarta</a>
-                </div>
-                <div class="footer-contact">
-                    <span>📧 info@totaldesignconsulting.net</span>
-                    <span>📱 +1-XXX-XXX-XXXX</span>
-                </div>
+              </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Total Design Consulting LLC. Alla rättigheter förbehållna.</p>
-            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
+
+  <footer class="tdc-footer text-white py-3 mt-auto">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-flex flex-wrap justify-content-center justify-content-md-between align-items-center">
+            <div class="d-flex align-items-center mb-2 mb-md-0">
+              <img src="../assets/images/green-logo-full-regal.png" alt="Total Design Consulting" height="32" class="me-3">
+              <span class="text-white">&copy; 2023-2025 Total Design Consulting LLC</span>
+            </div>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="mailto:support@totaldesignconsulting.com?subject=Free%20Consultation%20Request%20-%20Total%20Design%20Consulting&body=Hej%20Total%20Design%20Consulting%20Team%2C%0A%0AJag%20skulle%20vilja%20boka%20en%20gratis%20konsultation%20för%20att%20diskutera%20mina%20projektbehov.%0A%0AFöretag%2FOrganisation%3A%20%5BDitt%20företagsnamn%5D%0AProjekttyp%3A%20%5BVälj%3A%20Cybersäkerhet%2C%20Nätverksinfrastruktur%2C%20Industriell%20automation%2C%20Säkerhet%20%26%20efterlevnad%2C%20eller%20Annat%5D%0A%0AProjektbeskrivning%3A%0A%5BBeskriv%20kort%20dina%20krav%5D%0A%0AÖnskad%20kontaktmetod%3A%20%5BE-post%2FTelefon%2FVideosamtal%5D%0ATelefonnummer%3A%20%5BDitt%20telefonnummer%5D%0ABästa%20tid%20att%20kontakta%3A%20%5BDin%20önskade%20tid%5D%0A%0ATack%20för%20din%20tid.%20Jag%20ser%20fram%20emot%20att%20höra%20från%20er.%0A%0ABästa%20hälsningar%2C%0A%5BDitt%20namn%5D" class="text-white-50 text-decoration-none">E-post</a>
+              <a href="https://linkedin.com/company/total-design-consulting" class="text-white-50 text-decoration-none">LinkedIn</a>
+              <a href="contact.html" class="text-white-50 text-decoration-none">Kontakt</a>
+              <a href="legal-terms-conditions.html" class="text-white-50 text-decoration-none">Juridisk</a>
+              <a href="sitemap.html" class="text-white-50 text-decoration-none">Webbkarta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
