@@ -5,6 +5,78 @@ All notable changes to the Total Design Consulting website will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.5.0] - 2026-01-01 - Comprehensive SEO & Accessibility Optimization 🔍♿
+
+### 🌟 Major SEO Improvements
+
+#### Complete Hreflang Implementation
+- **All 7 language variants** now have complete cross-references (en, de, es, hi, ur, zh-CN, sv)
+- **x-default tag** added to all index pages for proper language fallback
+- **Fixed incomplete hreflang** in Hindi, Urdu, and Swedish pages (previously missing de, es references)
+
+#### Canonical URLs
+- Added canonical tags to **14 main pages** preventing duplicate content issues
+- All language index pages now have proper canonical URLs
+- Format: `https://totaldesignconsulting.com/[lang]/page.html`
+
+#### Open Graph Tags
+- **14 pages** now have complete OG metadata for social sharing
+- Locale-specific OG tags: `og:locale` set for each language (de_DE, es_ES, hi_IN, ur_PK, zh_CN, sv_SE)
+- Consistent branding with `og:image` pointing to company logo
+
+### ♿ Accessibility Enhancements
+
+#### Skip-to-Content Navigation
+- **56 HTML pages** now have skip-to-content links
+- CSS styling in `style.css` for screen reader-friendly navigation
+- `id="main-content"` added to all main elements
+
+#### Heading Hierarchy Fixes
+- **services.html**: Added `<h2>Core Services</h2>` section header (fixed h1→h3 jump)
+- **portfolio.html**: Changed Case Studies from `<h4>` to `<h3>` for proper hierarchy
+
+#### Aria-Label Translations
+- **Chinese pages**: `aria-label="切换导航"` (Toggle navigation)
+- **Swedish pages**: `aria-label="Växla navigering"` (Toggle navigation)
+
+### 🐛 Bug Fixes
+
+#### Hindi Navigation (Critical)
+- Fixed broken links: `sevayen.html` → `seva.html`
+- Fixed broken links: `pramanpatra.html` → `prashansa.html`
+- Fixed footer links: `qanuni.html` → `kanooni-niyam.html`
+- Fixed sitemap path: `sitemap.html` → `../sitemap.html`
+
+#### Swedish Localization
+- Fixed English title to Swedish: "Expertlösningar inom Teknik"
+
+### 📄 Meta Descriptions Added
+- `testimonials.html` - Client testimonials and success stories
+- `case-studies.html` - Fortune 50 case studies
+- `contact.html` - Contact and consultation info
+- `about-me.html` - Christopher's background
+- `portfolio.html` - Project portfolio
+- `services.html` - Engineering services
+- `404.html` - Page not found
+- `legal-terms-conditions.html` - Legal terms
+- `performance.html` - Performance benchmarks
+- `translation-technology.html` - Translation services
+- `icon-preview.html` - Brand assets
+
+### 📊 Statistics
+- **Files modified**: 85 files across 2 commits
+- **Skip links coverage**: 56/59 pages (95%)
+- **Hreflang coverage**: 100% of index pages
+- **OG tags coverage**: All main navigation pages
+- **Languages fully optimized**: 7 (en, de, es, hi, ur, zh, sv)
+
+### 🎯 SEO Impact
+- **Improved international SEO** with complete hreflang implementation
+- **Better social sharing** with Open Graph tags and localized content
+- **Enhanced accessibility** meeting WCAG skip navigation guidelines
+- **Fixed crawl errors** from broken Hindi navigation links
+- **Reduced duplicate content risk** with canonical URLs
+
 ## [2.4.0] - 2026-01-01 - Case Studies & Google Analytics Integration 📊
 
 ### 🌟 New Features
