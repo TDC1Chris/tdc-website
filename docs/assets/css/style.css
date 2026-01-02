@@ -1,5 +1,22 @@
 /* Optimized CSS for Total Design Consulting website */
 
+/* Skip to content link for accessibility */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 1rem;
+  background: var(--tdc-green, #2e7d32);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.skip-to-content:focus {
+  left: 0;
+}
+
 :root {
   --color-primary: #2563eb;
   --color-accent: #60a5fa;
