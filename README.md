@@ -158,5 +158,5 @@ python scripts/development/auto_translate_site.py         # Translation assistan
 ---
 
 **Current Version:** 2.5.0  
-**Last Updated:** Jan 1, 2025 
+**Last Updated:** Jan 1, 2026 
 **Repository Maintainer:** Christopher Clubb, Total Design Consulting LLC
