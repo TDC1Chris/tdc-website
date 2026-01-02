@@ -5,6 +5,38 @@ All notable changes to the Total Design Consulting website will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.0] - 2026-01-01 - Case Studies & Google Analytics Integration 📊
+
+### 🌟 New Features
+- **Case Studies Page** (`case-studies.html`) - New dedicated page featuring three detailed case studies:
+  - Fortune 50 Manufacturing Automation (General Motors, John Deere, ABB)
+  - Enterprise SIEM & Security Transformation (Critical Infrastructure, Defense)
+  - Global Network Infrastructure (International Manufacturing)
+- **Google Analytics Integration** - Configured tracking across all 46 HTML pages with measurement ID `G-YFCDR179N1`
+
+### 📄 Page Updates
+- **Portfolio Page** (`portfolio.html`) - Added prominent link to new Case Studies page
+- **Case Study Metrics** - Each case study includes challenge/solution format with measurable results:
+  - 75% efficiency increase, zero safety incidents (Manufacturing)
+  - 99.9% threat detection, 100% compliance (Security)
+  - 99.8% network uptime, 8 languages supported (Network)
+
+### 🔧 Technical Improvements
+- **Analytics Tracking** - Replaced `GA_MEASUREMENT_ID` placeholder with actual tracking ID in all pages
+- **Consistent Structure** - Case studies page follows established Bootstrap template pattern
+- **SEO Ready** - New page includes proper meta tags and navigation integration
+
+### 📊 Statistics
+- **Total pages**: 62 HTML files (up from 61)
+- **Analytics coverage**: 100% of all pages now have GA tracking
+- **Case studies**: 3 detailed project showcases
+
+### 🎯 Business Impact
+- **Enhanced credibility** with detailed project case studies
+- **Data-driven insights** through Google Analytics integration
+- **Improved lead generation** with specific success metrics and outcomes
+- **Professional portfolio** demonstrating Fortune 50 and defense sector experience
+
 ## [2.3.0] - 2025-07-07 - Chinese Language Site Completion & Global Consistency Audit 🇨🇳
 
 ### 🌟 Major Milestone: Complete Chinese Localization
