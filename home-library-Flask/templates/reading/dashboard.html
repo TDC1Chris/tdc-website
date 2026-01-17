@@ -20,22 +20,31 @@
 
     <!-- Quick Stats -->
     <div class="row mb-4">
-        <div class="col-md-4 mb-3">
+        <div class="col-md-3 mb-3">
             <div class="tdc-card text-center h-100">
-                <div class="h1 text-primary mb-2">{{ wishlist|length }}</div>
-                <div class="text-muted">Books to Read</div>
+                <div class="h1 text-danger mb-2">{{ 1 if waitlist_book else 0 }}</div>
+                <div class="text-muted">Waitlist</div>
             </div>
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-3 mb-3">
+            <div class="tdc-card text-center h-100">
+                <div class="h1 text-info mb-2">{{ checked_out|length }}</div>
+                <div class="text-muted">Checked Out</div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
             <div class="tdc-card text-center h-100">
                 <div class="h1 text-warning mb-2">{{ reading|length }}</div>
                 <div class="text-muted">Currently Reading</div>
+                {% if reading|length > 0 %}
+                <div class="small text-success mt-2">{{ reading[0].title }}</div>
+                {% endif %}
             </div>
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-3 mb-3">
             <div class="tdc-card text-center h-100">
-                <div class="h1 text-success mb-2">{{ completed|length }}</div>
-                <div class="text-muted">Completed</div>
+                <div class="h1 text-success mb-2">{{ bookshelf|length }}</div>
+                <div class="text-muted">Bookshelf</div>
             </div>
         </div>
     </div>
@@ -46,11 +55,110 @@
             <a href="{{ url_for('add_to_reading_list') }}" class="btn-tdc me-2">
                 <i class="fas fa-plus me-1"></i> Add Book
             </a>
-            <a href="{{ url_for('weather_recommendations') }}" class="btn-tdc-outline">
+            <a href="{{ url_for('recommendations') }}" class="btn-tdc-outline">
                 <i class="fas fa-cloud-sun me-1"></i> Reading Weather
             </a>
         </div>
     </div>
+
+    <!-- Waitlist Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="text-danger mb-3">
+                <i class="fas fa-clock me-2"></i>Waitlist (1 book maximum)
+            </h2>
+            {% if waitlist_book %}
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="tdc-card border border-danger">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h5 class="text-success mb-1">{{ waitlist_book.title }}</h5>
+                                <p class="text-muted mb-1">{{ waitlist_book.author }}</p>
+                                <p class="small text-muted mb-0">Copy #{{ waitlist_book.copy_number }}</p>
+                            </div>
+                            <span class="badge bg-danger">Waitlisted</span>
+                        </div>
+                        <div class="small mb-2">
+                            {% if waitlist_book.is_available %}
+                            <span class="text-success"><i class="fas fa-check-circle me-1"></i>Now Available!</span>
+                            {% else %}
+                            <span class="text-muted">Checked out until {{ waitlist_book.due_date.strftime('%b %d, %Y') if waitlist_book.due_date else 'N/A' }}</span>
+                            {% endif %}
+                        </div>
+                        <div class="d-flex gap-2">
+                            {% if waitlist_book.is_available %}
+                            <form action="{{ url_for('checkout_book', book_id=waitlist_book.id) }}" method="POST" class="flex-grow-1">
+                                <button type="submit" class="btn btn-sm btn-success w-100">
+                                    <i class="fas fa-book-reader me-1"></i> Check Out Now
+                                </button>
+                            </form>
+                            {% endif %}
+                            <form action="{{ url_for('remove_from_waitlist') }}" method="POST" class="flex-grow-1">
+                                <button type="submit" class="btn btn-sm btn-outline-danger w-100">
+                                    <i class="fas fa-times me-1"></i> Remove
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="tdc-card text-center py-4">
+                <p class="text-muted mb-0">No book on waitlist. Visit <a href="{{ url_for('books', view='available') }}" class="text-success">Our Library</a> to add a book to your waitlist when it becomes unavailable.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Checked Out From Library Section -->
+    {% if checked_out %}
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="text-info mb-3">
+                <i class="fas fa-book me-2"></i>Checked Out from Library ({{ checked_out|length }}/3)
+            </h2>
+            <div class="row">
+                {% for book in checked_out %}
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <div class="tdc-card {% if book.is_overdue %}border border-danger{% endif %}">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h5 class="text-success mb-1">{{ book.title }}</h5>
+                                <p class="text-muted mb-1">{{ book.author }}</p>
+                                <p class="small text-muted mb-0">Copy #{{ book.copy_number }}</p>
+                            </div>
+                            {% if book.is_overdue %}
+                            <span class="badge bg-danger">Overdue</span>
+                            {% else %}
+                            <span class="badge bg-info">Checked Out</span>
+                            {% endif %}
+                        </div>
+                        <div class="small mb-3">
+                            <div><strong>Checked out:</strong> {{ book.checkout_date.strftime('%b %d, %Y') }}</div>
+                            <div><strong>Due:</strong> {{ book.due_date.strftime('%b %d, %Y') }}</div>
+                        </div>
+                        <div class="d-flex gap-2">
+                            {% if book.id not in reading_book_ids %}
+                            <form action="{{ url_for('start_reading_library_book', book_id=book.id) }}" method="POST" class="flex-grow-1">
+                                <button type="submit" class="btn btn-sm btn-warning w-100">
+                                    <i class="fas fa-book-open me-1"></i> Start Reading
+                                </button>
+                            </form>
+                            {% endif %}
+                            <form action="{{ url_for('return_book', book_id=book.id) }}" method="POST" class="flex-grow-1">
+                                <button type="submit" class="btn btn-sm btn-success w-100">
+                                    <i class="fas fa-undo me-1"></i> Return Book
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
 
     <!-- Currently Reading Section -->
     {% if reading %}
@@ -77,9 +185,9 @@
                         {% if not demo_mode %}
                         <div class="mt-3">
                             <form action="{{ url_for('update_reading_status', book_id=book.id) }}" method="POST" class="d-inline">
-                                <input type="hidden" name="status" value="completed">
+                                <input type="hidden" name="status" value="bookshelf">
                                 <button type="submit" class="btn btn-sm btn-success">
-                                    <i class="fas fa-check me-1"></i> Mark Complete
+                                    <i class="fas fa-check me-1"></i> Add to Bookshelf
                                 </button>
                             </form>
                         </div>
@@ -111,6 +219,14 @@
                             {% if demo_mode %}{{ book.author }}{% else %}{{ book.author }}{% endif %}
                         </p>
                         <span class="book-status wishlist">Wishlist</span>
+                        {% if not demo_mode %}
+                        <form action="{{ url_for('update_reading_status', book_id=book.id) }}" method="POST" class="mt-2">
+                            <input type="hidden" name="status" value="reading">
+                            <button type="submit" class="btn btn-sm btn-outline-warning w-100">
+                                <i class="fas fa-play me-1"></i> Start Reading
+                            </button>
+                        </form>
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}
@@ -119,16 +235,16 @@
     </div>
     {% endif %}
 
-    <!-- Completed Section -->
-    {% if completed %}
+    <!-- Bookshelf Section -->
+    {% if bookshelf %}
     <div class="row">
         <div class="col-12">
             <h2 class="text-success mb-3">
-                <i class="fas fa-check-circle me-2"></i>Completed
+                <i class="fas fa-book me-2"></i>My Bookshelf
                 <a href="{{ url_for('reading_completed') }}" class="btn btn-sm btn-outline-success ms-2">View All</a>
             </h2>
             <div class="row">
-                {% for book in completed[:4] %}
+                {% for book in bookshelf[:4] %}
                 <div class="col-md-6 col-lg-3 mb-3">
                     <div class="book-card">
                         <h6 class="book-title mb-1">
@@ -137,8 +253,8 @@
                         <p class="book-author small mb-2">
                             {% if demo_mode %}{{ book.author }}{% else %}{{ book.author }}{% endif %}
                         </p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span class="book-status completed">Completed</span>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="book-status completed">Bookshelf</span>
                             {% if demo_mode and book.rating %}
                             <span class="star-rating">
                                 {% for i in range(book.rating) %}<i class="fas fa-star"></i>{% endfor %}
@@ -151,6 +267,14 @@
                             </span>
                             {% endif %}
                         </div>
+                        {% if not demo_mode %}
+                        <form action="{{ url_for('update_reading_status', book_id=book.id) }}" method="POST">
+                            <input type="hidden" name="status" value="reading">
+                            <button type="submit" class="btn btn-sm btn-outline-warning w-100">
+                                <i class="fas fa-redo me-1"></i> Read Again
+                            </button>
+                        </form>
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}
@@ -160,15 +284,20 @@
     {% endif %}
 
     <!-- Empty State -->
-    {% if not wishlist and not reading and not completed %}
+    {% if not wishlist and not reading and not bookshelf and not checked_out and not waitlist_book %}
     <div class="row">
         <div class="col-12 text-center py-5">
             <i class="fas fa-book-open text-muted" style="font-size: 4rem;"></i>
             <h3 class="text-muted mt-3">Your library is empty</h3>
-            <p class="text-muted">Start by adding some books you want to read!</p>
-            <a href="{{ url_for('add_to_reading_list') }}" class="btn-tdc">
-                <i class="fas fa-plus me-1"></i> Add Your First Book
-            </a>
+            <p class="text-muted">Check out books from our library or add books to your reading list!</p>
+            <div class="mt-3">
+                <a href="{{ url_for('books', view='available') }}" class="btn-tdc me-2">
+                    <i class="fas fa-book me-1"></i> Browse Library
+                </a>
+                <a href="{{ url_for('add_to_reading_list') }}" class="btn-tdc-outline">
+                    <i class="fas fa-plus me-1"></i> Add to Reading List
+                </a>
+            </div>
         </div>
     </div>
     {% endif %}

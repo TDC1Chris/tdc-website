@@ -390,6 +390,27 @@ input:focus, textarea:focus, select:focus {
   border-left: 4px solid #ff9800;
 }
 
+/* Reading score display styles */
+.reading-score-excellent {
+  background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
+  color: white;
+}
+
+.reading-score-good {
+  background: linear-gradient(135deg, #66bb6a 0%, #81c784 100%);
+  color: white;
+}
+
+.reading-score-fair {
+  background: linear-gradient(135deg, #ffa726 0%, #ffb74d 100%);
+  color: white;
+}
+
+.reading-score-poor {
+  background: linear-gradient(135deg, #ff9800 0%, #ffa726 100%);
+  color: white;
+}
+
 /* Responsive */
 @media (max-width: 767.98px) {
   .tdc-header {

@@ -77,6 +77,64 @@
         </div>
         {% endif %}
         
+        <div class="section-title">☁️ Reading Preferences</div>
+        
+        <div class="form-group">
+            <label style="margin-bottom: 10px;">Select your preferred reading conditions:</label>
+            <div class="help-text" style="margin-bottom: 15px;">Choose weather conditions that make you want to curl up with a good book</div>
+            {% set user_prefs = user.reading_preferences.split(',') if user.reading_preferences else [] %}
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                <label style="display: flex; align-items: center; padding: 10px; background-color: #f8f9fa; border-radius: 5px; cursor: pointer; font-weight: normal;">
+                    <input type="checkbox" name="reading_preferences" value="rainy" {% if 'rainy' in user_prefs %}checked{% endif %} style="margin-right: 8px;">
+                    🌧️ Rainy
+                </label>
+                <label style="display: flex; align-items: center; padding: 10px; background-color: #f8f9fa; border-radius: 5px; cursor: pointer; font-weight: normal;">
+                    <input type="checkbox" name="reading_preferences" value="snowy" {% if 'snowy' in user_prefs %}checked{% endif %} style="margin-right: 8px;">
+                    ❄️ Snowy
+                </label>
+                <label style="display: flex; align-items: center; padding: 10px; background-color: #f8f9fa; border-radius: 5px; cursor: pointer; font-weight: normal;">
+                    <input type="checkbox" name="reading_preferences" value="sunny" {% if 'sunny' in user_prefs %}checked{% endif %} style="margin-right: 8px;">
+                    ☀️ Sunny
+                </label>
+                <label style="display: flex; align-items: center; padding: 10px; background-color: #f8f9fa; border-radius: 5px; cursor: pointer; font-weight: normal;">
+                    <input type="checkbox" name="reading_preferences" value="cloudy" {% if 'cloudy' in user_prefs %}checked{% endif %} style="margin-right: 8px;">
+                    ☁️ Cloudy
+                </label>
+                <label style="display: flex; align-items: center; padding: 10px; background-color: #f8f9fa; border-radius: 5px; cursor: pointer; font-weight: normal;">
+                    <input type="checkbox" name="reading_preferences" value="windy" {% if 'windy' in user_prefs %}checked{% endif %} style="margin-right: 8px;">
+                    💨 Windy/Breezy
+                </label>
+                <label style="display: flex; align-items: center; padding: 10px; background-color: #f8f9fa; border-radius: 5px; cursor: pointer; font-weight: normal;">
+                    <input type="checkbox" name="reading_preferences" value="clear" {% if 'clear' in user_prefs %}checked{% endif %} style="margin-right: 8px;">
+                    🌙 Clear Night
+                </label>
+                <label style="display: flex; align-items: center; padding: 10px; background-color: #f8f9fa; border-radius: 5px; cursor: pointer; font-weight: normal;">
+                    <input type="checkbox" name="reading_preferences" value="foggy" {% if 'foggy' in user_prefs %}checked{% endif %} style="margin-right: 8px;">
+                    🌫️ Foggy
+                </label>
+                <label style="display: flex; align-items: center; padding: 10px; background-color: #f8f9fa; border-radius: 5px; cursor: pointer; font-weight: normal;">
+                    <input type="checkbox" name="reading_preferences" value="stormy" {% if 'stormy' in user_prefs %}checked{% endif %} style="margin-right: 8px;">
+                    ⛈️ Stormy
+                </label>
+            </div>
+        </div>
+        
+        <div class="section-title">📚 Reading Goal</div>
+        
+        <div class="form-group">
+            <label for="reading_goal">Annual Reading Goal:</label>
+            <select id="reading_goal" name="reading_goal" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box;">
+                {% set current_goal = user.reading_goal or 12 %}
+                <option value="4" {% if current_goal == 4 %}selected{% endif %}>4 books (1 per quarter)</option>
+                <option value="6" {% if current_goal == 6 %}selected{% endif %}>6 books (1 every 2 months)</option>
+                <option value="12" {% if current_goal == 12 %}selected{% endif %}>12 books (1 per month) - Default</option>
+                <option value="18" {% if current_goal == 18 %}selected{% endif %}>18 books (1.5 per month)</option>
+                <option value="24" {% if current_goal == 24 %}selected{% endif %}>24 books (2 per month)</option>
+                <option value="36" {% if current_goal == 36 %}selected{% endif %}>36 books (3 per month)</option>
+            </select>
+            <div class="help-text">Set your annual reading goal. This will track your progress throughout the year.</div>
+        </div>
+        
         <div style="margin-top: 25px;">
             <button type="submit" class="button">Update Profile</button>
             <a href="{{ url_for('home') }}" class="button back">Cancel</a>

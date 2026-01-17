@@ -18,11 +18,94 @@
     <!-- Reading Weather Link -->
     <div class="row justify-content-center mb-4">
         <div class="col-auto">
-            <a href="{{ url_for('weather_recommendations') }}" class="btn-tdc">
+            <a href="{{ url_for('recommendations') }}" class="btn-tdc">
                 <i class="fas fa-book me-1"></i> See Reading Weather Score
             </a>
         </div>
     </div>
+
+    <!-- Weather Preference Matching -->
+    {% if preference_match %}
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-10 col-lg-8">
+            <div class="tdc-card border border-success">
+                <h4 class="text-success mb-3">
+                    <i class="fas fa-heart me-2"></i>Your Weather Preferences
+                </h4>
+                
+                <!-- Overall Score -->
+                <div class="text-center mb-3">
+                    <div class="h1 mb-2">
+                        {% if preference_match.overall_score >= 70 %}
+                            <span class="text-success">{{ preference_match.overall_score }}%</span> 😍
+                        {% elif preference_match.overall_score >= 40 %}
+                            <span class="text-warning">{{ preference_match.overall_score }}%</span> 📖
+                        {% else %}
+                            <span class="text-muted">{{ preference_match.overall_score }}%</span> 🌤️
+                        {% endif %}
+                    </div>
+                    <p class="text-muted mb-0">{{ preference_match.message }}</p>
+                </div>
+
+                <!-- Best Reading Days -->
+                {% if preference_match.best_reading_days %}
+                <div class="mb-3">
+                    <h6 class="text-success mb-2">
+                        <i class="fas fa-star me-1"></i>Best Reading Times This Week:
+                    </h6>
+                    <div class="row">
+                        {% for day in preference_match.best_reading_days %}
+                        <div class="col-md-4 mb-2">
+                            <div class="card border-success">
+                                <div class="card-body p-2">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <strong class="small text-success">{{ day.name }}</strong>
+                                        <span class="badge bg-success">{{ day.match_count }} match{{ 'es' if day.match_count > 1 else '' }}</span>
+                                    </div>
+                                    <div class="small text-muted">{{ day.temperature }}°F - {{ day.forecast }}</div>
+                                    <div class="mt-1">
+                                        {% for pref in day.matched_preferences %}
+                                        <span class="badge bg-light text-success me-1">{{ pref }}</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Preference Breakdown -->
+                {% if preference_match.preference_scores %}
+                <div>
+                    <h6 class="text-muted mb-2">
+                        <i class="fas fa-chart-bar me-1"></i>Preference Matches:
+                    </h6>
+                    <div class="row">
+                        {% for pref, count in preference_match.preference_scores.items() %}
+                        <div class="col-6 col-md-3 mb-2">
+                            <div class="text-center">
+                                <div class="badge {{ 'bg-success' if count > 0 else 'bg-secondary' }} mb-1">
+                                    {{ count }}/{{ preference_match.total_periods }}
+                                </div>
+                                <div class="small text-capitalize">{{ pref }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="text-center mt-3">
+                    <a href="{{ url_for('profile') }}" class="btn btn-sm btn-outline-success">
+                        <i class="fas fa-cog me-1"></i>Update Preferences
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
 
     {% if error %}
     <div class="row justify-content-center">
@@ -36,51 +119,92 @@
         </div>
     </div>
     {% elif periods %}
-    <div class="row">
+    <div class="row g-2">
+        {% set day_periods = [] %}
         {% for period in periods %}
-        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-            <div class="tdc-card h-100 {% if not period.isDaytime %}bg-dark text-white{% endif %}">
-                <div class="d-flex justify-content-between align-items-start mb-2">
-                    <h5 class="{% if not period.isDaytime %}text-white{% else %}text-success{% endif %} mb-0">
-                        {{ period.name }}
-                    </h5>
-                    <span style="font-size: 2rem;">
-                        {% if 'rain' in period.shortForecast.lower() or 'shower' in period.shortForecast.lower() %}
-                            <i class="fas fa-cloud-rain"></i>
-                        {% elif 'thunder' in period.shortForecast.lower() %}
-                            <i class="fas fa-bolt"></i>
-                        {% elif 'snow' in period.shortForecast.lower() %}
-                            <i class="fas fa-snowflake"></i>
-                        {% elif 'cloud' in period.shortForecast.lower() %}
-                            <i class="fas fa-cloud"></i>
-                        {% elif 'partly' in period.shortForecast.lower() %}
-                            <i class="fas fa-cloud-sun"></i>
-                        {% elif period.isDaytime %}
-                            <i class="fas fa-sun text-warning"></i>
-                        {% else %}
-                            <i class="fas fa-moon"></i>
-                        {% endif %}
-                    </span>
+            {% if period.isDaytime %}
+                {% set _ = day_periods.append(period) %}
+            {% endif %}
+        {% endfor %}
+        {% for day_period in day_periods[:7] %}
+        {% set day_index = periods.index(day_period) %}
+        {% set night_period = periods[day_index + 1] if day_index + 1 < periods|length and not periods[day_index + 1].isDaytime else None %}
+        <div class="col-12 col-sm-6 col-md-4 col-lg col-xl">
+            <div class="tdc-card h-100 p-2">
+                <!-- Day Section -->
+                <div class="pb-2 border-bottom">
+                    <div class="d-flex justify-content-between align-items-start mb-1">
+                        <h6 class="text-success mb-0 small">
+                            {{ day_period.name }}
+                        </h6>
+                        <span style="font-size: 1.5rem;">
+                            {% if 'rain' in day_period.shortForecast.lower() or 'shower' in day_period.shortForecast.lower() %}
+                                <i class="fas fa-cloud-rain text-info"></i>
+                            {% elif 'thunder' in day_period.shortForecast.lower() %}
+                                <i class="fas fa-bolt text-warning"></i>
+                            {% elif 'snow' in day_period.shortForecast.lower() %}
+                                <i class="fas fa-snowflake text-primary"></i>
+                            {% elif 'cloud' in day_period.shortForecast.lower() %}
+                                <i class="fas fa-cloud text-secondary"></i>
+                            {% elif 'partly' in day_period.shortForecast.lower() %}
+                                <i class="fas fa-cloud-sun text-warning"></i>
+                            {% else %}
+                                <i class="fas fa-sun text-warning"></i>
+                            {% endif %}
+                        </span>
+                    </div>
+
+                    <div class="text-center my-1">
+                        <span class="h4 fw-bold text-success mb-0">
+                            {{ day_period.temperature }}°
+                        </span>
+                    </div>
+
+                    <p class="text-muted text-center mb-1" style="font-size: 0.75rem;">
+                        <em>{{ day_period.shortForecast[:20] }}{% if day_period.shortForecast|length > 20 %}...{% endif %}</em>
+                    </p>
+
+                    <p class="text-muted text-center mb-0" style="font-size: 0.7rem;">
+                        <i class="fas fa-wind me-1"></i>{{ day_period.windSpeed.split()[0] }}
+                    </p>
                 </div>
 
-                <div class="text-center my-3">
-                    <span class="display-5 fw-bold {% if not period.isDaytime %}text-white{% else %}text-success{% endif %}">
-                        {{ period.temperature }}°{{ period.temperatureUnit }}
-                    </span>
-                </div>
+                <!-- Night Section -->
+                {% if night_period %}
+                <div class="pt-2 bg-dark text-white rounded-bottom">
+                    <div class="d-flex justify-content-between align-items-start mb-1">
+                        <h6 class="text-white mb-0 small">
+                            {{ night_period.name }}
+                        </h6>
+                        <span style="font-size: 1.5rem;">
+                            {% if 'rain' in night_period.shortForecast.lower() or 'shower' in night_period.shortForecast.lower() %}
+                                <i class="fas fa-cloud-rain text-info"></i>
+                            {% elif 'thunder' in night_period.shortForecast.lower() %}
+                                <i class="fas fa-bolt text-warning"></i>
+                            {% elif 'snow' in night_period.shortForecast.lower() %}
+                                <i class="fas fa-snowflake text-primary"></i>
+                            {% elif 'cloud' in night_period.shortForecast.lower() %}
+                                <i class="fas fa-cloud text-light"></i>
+                            {% elif 'partly' in night_period.shortForecast.lower() %}
+                                <i class="fas fa-cloud-moon text-light"></i>
+                            {% else %}
+                                <i class="fas fa-moon text-light"></i>
+                            {% endif %}
+                        </span>
+                    </div>
 
-                <p class="{% if not period.isDaytime %}text-white-50{% else %}text-muted{% endif %} text-center mb-2">
-                    <em>{{ period.shortForecast }}</em>
-                </p>
+                    <div class="text-center my-1">
+                        <span class="h4 fw-bold text-white mb-0">
+                            {{ night_period.temperature }}°
+                        </span>
+                    </div>
 
-                <p class="{% if not period.isDaytime %}text-white-50{% else %}text-muted{% endif %} small text-center mb-3">
-                    <i class="fas fa-wind me-1"></i> {{ period.windSpeed }} {{ period.windDirection }}
-                </p>
+                    <p class="text-white-50 text-center mb-1" style="font-size: 0.75rem;">
+                        <em>{{ night_period.shortForecast[:20] }}{% if night_period.shortForecast|length > 20 %}...{% endif %}</em>
+                    </p>
 
-                {% if period.detailedForecast %}
-                <div class="border-top pt-2 mt-auto">
-                    <p class="{% if not period.isDaytime %}text-white-50{% else %}text-muted{% endif %} small mb-0">
-                        {{ period.detailedForecast[:150] }}{% if period.detailedForecast|length > 150 %}...{% endif %}
+                    <p class="text-white-50 text-center mb-0" style="font-size: 0.7rem;">
+                        <i class="fas fa-wind me-1"></i>{{ night_period.windSpeed.split()[0] }}
                     </p>
                 </div>
                 {% endif %}

@@ -17,11 +17,11 @@
                     </a>
 
                     {% if current_user.is_authenticated or session.get('demo_mode') %}
-                        <a class="nav-link tdc-nav-link {% if request.endpoint == 'reading_dashboard' %}active{% endif %}" href="{{ url_for('reading_dashboard') }}">
-                            <i class="fas fa-book me-1"></i> My Library
+                        <a class="nav-link tdc-nav-link {% if request.endpoint == 'books' and request.args.get('view') == 'available' %}active{% endif %}" href="{{ url_for('books', view='available') }}">
+                            <i class="fas fa-book me-1"></i> Our Library
                         </a>
-                        <a class="nav-link tdc-nav-link {% if request.endpoint == 'books' %}active{% endif %}" href="{{ url_for('books') }}">
-                            <i class="fas fa-library me-1"></i> Browse Books
+                        <a class="nav-link tdc-nav-link {% if request.endpoint == 'books' and request.args.get('view') != 'available' %}active{% endif %}" href="{{ url_for('books', view='catalog') }}">
+                            <i class="fas fa-search me-1"></i> Browse Books
                         </a>
                         <a class="nav-link tdc-nav-link {% if request.endpoint == 'weather' %}active{% endif %}" href="{{ url_for('weather') }}">
                             <i class="fas fa-cloud-sun me-1"></i> Weather

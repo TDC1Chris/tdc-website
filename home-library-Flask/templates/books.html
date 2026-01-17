@@ -1,106 +1,275 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Book Library</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 1200px; margin: 50px auto; padding: 20px; }
-        h1 { color: #333; }
-        .button { display: inline-block; padding: 10px 20px; background-color: #6c757d; color: white; text-decoration: none; border-radius: 5px; margin: 10px 0; }
-        .button:hover { background-color: #545b62; }
-        .book-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin-top: 20px; }
-        .book-card { border: 1px solid #ddd; border-radius: 8px; padding: 20px; background-color: #f8f9fa; }
-        .book-card h3 { margin-top: 0; color: #007bff; }
-        .book-info { margin: 10px 0; color: #555; }
-        .copy-status { margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd; }
-        .copy-item { padding: 10px; margin: 8px 0; background-color: white; border-radius: 5px; border: 1px solid #ddd; }
-        .copy-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-        .available { color: #28a745; font-weight: bold; }
-        .unavailable { color: #dc3545; font-weight: bold; }
-        .overdue { color: #ff0000; font-weight: bold; }
-        .due-info { font-size: 0.9em; color: #666; margin-top: 5px; }
-        .action-btn { padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; color: white; }
-        .checkout-btn { background-color: #007bff; }
-        .checkout-btn:hover { background-color: #0056b3; }
-        .return-btn { background-color: #28a745; }
-        .return-btn:hover { background-color: #218838; }
-        .alert { padding: 10px; margin-bottom: 15px; border-radius: 5px; }
-        .alert-success { background-color: #d4edda; color: #155724; }
-    </style>
-</head>
-<body>
-    <h1>📚 Book Library</h1>
-    
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        {% for message in messages %}
-          <div class="alert alert-success">{{ message }}</div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
-    
-    <a href="{{ url_for('home') }}" class="button">Back to Home</a>
-    
-    {% if books_by_title %}
-    <div class="book-list">
-        {% for title, book_info in books_by_title.items() %}
-        <div class="book-card">
-            <h3>{{ book_info.title }}</h3>
-            <div class="book-info">
-                <strong>Author:</strong> {{ book_info.author }}
-            </div>
-            <div class="book-info">
-                <strong>Published:</strong> {{ book_info.published_date or 'N/A' }}
-            </div>
-            <div class="copy-status">
-                <strong>Copies:</strong>
-                {% for copy in book_info.copies %}
-                <div class="copy-item">
-                    <div class="copy-header">
-                        <span><strong>Copy {{ copy.copy_number }}</strong></span>
-                        {% if copy.is_available %}
-                            <span class="available">✓ Available</span>
-                        {% else %}
-                            {% if copy.is_overdue %}
-                                <span class="overdue">✗ Overdue</span>
-                            {% else %}
-                                <span class="unavailable">✗ Checked Out</span>
-                            {% endif %}
-                        {% endif %}
+{% extends 'base.html' %}
+
+{% block title %}{% if view_mode == 'available' %}Our Library{% else %}Browse Books{% endif %}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="page-title text-success">
+                {% if view_mode == 'available' %}
+                <i class="fas fa-book me-2"></i>Our Library
+                {% else %}
+                <i class="fas fa-search me-2"></i>Browse Books
+                {% endif %}
+            </h1>
+            <p class="text-center text-muted">
+                {% if view_mode == 'available' %}
+                Available books in stock - ready to check out
+                {% else %}
+                Complete catalog of all books in our collection
+                {% endif %}
+            </p>
+        </div>
+    </div>
+
+    <!-- Search and Filter Section (only in catalog view) -->
+    {% if view_mode == 'catalog' %}
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="tdc-card">
+                <form method="GET" action="{{ url_for('books', view=view_mode) }}">
+                    <div class="row g-3">
+                        <!-- Search Bar -->
+                        <div class="col-md-6">
+                            <label for="search" class="form-label text-success">
+                                <i class="fas fa-search me-1"></i>Search Title or Author
+                            </label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="search" 
+                                   name="search" 
+                                   placeholder="Enter book title or author..." 
+                                   value="{{ current_search }}">
+                        </div>
+
+                        <!-- Author Filter -->
+                        <div class="col-md-3">
+                            <label for="author" class="form-label text-success">
+                                <i class="fas fa-user-edit me-1"></i>Author
+                            </label>
+                            <select class="form-select" id="author" name="author">
+                                <option value="">All Authors</option>
+                                {% for author in authors %}
+                                <option value="{{ author }}" {% if current_author == author %}selected{% endif %}>
+                                    {{ author }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Availability Filter -->
+                        <div class="col-md-3">
+                            <label for="availability" class="form-label text-success">
+                                <i class="fas fa-check-circle me-1"></i>Availability
+                            </label>
+                            <select class="form-select" id="availability" name="availability">
+                                <option value="all" {% if current_availability == 'all' %}selected{% endif %}>All Books</option>
+                                <option value="available" {% if current_availability == 'available' %}selected{% endif %}>Available Only</option>
+                                <option value="checked_out" {% if current_availability == 'checked_out' %}selected{% endif %}>Checked Out</option>
+                            </select>
+                        </div>
+
+                        <!-- Filter Buttons -->
+                        <div class="col-12">
+                            <button type="submit" class="btn-tdc">
+                                <i class="fas fa-filter me-1"></i>Apply Filters
+                            </button>
+                            <a href="{{ url_for('books', view=view_mode) }}" class="btn-tdc-outline">
+                                <i class="fas fa-redo me-1"></i>Clear Filters
+                            </a>
+                        </div>
                     </div>
-                    
-                    {% if not copy.is_available %}
-                        <div class="due-info">
-                            <div>Checked out: {{ copy.checkout_date.strftime('%b %d, %Y') }}</div>
-                            <div>Due back: {{ copy.due_date.strftime('%b %d, %Y') }}</div>
-                            {% if copy.checked_out_by == current_user.id %}
-                                <div style="margin-top: 8px;">
-                                    <form method="POST" action="{{ url_for('return_book', book_id=copy.id) }}" style="display: inline;">
-                                        <button type="submit" class="action-btn return-btn">Return Book</button>
-                                    </form>
-                                </div>
-                            {% elif current_user.is_admin %}
-                                <div style="margin-top: 8px;">
-                                    <form method="POST" action="{{ url_for('return_book', book_id=copy.id) }}" style="display: inline;">
-                                        <button type="submit" class="action-btn return-btn">Return (Admin)</button>
-                                    </form>
-                                </div>
-                            {% endif %}
-                        </div>
-                    {% else %}
-                        <div style="margin-top: 8px;">
-                            <form method="POST" action="{{ url_for('checkout_book', book_id=copy.id) }}" style="display: inline;">
-                                <button type="submit" class="action-btn checkout-btn">Check Out</button>
-                            </form>
-                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Results Count -->
+    {% if books_by_title %}
+    <div class="row mb-3">
+        <div class="col-12">
+            <p class="text-muted">
+                <i class="fas fa-book me-1"></i>
+                Showing {{ books_by_title|length }} book{{ 's' if books_by_title|length != 1 else '' }}
+            </p>
+        </div>
+    </div>
+
+    <!-- Book Cards -->
+    <div class="row">
+        {% for title, book_info in books_by_title.items() %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="tdc-card h-100">
+                {# Check if user has read this book (any copy) #}
+                {% set user_has_read = namespace(value=False) %}
+                {% for copy in book_info.copies %}
+                    {% if copy.id in user_completed_book_ids %}
+                        {% set user_has_read.value = True %}
+                    {% endif %}
+                {% endfor %}
+                
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h4 class="text-success mb-0">{{ book_info.title }}</h4>
+                    {% if user_has_read.value %}
+                    <span class="badge bg-success" title="You have read this book">
+                        <i class="fas fa-check-circle me-1"></i>Read
+                    </span>
                     {% endif %}
                 </div>
-                {% endfor %}
+                <p class="text-muted mb-1">
+                    <i class="fas fa-user me-1"></i><strong>Author:</strong> {{ book_info.author }}
+                </p>
+                {% if book_info.published_date %}
+                <p class="text-muted mb-1">
+                    <i class="fas fa-calendar me-1"></i><strong>Published:</strong> {{ book_info.published_date }}
+                </p>
+                {% endif %}
+                {% if book_info.isbn %}
+                <p class="text-muted mb-3">
+                    <i class="fas fa-barcode me-1"></i><strong>ISBN:</strong> {{ book_info.isbn }}
+                </p>
+                {% elif not book_info.published_date %}
+                <div class="mb-3"></div>
+                {% endif %}
+                
+                <div class="border-top pt-3">
+                    <h6 class="text-success mb-2">
+                        <i class="fas fa-copy me-1"></i>Copies ({{ book_info.copies|length }})
+                    </h6>
+                    {% for copy in book_info.copies %}
+                    <div class="card mb-2">
+                        <div class="card-body py-2">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <strong>Copy #{{ copy.copy_number }}</strong>
+                                {% if copy.checked_out_by == current_user.id and copy.id in user_reading_book_ids %}
+                                    <span class="badge bg-info">
+                                        <i class="fas fa-book-reader me-1"></i>Currently Reading
+                                    </span>
+                                {% elif copy.is_available %}
+                                    <span class="badge bg-success">
+                                        <i class="fas fa-check me-1"></i>Available
+                                    </span>
+                                {% else %}
+                                    {% if copy.is_overdue %}
+                                        <span class="badge bg-danger">
+                                            <i class="fas fa-exclamation-triangle me-1"></i>Overdue
+                                        </span>
+                                    {% else %}
+                                        <span class="badge bg-warning text-dark">
+                                            <i class="fas fa-clock me-1"></i>Checked Out
+                                        </span>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                            
+                            {% if not copy.is_available %}
+                                <div class="small text-muted mb-2">
+                                    {% if copy.user %}
+                                    <div class="text-info mb-1">
+                                        <i class="fas fa-user-circle me-1"></i>Being read by <strong>{{ copy.user.username }}</strong>
+                                    </div>
+                                    {% endif %}
+                                    <div>Checked out: {{ copy.checkout_date.strftime('%b %d, %Y') }}</div>
+                                    <div>Due: {{ copy.due_date.strftime('%b %d, %Y') }}</div>
+                                </div>
+                                {% if copy.checked_out_by == current_user.id or current_user.is_admin %}
+                                    <form method="POST" action="{{ url_for('return_book', book_id=copy.id) }}">
+                                        <button type="submit" class="btn btn-sm btn-success w-100">
+                                            <i class="fas fa-undo me-1"></i>Return Book
+                                        </button>
+                                    </form>
+                                {% else %}
+                                    {% if current_user.waitlist_book_id == copy.id %}
+                                        <span class="badge bg-danger w-100 py-2">
+                                            <i class="fas fa-clock me-1"></i>On Your Waitlist
+                                        </span>
+                                    {% elif current_user.waitlist_book_id %}
+                                        <button class="btn btn-sm btn-secondary w-100" disabled>
+                                            <i class="fas fa-ban me-1"></i>Waitlist Full
+                                        </button>
+                                    {% else %}
+                                        <form method="POST" action="{{ url_for('add_to_waitlist', book_id=copy.id) }}">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger w-100">
+                                                <i class="fas fa-clock me-1"></i>Add to Waitlist
+                                            </button>
+                                        </form>
+                                    {% endif %}
+                                {% endif %}
+                            {% else %}
+                                {# Check if user already has a copy of this book checked out #}
+                                {% set user_has_this_book = namespace(value=False) %}
+                                {% for other_copy in book_info.copies %}
+                                    {% if other_copy.checked_out_by == current_user.id %}
+                                        {% set user_has_this_book.value = True %}
+                                    {% endif %}
+                                {% endfor %}
+                                
+                                {% if user_has_this_book.value %}
+                                    {# User already has another copy - show waitlist button #}
+                                    {% if current_user.waitlist_book_id == copy.id %}
+                                        <span class="badge bg-danger w-100 py-2">
+                                            <i class="fas fa-clock me-1"></i>On Your Waitlist
+                                        </span>
+                                    {% elif current_user.waitlist_book_id %}
+                                        <button class="btn btn-sm btn-secondary w-100" disabled>
+                                            <i class="fas fa-ban me-1"></i>Waitlist Full
+                                        </button>
+                                    {% else %}
+                                        <form method="POST" action="{{ url_for('add_to_waitlist', book_id=copy.id) }}">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger w-100">
+                                                <i class="fas fa-clock me-1"></i>Add to Waitlist
+                                            </button>
+                                        </form>
+                                    {% endif %}
+                                {% elif user_checkout_count >= 3 %}
+                                    {# User has reached checkout limit - show waitlist button #}
+                                    {% if current_user.waitlist_book_id == copy.id %}
+                                        <span class="badge bg-danger w-100 py-2">
+                                            <i class="fas fa-clock me-1"></i>On Your Waitlist
+                                        </span>
+                                    {% elif current_user.waitlist_book_id %}
+                                        <button class="btn btn-sm btn-secondary w-100" disabled title="You already have a book on your waitlist">
+                                            <i class="fas fa-ban me-1"></i>Waitlist Full
+                                        </button>
+                                    {% else %}
+                                        <form method="POST" action="{{ url_for('add_to_waitlist', book_id=copy.id) }}">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger w-100" title="Checkout limit reached (3/3). Add to waitlist instead.">
+                                                <i class="fas fa-clock me-1"></i>Add to Waitlist
+                                            </button>
+                                        </form>
+                                    {% endif %}
+                                {% else %}
+                                    {# Normal check out button #}
+                                    <form method="POST" action="{{ url_for('checkout_book', book_id=copy.id) }}">
+                                        <button type="submit" class="btn btn-sm btn-outline-success w-100">
+                                            <i class="fas fa-book-reader me-1"></i>Check Out ({{ 3 - user_checkout_count }}/3 remaining)
+                                        </button>
+                                    </form>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
         {% endfor %}
     </div>
     {% else %}
-    <p>No books available in the library yet.</p>
+    <div class="row">
+        <div class="col-12">
+            <div class="tdc-card text-center py-5">
+                <i class="fas fa-book-open text-muted mb-3" style="font-size: 4rem;"></i>
+                <h4 class="text-muted">No books found</h4>
+                <p class="text-muted">Try adjusting your search or filter criteria</p>
+                <a href="{{ url_for('books') }}" class="btn-tdc mt-3">
+                    <i class="fas fa-redo me-1"></i>View All Books
+                </a>
+            </div>
+        </div>
+    </div>
     {% endif %}
-</body>
-</html>
+</div>
+{% endblock %}

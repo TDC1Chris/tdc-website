@@ -1,97 +1,60 @@
 {% extends 'base.html' %}
 
-{% block title %}Reading Weather{% endblock %}
+{% block title %}Popular Books{% endblock %}
 
 {% block content %}
 <div class="container py-4">
     <div class="row mb-4">
         <div class="col-12 text-center">
             <h1 class="page-title text-success">
-                <i class="fas fa-cloud-sun me-2"></i>Reading Weather
+                <i class="fas fa-fire me-2"></i>Popular Books
             </h1>
-            <p class="lead text-muted">Is today a good day to read?</p>
-            <p class="text-muted">
-                <i class="fas fa-map-marker-alt me-1"></i> {{ location }}
-            </p>
+            <p class="lead text-muted">Top 10 books being read by our community</p>
         </div>
     </div>
 
-    <!-- Reading Score Card -->
-    <div class="row justify-content-center mb-5">
-        <div class="col-md-8 col-lg-6">
-            <div class="reading-score {{ reading_score.score_class }}">
-                <div class="row align-items-center">
-                    <div class="col-auto">
-                        <span style="font-size: 4rem;">{{ reading_score.emoji }}</span>
-                    </div>
-                    <div class="col">
-                        <div class="reading-score-value">{{ reading_score.score }}/100</div>
-                        <div class="reading-score-label">Reading Score</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Recommendation -->
-    <div class="row justify-content-center mb-4">
-        <div class="col-md-8 col-lg-6">
-            <div class="tdc-card text-center">
-                <h4 class="text-success mb-3">{{ reading_score.recommendation }}</h4>
-                {% if reading_score.reasons %}
-                <ul class="list-unstyled text-muted">
-                    {% for reason in reading_score.reasons %}
-                    <li class="mb-1">
-                        <i class="fas fa-check-circle text-success me-2"></i>{{ reason }}
-                    </li>
-                    {% endfor %}
-                </ul>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-
-    <!-- Wishlist Recommendations -->
-    {% if wishlist %}
+    <!-- Popular Books List -->
+    {% if popular_books %}
     <div class="row justify-content-center">
-        <div class="col-md-10 col-lg-8">
-            <h3 class="text-center text-success mb-4">
-                <i class="fas fa-book me-2"></i>Books from Your Wishlist
-            </h3>
-            <p class="text-center text-muted mb-4">
-                {% if reading_score.score >= 70 %}
-                Perfect weather for reading! Here are some books from your wishlist:
-                {% elif reading_score.score >= 50 %}
-                Good time to start one of these books:
-                {% else %}
-                Save these for a cozy day:
-                {% endif %}
-            </p>
-
+        <div class="col-lg-10">
             <div class="row">
-                {% for book in wishlist[:3] %}
-                <div class="col-md-4 mb-3">
-                    <div class="book-card text-center h-100">
-                        <h5 class="book-title">
-                            {% if demo_mode %}{{ book.title }}{% else %}{{ book.title }}{% endif %}
-                        </h5>
-                        <p class="book-author">
-                            {% if demo_mode %}{{ book.author }}{% else %}{{ book.author }}{% endif %}
+                {% for item in popular_books %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="tdc-card h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div class="badge bg-success">{{ loop.index }}</div>
+                            {% if item.readers > 0 %}
+                            <div class="badge bg-info">
+                                <i class="fas fa-users me-1"></i>{{ item.readers }} reader{{ 's' if item.readers != 1 else '' }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        
+                        <h5 class="text-success mb-2">{{ item.title }}</h5>
+                        <p class="text-muted mb-1">
+                            <i class="fas fa-user me-1"></i><strong>Author:</strong> {{ item.author }}
                         </p>
-                        {% if demo_mode and book.genre %}
-                        <span class="badge bg-secondary">{{ book.genre }}</span>
-                        {% elif not demo_mode and book.genre %}
-                        <span class="badge bg-secondary">{{ book.genre }}</span>
+                        
+                        {% if item.published_date %}
+                        <p class="text-muted small mb-1">
+                            <i class="fas fa-calendar me-1"></i>{{ item.published_date }}
+                        </p>
                         {% endif %}
+                        
+                        {% if item.isbn %}
+                        <p class="text-muted small mb-3">
+                            <i class="fas fa-barcode me-1"></i>{{ item.isbn }}
+                        </p>
+                        {% endif %}
+                        
+                        <div class="mt-auto pt-2">
+                            <a href="{{ url_for('books', view='catalog') }}" class="btn btn-sm btn-outline-success w-100">
+                                <i class="fas fa-book me-1"></i>View in Library
+                            </a>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
-            </div>
-
-            <div class="text-center mt-3">
-                <a href="{{ url_for('reading_wishlist') }}" class="btn-tdc-outline">
-                    <i class="fas fa-list me-1"></i> View Full Wishlist
-                </a>
             </div>
         </div>
     </div>
@@ -100,10 +63,10 @@
         <div class="col-md-8 col-lg-6 text-center">
             <div class="tdc-card">
                 <i class="fas fa-book-open text-muted" style="font-size: 3rem;"></i>
-                <h4 class="text-muted mt-3">No books in your wishlist</h4>
-                <p class="text-muted">Add some books to get personalized recommendations!</p>
-                <a href="{{ url_for('add_to_reading_list') }}" class="btn-tdc">
-                    <i class="fas fa-plus me-1"></i> Add Books
+                <h4 class="text-muted mt-3">No popular books yet</h4>
+                <p class="text-muted">Be the first to start reading!</p>
+                <a href="{{ url_for('books', view='available') }}" class="btn-tdc">
+                    <i class="fas fa-book-reader me-1"></i> Browse Library
                 </a>
             </div>
         </div>
