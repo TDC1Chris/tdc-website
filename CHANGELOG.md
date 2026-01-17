@@ -5,6 +5,78 @@ All notable changes to the Total Design Consulting website will be documented in
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.6.0] - 2026-01-17 - Flask Reading Library Integration 📚
+
+### ✨ New Features
+
+#### Flask Portfolio Application
+- **Integrated TDC Reading Library** - Full-featured Flask web application demonstrating backend development skills
+- **User Authentication System** with Flask-Login (login/logout, admin roles)
+- **Book Management System** with SQLite database and SQLAlchemy ORM
+- **Personal Reading Lists** - Wishlist, currently reading, and completed books tracking
+- **Book Reviews & Blog** - Post reviews with star ratings and comments
+- **Weather Integration** - Reading recommendations based on National Weather Service API
+- **RESTful API** - CRUD operations for books using Flask-RESTful
+- **Database Migrations** - Alembic-powered schema versioning with Flask-Migrate
+- **Admin Panel** - Flask-Admin interface for user and content management
+- **Demo Mode** - Try the application without creating an account
+
+#### Project Documentation
+- **Comprehensive README.md** with setup instructions, features overview, and API documentation
+- **Environment Configuration** - `.env.example` template for secure deployment
+- **Requirements Management** - Complete `requirements.txt` with all dependencies
+- **Security Notes** - Production deployment guidance
+
+### 🔧 Technical Implementation
+
+#### Database Models
+- `User` - Authentication with location data for weather features
+- `Book` - Library books with copy tracking and checkout system
+- `UserBook` - Personal reading lists with status and ratings
+- `Post` - Blog posts and book reviews
+- `Comment` - Threaded comments on posts
+
+#### Technology Stack
+- Flask 3.x web framework
+- SQLAlchemy ORM with SQLite database
+- Flask-Login for session management
+- Flask-Admin for administrative interface
+- Flask-RESTful for API endpoints
+- Flask-Migrate for database version control
+- Werkzeug for password hashing
+- Requests library for weather API integration
+
+### 🏗️ Project Structure
+
+#### Repository Organization
+- Moved Flask project from separate nested git repository to `dev` branch
+- Integrated `home-library-Flask/` as part of main website repository
+- Updated `.gitignore` for Flask-specific files (venv, databases, cache)
+- Configured Python 3.13.9 virtual environment with all dependencies
+
+#### Workspace Configuration
+- Removed duplicate workspace folder reference
+- Consolidated to single workspace root for better organization
+
+### 📦 Dependencies Added
+- Flask >=3.0.0, <4.0.0
+- Flask-SQLAlchemy >=3.0.0, <4.0.0
+- Flask-Migrate >=4.0.0, <5.0.0
+- Flask-Admin >=1.6.0, <2.0.0
+- Flask-Login >=0.6.0, <1.0.0
+- Flask-RESTful >=0.3.10, <1.0.0
+- Werkzeug >=3.0.0, <4.0.0
+- requests >=2.31.0, <3.0.0
+- python-dotenv >=1.0, <2.0
+
+### 🔐 Security Features
+- Password hashing with Werkzeug
+- Session management with Flask-Login
+- Role-based access control (admin/user)
+- CSRF protection recommendations for production
+
+---
+
 ## [2.5.0] - 2026-01-01 - Comprehensive SEO & Accessibility Optimization 🔍♿
 
 ### 🌟 Major SEO Improvements
