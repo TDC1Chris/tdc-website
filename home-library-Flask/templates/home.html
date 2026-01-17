@@ -1,3 +1,4 @@
+<!-- VS Code: Set language mode to Jinja-HTML or Django-HTML -->
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
@@ -98,7 +99,7 @@
                         <!-- Progress Bar -->
                         <div class="progress mb-3" style="height: 20px;">
                             <div class="progress-bar bg-success" role="progressbar" 
-                                 style="width: {{ reading_goal_data.display_percentage }}%" 
+                                 style="width: {{ reading_goal_data.display_percentage }}%;"
                                  aria-valuenow="{{ reading_goal_data.percentage }}" 
                                  aria-valuemin="0" aria-valuemax="100">
                                 {{ reading_goal_data.percentage }}%
