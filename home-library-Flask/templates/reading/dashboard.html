@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+{% block title %}My Library{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h1 class="page-title text-success">
+                <i class="fas fa-book-reader me-2"></i>My Reading Library
+            </h1>
+            <p class="lead text-muted">Track your reading journey</p>
+            {% if demo_mode %}
+                <span class="badge bg-warning text-dark">
+                    <i class="fas fa-flask me-1"></i> Demo Mode
+                </span>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="row mb-4">
+        <div class="col-md-4 mb-3">
+            <div class="tdc-card text-center h-100">
+                <div class="h1 text-primary mb-2">{{ wishlist|length }}</div>
+                <div class="text-muted">Books to Read</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="tdc-card text-center h-100">
+                <div class="h1 text-warning mb-2">{{ reading|length }}</div>
+                <div class="text-muted">Currently Reading</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="tdc-card text-center h-100">
+                <div class="h1 text-success mb-2">{{ completed|length }}</div>
+                <div class="text-muted">Completed</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <a href="{{ url_for('add_to_reading_list') }}" class="btn-tdc me-2">
+                <i class="fas fa-plus me-1"></i> Add Book
+            </a>
+            <a href="{{ url_for('weather_recommendations') }}" class="btn-tdc-outline">
+                <i class="fas fa-cloud-sun me-1"></i> Reading Weather
+            </a>
+        </div>
+    </div>
+
+    <!-- Currently Reading Section -->
+    {% if reading %}
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="text-warning mb-3">
+                <i class="fas fa-book-open me-2"></i>Currently Reading
+            </h2>
+            <div class="row">
+                {% for book in reading %}
+                <div class="col-md-6 col-lg-4 mb-3">
+                    <div class="book-card">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                <h5 class="book-title mb-1">
+                                    {% if demo_mode %}{{ book.title }}{% else %}{{ book.title }}{% endif %}
+                                </h5>
+                                <p class="book-author mb-0">
+                                    {% if demo_mode %}{{ book.author }}{% else %}{{ book.author }}{% endif %}
+                                </p>
+                            </div>
+                            <span class="book-status reading">Reading</span>
+                        </div>
+                        {% if not demo_mode %}
+                        <div class="mt-3">
+                            <form action="{{ url_for('update_reading_status', book_id=book.id) }}" method="POST" class="d-inline">
+                                <input type="hidden" name="status" value="completed">
+                                <button type="submit" class="btn btn-sm btn-success">
+                                    <i class="fas fa-check me-1"></i> Mark Complete
+                                </button>
+                            </form>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Wishlist Section -->
+    {% if wishlist %}
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="text-primary mb-3">
+                <i class="fas fa-list me-2"></i>Want to Read
+                <a href="{{ url_for('reading_wishlist') }}" class="btn btn-sm btn-outline-primary ms-2">View All</a>
+            </h2>
+            <div class="row">
+                {% for book in wishlist[:4] %}
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="book-card">
+                        <h6 class="book-title mb-1">
+                            {% if demo_mode %}{{ book.title }}{% else %}{{ book.title }}{% endif %}
+                        </h6>
+                        <p class="book-author small mb-2">
+                            {% if demo_mode %}{{ book.author }}{% else %}{{ book.author }}{% endif %}
+                        </p>
+                        <span class="book-status wishlist">Wishlist</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Completed Section -->
+    {% if completed %}
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-success mb-3">
+                <i class="fas fa-check-circle me-2"></i>Completed
+                <a href="{{ url_for('reading_completed') }}" class="btn btn-sm btn-outline-success ms-2">View All</a>
+            </h2>
+            <div class="row">
+                {% for book in completed[:4] %}
+                <div class="col-md-6 col-lg-3 mb-3">
+                    <div class="book-card">
+                        <h6 class="book-title mb-1">
+                            {% if demo_mode %}{{ book.title }}{% else %}{{ book.title }}{% endif %}
+                        </h6>
+                        <p class="book-author small mb-2">
+                            {% if demo_mode %}{{ book.author }}{% else %}{{ book.author }}{% endif %}
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="book-status completed">Completed</span>
+                            {% if demo_mode and book.rating %}
+                            <span class="star-rating">
+                                {% for i in range(book.rating) %}<i class="fas fa-star"></i>{% endfor %}
+                                {% for i in range(5 - book.rating) %}<i class="fas fa-star empty"></i>{% endfor %}
+                            </span>
+                            {% elif not demo_mode and book.rating %}
+                            <span class="star-rating">
+                                {% for i in range(book.rating) %}<i class="fas fa-star"></i>{% endfor %}
+                                {% for i in range(5 - book.rating) %}<i class="fas fa-star empty"></i>{% endfor %}
+                            </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Empty State -->
+    {% if not wishlist and not reading and not completed %}
+    <div class="row">
+        <div class="col-12 text-center py-5">
+            <i class="fas fa-book-open text-muted" style="font-size: 4rem;"></i>
+            <h3 class="text-muted mt-3">Your library is empty</h3>
+            <p class="text-muted">Start by adding some books you want to read!</p>
+            <a href="{{ url_for('add_to_reading_list') }}" class="btn-tdc">
+                <i class="fas fa-plus me-1"></i> Add Your First Book
+            </a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <!-- User Info Section - At Top -->
+    {% if current_user.is_authenticated %}
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8">
+            <div class="tdc-card">
+                <div class="d-flex align-items-center mb-3">
+                    <i class="fas fa-user-circle text-success me-3" style="font-size: 3rem;"></i>
+                    <div>
+                        <h4 class="mb-1">Welcome, {{ current_user.personal_name }}!</h4>
+                        <p class="text-muted mb-0">{{ current_user.username }} | {{ current_user.email }}</p>
+                    </div>
+                    {% if current_user.is_admin %}
+                    <span class="badge bg-success ms-auto">Administrator</span>
+                    {% endif %}
+                </div>
+
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="{{ url_for('reading_dashboard') }}" class="btn-tdc">
+                        <i class="fas fa-book me-1"></i> My Library
+                    </a>
+                    <a href="{{ url_for('books') }}" class="btn-tdc-outline">
+                        <i class="fas fa-library me-1"></i> Browse Books
+                    </a>
+                    <a href="{{ url_for('blog') }}" class="btn-tdc-outline">
+                        <i class="fas fa-pen me-1"></i> Blog
+                    </a>
+                    <a href="{{ url_for('weather') }}" class="btn-tdc-outline">
+                        <i class="fas fa-cloud-sun me-1"></i> Weather
+                    </a>
+                    <a href="{{ url_for('profile') }}" class="btn-tdc-outline">
+                        <i class="fas fa-cog me-1"></i> Profile
+                    </a>
+                    {% if current_user.is_admin %}
+                    <a href="{{ url_for('users') }}" class="btn-tdc-outline">
+                        <i class="fas fa-users me-1"></i> Users
+                    </a>
+                    <a href="/admin" class="btn-tdc-outline">
+                        <i class="fas fa-tools me-1"></i> Admin
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Hero Section -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-10">
+            <div class="tdc-hero text-center">
+                <h1 class="display-4 fw-bold mb-3">
+                    <i class="fas fa-book-reader me-2"></i>TDC Reading Library
+                </h1>
+                <p class="lead mb-4">
+                    Track your reading journey with weather-based recommendations.
+                    Keep a wishlist, log books you've read, and discover the perfect day to curl up with a good book.
+                </p>
+
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('reading_dashboard') }}" class="btn btn-light btn-lg me-2">
+                        <i class="fas fa-book me-1"></i> My Library
+                    </a>
+                    <a href="{{ url_for('weather_recommendations') }}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-cloud-sun me-1"></i> Reading Weather
+                    </a>
+                {% elif session.get('demo_mode') %}
+                    <span class="badge bg-warning text-dark mb-3 fs-6">
+                        <i class="fas fa-flask me-1"></i> Demo Mode Active
+                    </span>
+                    <br>
+                    <a href="{{ url_for('reading_dashboard') }}" class="btn btn-light btn-lg me-2">
+                        <i class="fas fa-book me-1"></i> Explore Library
+                    </a>
+                    <a href="{{ url_for('exit_demo') }}" class="btn btn-outline-light btn-lg">
+                        Exit Demo
+                    </a>
+                {% else %}
+                    <a href="{{ url_for('demo_mode') }}" class="btn btn-warning btn-lg me-2">
+                        <i class="fas fa-flask me-1"></i> Try Demo
+                    </a>
+                    <a href="{{ url_for('login') }}" class="btn btn-light btn-lg me-2">
+                        <i class="fas fa-sign-in-alt me-1"></i> Login
+                    </a>
+                    <a href="{{ url_for('create_user') }}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-user-plus me-1"></i> Sign Up
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row mb-5">
+        <div class="col-12 text-center mb-4">
+            <h2 class="text-success">Features</h2>
+            <p class="text-muted">Everything you need to manage your reading life</p>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="tdc-service-card h-100">
+                <div class="card-body">
+                    <i class="fas fa-list text-primary mb-3" style="font-size: 2.5rem;"></i>
+                    <h5 class="card-title text-success">Wishlist</h5>
+                    <p class="card-text text-muted">
+                        Keep track of books you want to read. Never forget a recommendation again.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="tdc-service-card h-100">
+                <div class="card-body">
+                    <i class="fas fa-star text-warning mb-3" style="font-size: 2.5rem;"></i>
+                    <h5 class="card-title text-success">Rate & Review</h5>
+                    <p class="card-text text-muted">
+                        Track what you've read with ratings and personal reviews.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="tdc-service-card h-100">
+                <div class="card-body">
+                    <i class="fas fa-cloud-sun text-info mb-3" style="font-size: 2.5rem;"></i>
+                    <h5 class="card-title text-success">Weather Reading Score</h5>
+                    <p class="card-text text-muted">
+                        Get personalized reading recommendations based on the weather. Rainy day? Perfect for reading!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-8 text-center">
+            <h3 class="text-success mb-3">About This Project</h3>
+            <p class="text-muted">
+                This is a Flask demonstration project showcasing SQLAlchemy, Flask-Login, Flask-Migrate,
+                and integration with the National Weather Service API. Built as a portfolio piece for
+                <a href="https://totaldesignconsulting.com" target="_blank" class="text-success">Total Design Consulting</a>.
+            </p>
+            <div class="d-flex justify-content-center gap-2 mt-3">
+                <span class="badge bg-success">Flask</span>
+                <span class="badge bg-secondary">SQLAlchemy</span>
+                <span class="badge bg-secondary">Bootstrap 5</span>
+                <span class="badge bg-secondary">Weather API</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Library</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1200px; margin: 50px auto; padding: 20px; }
+        h1 { color: #333; }
+        .button { display: inline-block; padding: 10px 20px; background-color: #6c757d; color: white; text-decoration: none; border-radius: 5px; margin: 10px 0; }
+        .button:hover { background-color: #545b62; }
+        .book-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; margin-top: 20px; }
+        .book-card { border: 1px solid #ddd; border-radius: 8px; padding: 20px; background-color: #f8f9fa; }
+        .book-card h3 { margin-top: 0; color: #007bff; }
+        .book-info { margin: 10px 0; color: #555; }
+        .copy-status { margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd; }
+        .copy-item { padding: 10px; margin: 8px 0; background-color: white; border-radius: 5px; border: 1px solid #ddd; }
+        .copy-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .available { color: #28a745; font-weight: bold; }
+        .unavailable { color: #dc3545; font-weight: bold; }
+        .overdue { color: #ff0000; font-weight: bold; }
+        .due-info { font-size: 0.9em; color: #666; margin-top: 5px; }
+        .action-btn { padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; color: white; }
+        .checkout-btn { background-color: #007bff; }
+        .checkout-btn:hover { background-color: #0056b3; }
+        .return-btn { background-color: #28a745; }
+        .return-btn:hover { background-color: #218838; }
+        .alert { padding: 10px; margin-bottom: 15px; border-radius: 5px; }
+        .alert-success { background-color: #d4edda; color: #155724; }
+    </style>
+</head>
+<body>
+    <h1>📚 Book Library</h1>
+    
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    
+    <a href="{{ url_for('home') }}" class="button">Back to Home</a>
+    
+    {% if books_by_title %}
+    <div class="book-list">
+        {% for title, book_info in books_by_title.items() %}
+        <div class="book-card">
+            <h3>{{ book_info.title }}</h3>
+            <div class="book-info">
+                <strong>Author:</strong> {{ book_info.author }}
+            </div>
+            <div class="book-info">
+                <strong>Published:</strong> {{ book_info.published_date or 'N/A' }}
+            </div>
+            <div class="copy-status">
+                <strong>Copies:</strong>
+                {% for copy in book_info.copies %}
+                <div class="copy-item">
+                    <div class="copy-header">
+                        <span><strong>Copy {{ copy.copy_number }}</strong></span>
+                        {% if copy.is_available %}
+                            <span class="available">✓ Available</span>
+                        {% else %}
+                            {% if copy.is_overdue %}
+                                <span class="overdue">✗ Overdue</span>
+                            {% else %}
+                                <span class="unavailable">✗ Checked Out</span>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                    
+                    {% if not copy.is_available %}
+                        <div class="due-info">
+                            <div>Checked out: {{ copy.checkout_date.strftime('%b %d, %Y') }}</div>
+                            <div>Due back: {{ copy.due_date.strftime('%b %d, %Y') }}</div>
+                            {% if copy.checked_out_by == current_user.id %}
+                                <div style="margin-top: 8px;">
+                                    <form method="POST" action="{{ url_for('return_book', book_id=copy.id) }}" style="display: inline;">
+                                        <button type="submit" class="action-btn return-btn">Return Book</button>
+                                    </form>
+                                </div>
+                            {% elif current_user.is_admin %}
+                                <div style="margin-top: 8px;">
+                                    <form method="POST" action="{{ url_for('return_book', book_id=copy.id) }}" style="display: inline;">
+                                        <button type="submit" class="action-btn return-btn">Return (Admin)</button>
+                                    </form>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% else %}
+                        <div style="margin-top: 8px;">
+                            <form method="POST" action="{{ url_for('checkout_book', book_id=copy.id) }}" style="display: inline;">
+                                <button type="submit" class="action-btn checkout-btn">Check Out</button>
+                            </form>
+                        </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No books available in the library yet.</p>
+    {% endif %}
+</body>
+</html>

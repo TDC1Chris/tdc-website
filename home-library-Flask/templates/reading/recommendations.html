@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block title %}Reading Weather{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h1 class="page-title text-success">
+                <i class="fas fa-cloud-sun me-2"></i>Reading Weather
+            </h1>
+            <p class="lead text-muted">Is today a good day to read?</p>
+            <p class="text-muted">
+                <i class="fas fa-map-marker-alt me-1"></i> {{ location }}
+            </p>
+        </div>
+    </div>
+
+    <!-- Reading Score Card -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-8 col-lg-6">
+            <div class="reading-score {{ reading_score.score_class }}">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <span style="font-size: 4rem;">{{ reading_score.emoji }}</span>
+                    </div>
+                    <div class="col">
+                        <div class="reading-score-value">{{ reading_score.score }}/100</div>
+                        <div class="reading-score-label">Reading Score</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recommendation -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-8 col-lg-6">
+            <div class="tdc-card text-center">
+                <h4 class="text-success mb-3">{{ reading_score.recommendation }}</h4>
+                {% if reading_score.reasons %}
+                <ul class="list-unstyled text-muted">
+                    {% for reason in reading_score.reasons %}
+                    <li class="mb-1">
+                        <i class="fas fa-check-circle text-success me-2"></i>{{ reason }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Wishlist Recommendations -->
+    {% if wishlist %}
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8">
+            <h3 class="text-center text-success mb-4">
+                <i class="fas fa-book me-2"></i>Books from Your Wishlist
+            </h3>
+            <p class="text-center text-muted mb-4">
+                {% if reading_score.score >= 70 %}
+                Perfect weather for reading! Here are some books from your wishlist:
+                {% elif reading_score.score >= 50 %}
+                Good time to start one of these books:
+                {% else %}
+                Save these for a cozy day:
+                {% endif %}
+            </p>
+
+            <div class="row">
+                {% for book in wishlist[:3] %}
+                <div class="col-md-4 mb-3">
+                    <div class="book-card text-center h-100">
+                        <h5 class="book-title">
+                            {% if demo_mode %}{{ book.title }}{% else %}{{ book.title }}{% endif %}
+                        </h5>
+                        <p class="book-author">
+                            {% if demo_mode %}{{ book.author }}{% else %}{{ book.author }}{% endif %}
+                        </p>
+                        {% if demo_mode and book.genre %}
+                        <span class="badge bg-secondary">{{ book.genre }}</span>
+                        {% elif not demo_mode and book.genre %}
+                        <span class="badge bg-secondary">{{ book.genre }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="{{ url_for('reading_wishlist') }}" class="btn-tdc-outline">
+                    <i class="fas fa-list me-1"></i> View Full Wishlist
+                </a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 text-center">
+            <div class="tdc-card">
+                <i class="fas fa-book-open text-muted" style="font-size: 3rem;"></i>
+                <h4 class="text-muted mt-3">No books in your wishlist</h4>
+                <p class="text-muted">Add some books to get personalized recommendations!</p>
+                <a href="{{ url_for('add_to_reading_list') }}" class="btn-tdc">
+                    <i class="fas fa-plus me-1"></i> Add Books
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Back to Dashboard -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-auto">
+            <a href="{{ url_for('reading_dashboard') }}" class="btn-tdc-outline">
+                <i class="fas fa-arrow-left me-1"></i> Back to Library
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

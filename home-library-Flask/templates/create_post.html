@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New Post</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .container { background-color: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        h1 { color: #333; margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; color: #555; }
+        input[type="text"], textarea, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 1em; box-sizing: border-box; }
+        textarea { min-height: 200px; resize: vertical; font-family: Arial, sans-serif; }
+        .button { display: inline-block; padding: 10px 20px; background-color: #667eea; color: white; text-decoration: none; border-radius: 5px; margin: 10px 5px 10px 0; border: none; cursor: pointer; font-size: 1em; }
+        .button:hover { background-color: #5568d3; }
+        .button.success { background-color: #28a745; }
+        .button.success:hover { background-color: #218838; }
+        .rating-group { display: flex; gap: 10px; align-items: center; }
+        .rating-group label { margin: 0; }
+        .help-text { font-size: 0.9em; color: #666; margin-top: 5px; }
+        .optional-section { background-color: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✍️ Create New Post</h1>
+        
+        <form method="POST">
+            <div class="form-group">
+                <label for="title">Post Title *</label>
+                <input type="text" id="title" name="title" required placeholder="Enter your post title">
+            </div>
+            
+            <div class="optional-section">
+                <div class="form-group">
+                    <label for="book_id">Related Book (Optional)</label>
+                    <select id="book_id" name="book_id">
+                        <option value="">-- General Discussion (No Book) --</option>
+                        {% for book in books %}
+                        <option value="{{ book.id }}">{{ book.title }} by {{ book.author }}</option>
+                        {% endfor %}
+                    </select>
+                    <div class="help-text">Select a book if this is a review</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rating">Rating (Optional)</label>
+                    <select id="rating" name="rating">
+                        <option value="">-- No Rating --</option>
+                        <option value="5">⭐⭐⭐⭐⭐ (5 stars - Excellent)</option>
+                        <option value="4">⭐⭐⭐⭐ (4 stars - Good)</option>
+                        <option value="3">⭐⭐⭐ (3 stars - Average)</option>
+                        <option value="2">⭐⭐ (2 stars - Below Average)</option>
+                        <option value="1">⭐ (1 star - Poor)</option>
+                    </select>
+                    <div class="help-text">Only applies if you selected a book above</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="content">Content *</label>
+                <textarea id="content" name="content" required placeholder="Share your thoughts about the book or start a discussion..."></textarea>
+            </div>
+            
+            <div>
+                <button type="submit" class="button success">Publish Post</button>
+                <a href="{{ url_for('blog') }}" class="button">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

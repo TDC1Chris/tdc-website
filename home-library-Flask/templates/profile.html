@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 50px auto; padding: 20px; }
+        h1 { color: #333; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #333; }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="number"] { 
+            width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; 
+        }
+        .button { display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border: none; border-radius: 5px; cursor: pointer; margin: 5px; }
+        .button:hover { background-color: #0056b3; }
+        .button.back { background-color: #6c757d; }
+        .button.back:hover { background-color: #545b62; }
+        .alert { padding: 10px; margin-bottom: 15px; border-radius: 5px; }
+        .alert-success { background-color: #d4edda; color: #155724; }
+        .section-title { color: #007bff; font-size: 1.2em; margin-top: 25px; margin-bottom: 10px; padding-bottom: 5px; border-bottom: 2px solid #007bff; }
+        .help-text { font-size: 0.9em; color: #666; margin-top: 5px; }
+        .location-help { background-color: #f8f9fa; padding: 15px; border-radius: 5px; margin-top: 10px; }
+        .location-help h4 { margin-top: 0; color: #333; }
+        .location-help p { margin: 5px 0; font-size: 0.9em; }
+        .location-help a { color: #007bff; }
+    </style>
+</head>
+<body>
+    <h1>My Profile</h1>
+    
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    
+    <a href="{{ url_for('home') }}" class="button back">Back to Home</a>
+    
+    <form method="POST">
+        <div class="section-title">Personal Information</div>
+        
+        <div class="form-group">
+            <label for="personal_name">Full Name:</label>
+            <input type="text" id="personal_name" name="personal_name" value="{{ user.personal_name }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ user.email }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone_number">Phone Number:</label>
+            <input type="tel" id="phone_number" name="phone_number" value="{{ user.phone_number or '' }}">
+        </div>
+        
+        <div class="section-title">Location Settings (for Weather)</div>
+        
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" value="{{ user.city or '' }}" placeholder="e.g., Hoboken">
+            <div class="help-text">Major cities are recognized automatically. Supported: New York, Hoboken, Los Angeles, Chicago, Houston, Phoenix, Philadelphia, Boston, Miami, Seattle, Denver, Washington DC, Atlanta, Dallas, Portland, San Diego, Las Vegas, and more.</div>
+        </div>
+        
+        <div class="form-group">
+            <label for="state">State (2-letter code):</label>
+            <input type="text" id="state" name="state" value="{{ user.state or '' }}" placeholder="e.g., CA" maxlength="2" style="text-transform: uppercase;">
+        </div>
+        
+        {% if user.latitude and user.longitude %}
+        <div class="location-help">
+            <h4>📍 Current Coordinates:</h4>
+            <p><strong>Latitude:</strong> {{ "%.4f"|format(user.latitude) }}</p>
+            <p><strong>Longitude:</strong> {{ "%.4f"|format(user.longitude) }}</p>
+            <p style="color: #28a745; font-size: 0.9em;">✓ Coordinates are set and will be used for weather forecasts</p>
+        </div>
+        {% endif %}
+        
+        <div style="margin-top: 25px;">
+            <button type="submit" class="button">Update Profile</button>
+            <a href="{{ url_for('home') }}" class="button back">Cancel</a>
+        </div>
+    </form>
+</body>
+</html>

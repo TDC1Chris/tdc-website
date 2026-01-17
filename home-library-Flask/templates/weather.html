@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %}Weather Forecast{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            <h1 class="page-title text-success">
+                <i class="fas fa-cloud-sun me-2"></i>Weather Forecast
+            </h1>
+            <p class="lead text-muted">
+                <i class="fas fa-map-marker-alt me-1"></i> {{ location }}
+            </p>
+        </div>
+    </div>
+
+    <!-- Reading Weather Link -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-auto">
+            <a href="{{ url_for('weather_recommendations') }}" class="btn-tdc">
+                <i class="fas fa-book me-1"></i> See Reading Weather Score
+            </a>
+        </div>
+    </div>
+
+    {% if error %}
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="tdc-card text-center">
+                <i class="fas fa-exclamation-triangle text-warning" style="font-size: 3rem;"></i>
+                <h4 class="text-muted mt-3">Unable to fetch weather data</h4>
+                <p class="text-muted">Please try again later.</p>
+                <p class="text-muted small">Data source: National Weather Service (weather.gov)</p>
+            </div>
+        </div>
+    </div>
+    {% elif periods %}
+    <div class="row">
+        {% for period in periods %}
+        <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+            <div class="tdc-card h-100 {% if not period.isDaytime %}bg-dark text-white{% endif %}">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h5 class="{% if not period.isDaytime %}text-white{% else %}text-success{% endif %} mb-0">
+                        {{ period.name }}
+                    </h5>
+                    <span style="font-size: 2rem;">
+                        {% if 'rain' in period.shortForecast.lower() or 'shower' in period.shortForecast.lower() %}
+                            <i class="fas fa-cloud-rain"></i>
+                        {% elif 'thunder' in period.shortForecast.lower() %}
+                            <i class="fas fa-bolt"></i>
+                        {% elif 'snow' in period.shortForecast.lower() %}
+                            <i class="fas fa-snowflake"></i>
+                        {% elif 'cloud' in period.shortForecast.lower() %}
+                            <i class="fas fa-cloud"></i>
+                        {% elif 'partly' in period.shortForecast.lower() %}
+                            <i class="fas fa-cloud-sun"></i>
+                        {% elif period.isDaytime %}
+                            <i class="fas fa-sun text-warning"></i>
+                        {% else %}
+                            <i class="fas fa-moon"></i>
+                        {% endif %}
+                    </span>
+                </div>
+
+                <div class="text-center my-3">
+                    <span class="display-5 fw-bold {% if not period.isDaytime %}text-white{% else %}text-success{% endif %}">
+                        {{ period.temperature }}°{{ period.temperatureUnit }}
+                    </span>
+                </div>
+
+                <p class="{% if not period.isDaytime %}text-white-50{% else %}text-muted{% endif %} text-center mb-2">
+                    <em>{{ period.shortForecast }}</em>
+                </p>
+
+                <p class="{% if not period.isDaytime %}text-white-50{% else %}text-muted{% endif %} small text-center mb-3">
+                    <i class="fas fa-wind me-1"></i> {{ period.windSpeed }} {{ period.windDirection }}
+                </p>
+
+                {% if period.detailedForecast %}
+                <div class="border-top pt-2 mt-auto">
+                    <p class="{% if not period.isDaytime %}text-white-50{% else %}text-muted{% endif %} small mb-0">
+                        {{ period.detailedForecast[:150] }}{% if period.detailedForecast|length > 150 %}...{% endif %}
+                    </p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12 text-center">
+            <p class="text-muted small">
+                <i class="fas fa-info-circle me-1"></i>
+                Weather data provided by the National Weather Service |
+                Last updated: {{ periods[0].startTime[:10] if periods else 'N/A' }}
+            </p>
+        </div>
+    </div>
+    {% else %}
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="tdc-card">
+                <i class="fas fa-spinner fa-spin text-success" style="font-size: 3rem;"></i>
+                <h4 class="text-muted mt-3">Loading weather data...</h4>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

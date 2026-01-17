@@ -1,0 +1,412 @@
+/* TDC Theme - Shared styling with Total Design Consulting website */
+
+/* CSS Variables */
+:root {
+  --color-primary: #2563eb;
+  --color-accent: #60a5fa;
+  --color-light: #f3f4f6;
+  --color-dark: #1f2937;
+  --color-text: #22223b;
+  --color-muted: #e0e7ef;
+  --font-base: 'Segoe UI', Arial, sans-serif;
+
+  --tdc-green: #2e7d32;
+  --tdc-green-light: #43a047;
+  --tdc-green-gradient: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
+  --tdc-bg-light: #f7faf7;
+  --tdc-bg-gradient: linear-gradient(135deg, #f7faf7 0%, #e8f5e8 20%, #f0f8f0 40%, #e3f2e3 60%, #f4f9f4 80%, #e8f5e8 100%);
+  --tdc-bg-gray: #f3f4f6;
+  --tdc-card-bg: #fff;
+  --tdc-card-shadow: 0 6px 32px rgba(46, 125, 50, 0.12);
+}
+
+/* Base body styling */
+body {
+  font-family: var(--font-base);
+  background: var(--tdc-bg-gradient);
+  background-size: 200% 200%;
+  background-attachment: fixed;
+  animation: gradientShift 20s ease infinite;
+  color: var(--color-text);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+.tdc-header {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tdc-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: var(--tdc-green);
+}
+
+/* Navigation */
+.tdc-nav-link {
+  color: var(--tdc-green);
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: color 0.2s;
+}
+
+.tdc-nav-link:hover {
+  color: var(--tdc-green-light);
+  text-decoration: underline;
+}
+
+.tdc-nav-link.active {
+  color: #17451e;
+  font-weight: 600;
+}
+
+/* Main content area */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1rem;
+  min-height: 70vh;
+  flex: 1;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: var(--color-dark);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Cards */
+.tdc-card {
+  background: var(--tdc-card-bg);
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: var(--tdc-card-shadow);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.tdc-service-card {
+  background: var(--tdc-card-bg);
+  border: 1px solid #e5e7eb;
+  box-shadow: var(--tdc-card-shadow);
+  border-radius: 1rem;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.tdc-service-card .card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.tdc-service-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 8px 32px rgba(46, 125, 50, 0.13);
+  border-color: var(--tdc-green-light);
+}
+
+/* Portfolio cards */
+.tdc-portfolio-card {
+  background: var(--tdc-card-bg);
+  border: 1px solid #e5e7eb;
+  box-shadow: var(--tdc-card-shadow);
+  border-radius: 1rem;
+  transition: transform 0.18s, box-shadow 0.18s;
+  overflow: hidden;
+}
+
+.tdc-portfolio-card .card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.tdc-portfolio-card:hover {
+  transform: translateY(-8px) scale(1.025);
+  box-shadow: 0 12px 40px rgba(46, 125, 50, 0.15);
+  border-color: var(--tdc-green);
+}
+
+/* Hero section */
+.tdc-hero {
+  background: var(--tdc-green-gradient);
+  color: #fff;
+  border-radius: 1.5rem;
+  box-shadow: var(--tdc-card-shadow);
+  max-width: 800px;
+  padding: 3rem 2rem !important;
+}
+
+/* Forms */
+input, textarea, select {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f9fafb;
+  color: var(--color-text);
+  outline: none;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--tdc-green);
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+  background: #fff;
+}
+
+/* Buttons */
+.btn-tdc {
+  padding: 0.7rem 1.5rem;
+  background: var(--tdc-green-gradient);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.15);
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.btn-tdc:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(46, 125, 50, 0.25);
+  color: white;
+}
+
+.btn-tdc-outline {
+  padding: 0.7rem 1.5rem;
+  background: transparent;
+  color: var(--tdc-green);
+  border: 2px solid var(--tdc-green);
+  border-radius: 6px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.18s;
+}
+
+.btn-tdc-outline:hover {
+  background: var(--tdc-green);
+  color: white;
+}
+
+/* Footer */
+.tdc-footer {
+  background: linear-gradient(135deg, #1b2e1b 0%, #2e5f2e 100%);
+  color: #fff;
+  padding: 1.2rem 0;
+  text-align: center;
+  font-size: 1rem;
+  box-shadow: 0 -4px 16px rgba(31, 41, 55, 0.15);
+  width: 100%;
+  margin-top: auto;
+}
+
+.tdc-footer a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.tdc-footer a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+/* Flash messages */
+.flash-messages {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 1rem;
+}
+
+.flash-message {
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.flash-message.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.flash-message.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.flash-message.info {
+  background: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+.flash-message.warning {
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+/* Reading Library specific styles */
+.book-card {
+  background: var(--tdc-card-bg);
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: var(--tdc-card-shadow);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(46, 125, 50, 0.15);
+}
+
+.book-title {
+  color: var(--tdc-green);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.book-author {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.book-status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.book-status.wishlist {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.book-status.reading {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.book-status.completed {
+  background: #e8f5e9;
+  color: var(--tdc-green);
+}
+
+/* Star rating */
+.star-rating {
+  color: #ffc107;
+  font-size: 1.2rem;
+}
+
+.star-rating .empty {
+  color: #e0e0e0;
+}
+
+/* Weather reading score */
+.reading-score {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--tdc-card-bg);
+  border-radius: 1rem;
+  box-shadow: var(--tdc-card-shadow);
+}
+
+.reading-score-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--tdc-green);
+}
+
+.reading-score-label {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}
+
+.reading-score.excellent {
+  border-left: 4px solid var(--tdc-green);
+}
+
+.reading-score.good {
+  border-left: 4px solid #43a047;
+}
+
+.reading-score.fair {
+  border-left: 4px solid #ffc107;
+}
+
+.reading-score.poor {
+  border-left: 4px solid #ff9800;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+  .tdc-header {
+    padding-bottom: 0.5rem;
+  }
+
+  .tdc-card,
+  .tdc-service-card,
+  .tdc-portfolio-card {
+    padding: 1rem 0.7rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .book-card {
+    padding: 1rem;
+  }
+}

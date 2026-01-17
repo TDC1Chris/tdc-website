@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}Rate Book{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('reading_dashboard') }}" class="text-success">My Library</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url_for('reading_completed') }}" class="text-success">Completed</a></li>
+                    <li class="breadcrumb-item active">Rate Book</li>
+                </ol>
+            </nav>
+            <h1 class="page-title text-success">
+                <i class="fas fa-star me-2"></i>Rate & Review
+            </h1>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="tdc-card">
+                <div class="text-center mb-4">
+                    <h4 class="book-title">{{ book.title }}</h4>
+                    <p class="book-author">by {{ book.author }}</p>
+                </div>
+
+                <form method="POST" action="{{ url_for('rate_book', book_id=book.id) }}">
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">
+                            <i class="fas fa-star me-1 text-warning"></i> Your Rating
+                        </label>
+                        <div class="d-flex gap-3 justify-content-center my-3">
+                            {% for i in range(1, 6) %}
+                            <div class="form-check">
+                                <input class="form-check-input visually-hidden" type="radio" name="rating" id="rating_{{ i }}" value="{{ i }}"
+                                       {% if book.rating == i %}checked{% endif %}>
+                                <label class="form-check-label star-rating-select" for="rating_{{ i }}" style="font-size: 2rem; cursor: pointer;">
+                                    <i class="{% if book.rating and book.rating >= i %}fas{% else %}far{% endif %} fa-star"></i>
+                                </label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <p class="text-center text-muted small">Click to select rating</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="review" class="form-label fw-bold">
+                            <i class="fas fa-pen me-1 text-success"></i> Your Review (Optional)
+                        </label>
+                        <textarea class="form-control" id="review" name="review" rows="5"
+                                  placeholder="What did you think of this book?">{{ book.review or '' }}</textarea>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn-tdc flex-grow-1">
+                            <i class="fas fa-save me-1"></i> Save Rating
+                        </button>
+                        <a href="{{ url_for('reading_completed') }}" class="btn-tdc-outline">
+                            Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_js %}
+<script>
+// Interactive star rating
+document.querySelectorAll('.star-rating-select').forEach(function(label, index) {
+    label.addEventListener('click', function() {
+        const rating = index + 1;
+        document.querySelectorAll('.star-rating-select i').forEach(function(star, starIndex) {
+            if (starIndex < rating) {
+                star.classList.remove('far');
+                star.classList.add('fas');
+            } else {
+                star.classList.remove('fas');
+                star.classList.add('far');
+            }
+        });
+    });
+
+    label.addEventListener('mouseenter', function() {
+        const hoverRating = index + 1;
+        document.querySelectorAll('.star-rating-select i').forEach(function(star, starIndex) {
+            star.style.color = starIndex < hoverRating ? '#ffc107' : '#e0e0e0';
+        });
+    });
+});
+
+document.querySelector('.tdc-card').addEventListener('mouseleave', function() {
+    const selectedRating = document.querySelector('input[name="rating"]:checked');
+    const rating = selectedRating ? parseInt(selectedRating.value) : 0;
+    document.querySelectorAll('.star-rating-select i').forEach(function(star, starIndex) {
+        star.style.color = starIndex < rating ? '#ffc107' : '#e0e0e0';
+    });
+});
+</script>
+{% endblock %}
+{% endblock %}

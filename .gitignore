@@ -19,3 +19,13 @@ __pycache__/
 .tdc_license
 *.license
 licensing/
+
+# Claude Code context file (local only)
+CLAUDE.md
+
+# Flask project specific ignores
+home-library-Flask/venv/
+home-library-Flask/instance/*.db
+home-library-Flask/__pycache__/
+home-library-Flask/*.db
+home-library-Flask/.env

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block title %}Want to Read{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row mb-4">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('reading_dashboard') }}" class="text-success">My Library</a></li>
+                    <li class="breadcrumb-item active">Want to Read</li>
+                </ol>
+            </nav>
+            <h1 class="page-title text-primary">
+                <i class="fas fa-list me-2"></i>Want to Read
+            </h1>
+            <p class="lead text-muted">{{ books|length }} book{% if books|length != 1 %}s{% endif %} in your wishlist</p>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <a href="{{ url_for('add_to_reading_list') }}" class="btn-tdc">
+                <i class="fas fa-plus me-1"></i> Add Book
+            </a>
+        </div>
+    </div>
+
+    {% if books %}
+    <div class="row">
+        {% for book in books %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="book-card h-100">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <div>
+                        <h5 class="book-title mb-1">
+                            {% if demo_mode %}{{ book.title }}{% else %}{{ book.title }}{% endif %}
+                        </h5>
+                        <p class="book-author mb-0">
+                            {% if demo_mode %}{{ book.author }}{% else %}{{ book.author }}{% endif %}
+                        </p>
+                    </div>
+                    <span class="book-status wishlist">Wishlist</span>
+                </div>
+
+                {% if demo_mode and book.genre %}
+                <p class="text-muted small mb-3">
+                    <i class="fas fa-tag me-1"></i> {{ book.genre }}
+                </p>
+                {% elif not demo_mode and book.genre %}
+                <p class="text-muted small mb-3">
+                    <i class="fas fa-tag me-1"></i> {{ book.genre }}
+                </p>
+                {% endif %}
+
+                {% if not demo_mode %}
+                <div class="mt-auto pt-3 border-top">
+                    <form action="{{ url_for('update_reading_status', book_id=book.id) }}" method="POST" class="d-inline">
+                        <input type="hidden" name="status" value="reading">
+                        <button type="submit" class="btn btn-sm btn-warning">
+                            <i class="fas fa-book-open me-1"></i> Start Reading
+                        </button>
+                    </form>
+                    <form action="{{ url_for('delete_from_reading_list', book_id=book.id) }}" method="POST" class="d-inline ms-2">
+                        <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Remove this book?')">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </form>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="row">
+        <div class="col-12 text-center py-5">
+            <i class="fas fa-list text-muted" style="font-size: 4rem;"></i>
+            <h3 class="text-muted mt-3">No books in your wishlist</h3>
+            <p class="text-muted">Add books you want to read!</p>
+            <a href="{{ url_for('add_to_reading_list') }}" class="btn-tdc">
+                <i class="fas fa-plus me-1"></i> Add Book
+            </a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
